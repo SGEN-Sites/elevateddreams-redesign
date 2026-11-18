@@ -15,7 +15,7 @@ ${hero.section}
 
 <section class="band band--cats" aria-labelledby="cats-t">
   <div class="band__in">${catsGrid().replace('class="shead__t"', 'class="shead__t" id="cats-t"')}
-  <p class="center"><a class="link" href="${u('/learn/')}">Not sure where to start? Read our product guides ${icon('arrow')}</a></p></div>
+  <p class="center" id="menu-guides"><a class="link" href="${u('/learn/')}">Not sure where to start? Read our product guides ${icon('arrow')}</a></p></div>
 </section>
 
 <section class="band band--brick band--placards band--placards-top" id="license" aria-label="License, warnings and HOPEline">

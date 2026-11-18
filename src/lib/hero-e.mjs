@@ -240,6 +240,7 @@ body.hxe-page .band--placards-top::before{background:radial-gradient(48% 44% at 
 /* the menu sits straight on the sky: no scrim, and no rooftop ledge up here */
 body.hxe-page .band--cats::before{background:none}
 body.hxe-page .ledge{display:none}
+body.hxe-page .band--cats .center{margin:clamp(36px,4vw,56px) 0 0;scroll-margin-top:45vh}
 
 /* far off screen the heavy layers leave the compositor altogether */
 .hxe.hxe-off .hxe-stage,.hxe.hxe-skyoff .hxe-sky{visibility:hidden}
