@@ -57,7 +57,7 @@ const copyDir = (src, dst) => { fs.mkdirSync(dst, { recursive: true }); for (con
 copyDir(path.join(ROOT, 'src/assets/fonts'), path.join(OUT, 'assets/fonts'));
 copyDir(path.join(ROOT, 'src/assets/img'), path.join(OUT, 'assets/img'));
 copyDir(path.join(ROOT, 'src/assets/video'), path.join(OUT, 'assets/video'));
-const CSS = ['fonts', 'tokens', 'base', 'chrome', 'components', 'home', 'pages', 'signature', 'dream', 'round3', 'fix'];
+const CSS = ['fonts', 'tokens', 'base', 'chrome', 'components', 'home', 'pages', 'signature', 'dream', 'round3', 'splash', 'fix'];
 const css = CSS.map((n) => { const f = path.join(ROOT, `src/styles/${n}.css`); return fs.existsSync(f) ? `/* ${n}.css */\n` + fs.readFileSync(f, 'utf8') : ''; }).join('\n').replace(/url\(\.\.\/assets\/fonts\//g, 'url(../fonts/');
 fs.mkdirSync(path.join(OUT, 'assets/css'), { recursive: true });
 fs.writeFileSync(path.join(OUT, 'assets/css/site.css'), css);

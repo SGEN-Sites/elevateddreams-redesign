@@ -19,7 +19,7 @@ export default function () {
     body: `<section class="labx">
   <div class="labx__bg" aria-hidden="true">${img('hero-golden-b', { alt: '', sizes: '100vw', eager: true })}</div>
   <div class="band__in labx__in">
-    <p class="kicker">ROUND 3 · FOR REVIEW</p>
+    <p class="kicker">ROUND 3 · CHOSEN: HERO A + SPLASH 1, NOW ON THE HOME PAGE</p>
     <h1 class="labx__t">Pick a hero. <em>Pick a splash.</em></h1>
     <p class="labx__lede">All three heroes use the real storefront, relit at golden hour and floating on clouds. Open each one, move the cursor, scroll, and try it on your phone. Splash pages have a Replay button in the bar above.</p>
   </div>

@@ -14,6 +14,9 @@ The preview is `noindex`; it is a pitch, not the client's official website.
   golden-tall 01a1ec45-7605-7fb3-8f4d-0d4d748dcff3, night-wide-b 01a1ec47-9f88-71b0-9342-6676c9ca7607,
   plate-wide-b 01a1ec47-9f7e-7ec0-9639-06783a4967ea, cut-out (BiRefNet v2) 01a1ec47-a04e-7c80-9dde-2ee9186ea146.
   List price about $0.90. The client should approve showing an edited image of their storefront.
+- **Chosen (owner, 2026-11-18): Hero A "Levitate" + Splash 1 "Through the clouds"**, now on the site: the home
+  hero is Levitate (`src/lib/hero-a.mjs`); the splash replaces the smoke loader on the first page of every visit and
+  hands off to the age check (`src/lib/splash.mjs`, `src/styles/splash.css`).
 - **Hero layout and splash: three options each** at `/lab/` on the preview (Levitate, Portal, Golden hour to after
   dark; Through the clouds, Golden horizon, Wake into the dream). The home page shows the storefront on the right with
   the copy on the left until one is chosen.

@@ -5,37 +5,13 @@ import { skyline } from '../lib/skyline.mjs';
 import { placards } from '../lib/layout.mjs';
 import { dealsGrid, catsGrid, feelingsFacade, visitBlock, stepsPanel, learnCards, finale, sectionHead, localBusiness } from '../lib/sections.mjs';
 import { store, SHOP, home } from '../content/site.mjs';
+import { heroA } from '../lib/hero-a.mjs';
 
 export default function homePage({ articles }) {
   const latest = articles.slice(0, 3);
+  const hero = heroA();
   const body = `
-<section class="hero" data-hero aria-labelledby="hero-h1">
-  <div class="hero__media" aria-hidden="true">
-    <picture class="hero__still">
-      <source media="(max-width: 760px)" srcset="${asset('img/gen/hero-golden-tall-720.webp')} 720w, ${asset('img/gen/hero-golden-tall-1080.webp')} 1080w" sizes="100vw">
-      ${img('hero-golden-b', { alt: '', sizes: '100vw', eager: true, cls: 'hero__img' })}
-    </picture>
-  </div>
-  <div class="hero__glow hero__glow--golden" aria-hidden="true"></div>
-  <canvas class="hero__smoke" data-smoke aria-hidden="true"></canvas>
-  <div class="band__in hero__in">
-    <div class="hero__lock" aria-hidden="true">
-      <span class="hero__elev" data-lift>ELEVATED</span>
-      <span class="hero__cast"></span>
-      <span class="hero__dreams">DREAMS</span>
-    </div>
-    <div class="hero__plate">
-      <p class="kicker">${esc(home.heroKicker)}</p>
-      <h1 class="hero__h1" id="hero-h1">Dreams take work. <em>Welcome in.</em></h1>
-      <p class="hero__lede">${esc(home.heroLede)}</p>
-      <p class="hero__sub">Social-equity owned. Thirteen months of rent on a locked door before it opened. <a href="${u('/about/')}">Read the story</a></p>
-      <div class="hero__cta">${shopBtn('Shop the menu')}${btn('Get Directions', store.maps, { kind: 'ghost' })}</div>
-      <p class="hero__meta"><a href="tel:${store.tel}">${icon('phone')} Call ${store.phone}</a>${statusLine()}</p>
-    </div>
-  </div>
-  <div class="fogband fogband--home fogband--warm" aria-hidden="true"><i></i><i></i><i></i></div>
-  <a class="hero__down" href="#tonight"><span>GOING UP</span>${icon('up')}</a>
-</section>
+${hero.section}
 
 <section class="band band--brick band--placards band--placards-top" aria-label="License, warnings and HOPEline">
   <div class="band__in">${placards()}</div>
@@ -152,8 +128,8 @@ ${finale()}`;
   return [{
     path: '/', title: 'Elevated Dreams LLC | Newburgh NY Dispensary',
     desc: 'Visit Elevated Dreams LLC, a Newburgh, NY dispensary for adult-use cannabis, delivery, pickup, product education, and daily deals. Order online today.',
-    bodyClass: 'is-home', body, noPlacards: true, scripts: ['smoke.js'],
-    preload: `<link rel="preload" as="image" href="${asset('img/gen/scene-hero-river-1400.webp')}" media="(min-width: 761px)"><link rel="preload" as="image" href="${asset('img/gen/scene-hero-river-tall-720.webp')}" media="(max-width: 760px)">`,
+    bodyClass: 'is-home', body, noPlacards: true, inlineCss: hero.css, inlineJs: hero.js,
+    preload: hero.preload,
     schema: [localBusiness(), { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Elevated Dreams', url: 'https://elevateddreamscannabisny.com/' }],
   }];
 }

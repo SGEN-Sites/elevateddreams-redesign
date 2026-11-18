@@ -1,6 +1,7 @@
 // layout.mjs: the page shell. Head, smoke loader, routing age gate, altitude stage + fog layer, chrome, footer, pickup bar.
 import { esc, u, asset, icon, img, imgSrc, btn, shopAttrs, statusLine } from './html.mjs';
 import { skyline } from './skyline.mjs';
+import { splashMarkup, splashJs } from './splash.mjs';
 import { store, SHOP, compliance, nav, categories, feelings, home, areas, STORE_ORIGIN } from '../content/site.mjs';
 
 const SITE = 'https://elevateddreamscannabisny.com';
@@ -260,7 +261,8 @@ export function layout(p, ctx) {
   return `${head(p, ctx)}
 <body class="${p.bodyClass || ''}">
 <a class="skip" href="#main">Skip to content</a>
-${p.lab ? labBar(p) : `${loader()}
+${p.lab ? labBar(p) : `${splashMarkup()}
+<script>${splashJs}</script>
 ${gate()}`}
 ${sky()}
 ${header(p)}
