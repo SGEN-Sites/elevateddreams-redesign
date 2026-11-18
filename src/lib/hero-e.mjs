@@ -78,10 +78,6 @@ export function heroE() {
   ${on} .hxe-sky__mist i{animation:hxe-drift 130s linear infinite}
   ${on} .hxe-sky__mist i:nth-child(2){animation-duration:90s;animation-direction:reverse}
   ${on} .hxe-sky__stars i:nth-child(2){animation:hxe-twinkle 5.5s ease-in-out infinite alternate}
-  /* each sign drifts on its own slow breath once it has risen into place */
-  ${on} body.hxe-page .placard.is-in{animation:hxe-hover 7.2s var(--ease-io) 1.3s infinite alternate}
-  ${on} body.hxe-page .placard--sign.is-in{animation-duration:8.6s}
-  ${on} body.hxe-page .placard--transit.is-in{animation-duration:6.4s}
   /* cursor depth: the compositor eases each layer to where the script last pointed it */
   @media (hover: hover) and (pointer: fine){
     ${on} .hxe-sk,${on} .hxe-words,${on} .hxe-bld,${on} .hxe-bank,${on} .hxe-fog,${on} .hxe-sky__cl{transition:transform .62s cubic-bezier(.2,.72,.28,1)}
@@ -109,7 +105,6 @@ export function heroE() {
     ${fogI(3, '150s linear infinite', 0, '.62')}
   }
   ${on} .hxe.hxe-off .hxe-bob,${on} .hxe.hxe-off .hxe-fog i,${on} .hxe.hxe-skyoff .hxe-sky__mist i,${on} .hxe.hxe-skyoff .hxe-sky__stars i{animation-play-state:paused}
-  ${on} body.hxe-page .hxe.hxe-ploff ~ .band--placards-top .placard{animation-play-state:paused}
 }
 @keyframes hxe-y{to{translate:0 var(--dy)}}
 @keyframes hxe-o{from{opacity:var(--o0)}to{opacity:var(--o1)}}
@@ -119,7 +114,7 @@ export function heroE() {
 @keyframes hxe-bob{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,-1.7%,0)}}
 @keyframes hxe-drift{to{transform:translate3d(-1200px,0,0)}}
 @keyframes hxe-twinkle{from{opacity:.25}to{opacity:.85}}
-@keyframes hxe-hover{from{translate:0 0}to{translate:0 -7px}}`;
+`;
 
   const inlineCss = `
 /* ===================== HERO E: one sky, golden hour to night (hero rules scoped to .hxe) ===================== */

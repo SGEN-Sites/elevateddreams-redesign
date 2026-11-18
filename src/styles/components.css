@@ -23,28 +23,9 @@
 .lev__shadow { width: 62%; height: 16px; margin-top: 26px; border-radius: 50%; background: radial-gradient(closest-side, rgba(4, 2, 7, .92) 55%, rgba(4, 2, 7, 0) 100%); animation: shadow 6.5s var(--ease-io) infinite alternate; animation-delay: calc(var(--d, 0s) * -1); scale: calc(1 - var(--lift, 0) * .025); transition: scale .5s var(--ease); }
 
 /* =============================== COMPLIANCE PLACARDS =============================== */
-.placards { display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: clamp(16px, 2.6vw, 34px); align-items: stretch; perspective: 1200px; }
-.placard { position: relative; padding: 30px 28px 28px; border-radius: 12px; transform-style: preserve-3d; transition: transform .6s var(--ease); }
-.placard__h { font: 800 1.05rem/1.2 var(--f-ui); letter-spacing: .16em; margin-bottom: 12px; }
-.placard__h2 { font: 800 .95rem/1.2 var(--f-ui); letter-spacing: .16em; margin: 16px 0 8px; }
-.placard__p { font-size: .98rem; line-height: 1.55; margin: 0; }
-.placard--plaque { background: var(--brass); color: #2a1d0c; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .55), inset 0 -3px 8px rgba(0, 0, 0, .35), inset 0 0 0 6px rgba(0, 0, 0, .06), 0 24px 44px -18px rgba(0, 0, 0, .85); text-shadow: 0 1px 0 rgba(255, 255, 255, .35); display: grid; align-content: center; text-align: center; }
-.placard--plaque::before { content: ""; position: absolute; inset: 12px; border-radius: 6px; box-shadow: inset 0 0 0 1px rgba(42, 29, 12, .35), inset 0 0 0 2px rgba(255, 255, 255, .22); pointer-events: none; }
-.placard__lic { margin: 14px 0 0; font: 400 clamp(1.25rem, 2vw, 1.6rem)/1 var(--f-display); letter-spacing: .02em; }
 .screw { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff8e0, #a8874a 60%, #5e4520); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .3); }
 .screw::after { content: ""; position: absolute; left: 2px; right: 2px; top: 5px; height: 2px; background: rgba(42, 29, 12, .6); transform: rotate(35deg); }
 .screw--tl { top: 10px; left: 10px; } .screw--tr { top: 10px; right: 10px; } .screw--bl { bottom: 10px; left: 10px; } .screw--br { bottom: 10px; right: 10px; }
-.placard--sign { background: linear-gradient(180deg, #43295f, #2e1c45); color: #fff; border-radius: 16px; box-shadow: inset 0 0 0 5px #2e1c45, inset 0 0 0 7px rgba(255, 255, 255, .9), 0 24px 44px -18px rgba(0, 0, 0, .85); padding: 34px 32px 30px; }
-.placard--sign::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(115deg, rgba(255, 255, 255, .14), transparent 40%); pointer-events: none; }
-.placard__badge { position: absolute; top: -18px; right: 22px; margin: 0; display: grid; place-items: center; width: 74px; height: 74px; border-radius: 50%; background: var(--sodium); color: #1A1424; font: 800 1rem/1 var(--f-ui); letter-spacing: .06em; box-shadow: 0 0 0 4px #fff, 0 12px 26px -8px rgba(0, 0, 0, .8); text-align: center; transform: rotate(-8deg); }
-.placard--transit { background: #0c0a10; color: #fff; border-radius: 10px; box-shadow: inset 0 6px 0 var(--violet), 0 24px 44px -18px rgba(0, 0, 0, .85), inset 0 0 0 1px rgba(255, 255, 255, .08); padding-top: 36px; }
-.placard--transit .placard__h { display: flex; align-items: center; gap: 12px; }
-.placard__dot { display: grid; place-items: center; flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--violet); color: #fff; font: 800 1.1rem/1 var(--f-ui); letter-spacing: 0; }
-.placard__rows { list-style: none; display: grid; gap: 10px; margin-top: 6px; }
-.placard__rows li { display: grid; grid-template-columns: 52px 1fr; gap: 10px; align-items: baseline; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, .12); }
-.placard__rows span { font: 800 .82rem var(--f-ui); letter-spacing: .2em; color: var(--violet-hi); }
-.placard__rows a { color: #fff; font: 700 1.12rem var(--f-ui); letter-spacing: .04em; text-decoration: none; overflow-wrap: anywhere; }
-.placard__rows a:hover { color: var(--gold); }
 
 /* =============================== DEALS: lit lightbox signs =============================== */
 .tickets { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: clamp(18px, 2.4vw, 30px); perspective: 1100px; }

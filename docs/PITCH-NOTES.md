@@ -12,8 +12,8 @@ The preview is `noindex`; it is a pitch, not the client's official website.
   night grades are pre-baked, the page's own sky stops while the hero's sky covers it, and reveals and page changes no
   longer animate filters. The intro is about one second, once per visitor.
 - **The "13"** no longer shows a glow cut off by its fill.
-- **Sign cards:** three directions at `/lab/cards/` (Dream cards, Street signs at dusk, Adrift on the clouds), wording
-  unchanged, awaiting a pick.
+- **Sign cards:** the owner chose Dream cards (the Sun, the Moon, the Star). They now carry the license, warning and
+  HOPEline on every page that shows them, with the wording unchanged. The other two directions stay at `/lab/cards/`.
 
 ## Round 4 (owner review, 2026-11-18)
 

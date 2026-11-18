@@ -54,8 +54,6 @@ body::after { content: ""; position: fixed; inset: -60%; z-index: 95; pointer-ev
   .hdr__shop { margin-left: auto; }
   .hdr__act { margin-left: auto; }
   .alt { display: none; }
-  .placards { grid-template-columns: 1fr 1fr; }
-  .placard--sign { grid-column: 1 / -1; order: -1; }
   .cats { grid-template-columns: repeat(3, 1fr); }
   .visit, .split, .members, .why, .rooted, .stairs, .owner, .contact { grid-template-columns: 1fr; }
   .lcards, .arts, .hub, .howto, .ways, .plaques--3 { grid-template-columns: 1fr 1fr; }
@@ -91,9 +89,6 @@ body::after { content: ""; position: fixed; inset: -60%; z-index: 95; pointer-ev
   .hero__prop--a { right: 4vw; top: calc(var(--hdr-h) + var(--tick-h) + 3vh); bottom: auto; width: 27vw; }
   .hero__down { display: none; }
   .hero__pause { bottom: auto; top: calc(var(--hdr-h) + var(--tick-h) + 10px); right: 12px; }
-  .placards { grid-template-columns: 1fr; }
-  .placard--sign { grid-column: auto; }
-  .placard__badge { width: 64px; height: 64px; font-size: .9rem; }
   .cats { grid-template-columns: 1fr 1fr; }
   .cat__a { padding: 18px 10px 18px; border-radius: 20px; }
   .facade { padding: 46px 16px 0; }

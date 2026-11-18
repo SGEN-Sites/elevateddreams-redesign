@@ -18,7 +18,7 @@ ${hero.section}
   <p class="center"><a class="link" href="${u('/learn/')}">Not sure where to start? Read our product guides ${icon('arrow')}</a></p></div>
 </section>
 
-<section class="band band--brick band--placards band--placards-top" aria-label="License, warnings and HOPEline">
+<section class="band band--brick band--placards band--placards-top" id="license" aria-label="License, warnings and HOPEline">
   <div class="band__in">${placards()}</div>
 </section>
 

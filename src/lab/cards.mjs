@@ -3,6 +3,7 @@
 // browser has them, so it runs off the main thread); loops pause off screen; reduced motion gets the settled cards.
 import { esc, asset } from '../lib/html.mjs';
 import { store, compliance as C } from '../content/site.mjs';
+import { sun, moon, star, dream } from '../lib/dream-cards.mjs';
 
 const lic = () => `<h3 class="k-h">${C.licenseTitle}</h3><p class="k-p">${esc(C.licenseLine)}</p><p class="k-no">${store.license}</p>`;
 const warn = () => `<h3 class="k-h">${C.warningTitle}</h3><p class="k-p">${esc(C.warning)}</p><h4 class="k-h2">${C.addTitle}</h4><p class="k-p">${esc(C.additional)}</p>`;
@@ -10,14 +11,6 @@ const hopeRows = () => `<ul class="k-rows"><li><span>CALL</span><a href="tel:${C
 const hope = () => `<h3 class="k-h">${C.hopeTitle}</h3>${hopeRows()}`;
 const label = (n, id, t, d) => `<header class="kx-label"><span class="kx-n" aria-hidden="true">${n}</span><div><h2 id="${id}">${t}</h2><p>${d}</p></div></header>`;
 
-/* hand-drawn emblems: each moving part is its own <svg>, so it moves as one GPU layer */
-const rays = Array.from({ length: 24 }, (_, i) => `<path transform="rotate(${i * 15})" d="M0-58 L${i % 2 ? 1.7 : 2.9}-${i % 2 ? 41 : 37} L-${i % 2 ? 1.7 : 2.9}-${i % 2 ? 41 : 37}Z"/>`).join('');
-const sun = `<svg class="ka-spin" viewBox="-60 -60 120 120" fill="currentColor">${rays}</svg><svg viewBox="-60 -60 120 120"><circle r="31" fill="none" stroke="currentColor" stroke-width="1.4"/><circle r="25" fill="currentColor"/></svg>`;
-const moon = `<svg class="ka-spin ka-spin--slow" viewBox="-60 -60 120 120" fill="currentColor"><circle r="54" fill="none" stroke="currentColor" stroke-width=".9" stroke-dasharray="1.5 7"/><circle cx="38" cy="-38" r="2.1"/><circle cx="-44" cy="27" r="1.6"/><circle cx="20" cy="50" r="1.3"/></svg><svg viewBox="-60 -60 120 120" fill="currentColor"><path d="M15-37A40 40 0 1 0 15 37 31 31 0 1 1 15-37Z"/><path d="M27-12l2.2 6.3 6.3 2.2-6.3 2.2L27 5l-2.2-6.3-6.3-2.2 6.3-2.2Z"/></svg>`;
-const pts = (n, R, r, off = 0) => Array.from({ length: n * 2 }, (_, i) => { const a = (i * Math.PI) / n + off, v = i % 2 ? r : R; return `${(Math.sin(a) * v).toFixed(2)},${(-Math.cos(a) * v).toFixed(2)}`; }).join(' ');
-const star = `<svg class="ka-glint" viewBox="-60 -60 120 120" fill="currentColor"><polygon points="${pts(4, 34, 7, Math.PI / 4)}" opacity=".5"/></svg><svg viewBox="-60 -60 120 120" fill="currentColor"><polygon points="${pts(4, 56, 8.5)}"/><circle cx="37" cy="-40" r="1.9"/><circle cx="-41" cy="38" r="1.5"/><circle cx="-36" cy="-34" r="1.1"/></svg>`;
-
-const dream = (cls, art, name, body, extra = '') => `<article class="ka ka--${cls}"><div class="ka-float">${extra}<div class="ka-in" data-kt><div class="ka-art" aria-hidden="true">${art}</div><p class="ka-name" aria-hidden="true">${name}</p>${body}<span class="ka-sheen" data-ks aria-hidden="true"></span></div></div></article>`;
 const led = `${C.hopeCall} ✦ TEXT ${C.hopeText} TO ${C.hopeTextTo} ✦ ${C.hopeWeb.toUpperCase()} ✦ `;
 const hang = (cls, i, face) => `<article class="kb kb--${cls}" style="--i:${i}"><div class="kb-sway"><span class="kb-rod kb-rod--l" aria-hidden="true"></span><span class="kb-rod kb-rod--r" aria-hidden="true"></span><span class="kb-lamp" aria-hidden="true"></span><span class="kb-cone" aria-hidden="true"></span><div class="kb-face" data-kt>${face}<span class="kb-dim" aria-hidden="true"></span><span class="kb-sheen" data-ks aria-hidden="true"></span></div></div></article>`;
 const cl = (f, cls) => `<img class="kc-cl ${cls}" src="${asset(`img/gen/${f}.webp`)}" alt="" width="1200" height="560" loading="lazy" decoding="async" aria-hidden="true">`;
@@ -27,7 +20,7 @@ export default function () {
   const body = `<div class="kx-head"><p class="kicker">SIGN CARDS · THREE DIRECTIONS</p><h1>Same words. <em>More life.</em></h1><p class="kx-lede">The license, warning and HOPEline wording stays exactly as it is on the live site. Scroll slowly through each direction and move your cursor over the cards.</p></div>
 
 <section class="kx kx-a" aria-labelledby="ka-t"><span class="kx-stars" aria-hidden="true"></span>
-  ${label('A', 'ka-t', 'Dream cards', 'The Sun for the license, the Moon for the warning, the Star for hope: in the tarot, the Star is the card of hope. They deal out of one deck as you scroll, and foil catches your cursor.')}
+  ${label('A', 'ka-t', 'Dream cards (chosen, now on the site)', 'The Sun for the license, the Moon for the warning, the Star for hope: in the tarot, the Star is the card of hope. They deal out of one deck as you scroll, and foil catches your cursor.')}
   <div class="kx-wrap ka-deck">${dream('sun', sun, 'XIX · THE SUN', lic())}${dream('moon', moon, 'XVIII · THE MOON', warn(), '<p class="ka-badge">21+ ONLY</p>')}${dream('star', star, 'XVII · THE STAR', hope())}</div>
 </section>
 
@@ -211,7 +204,7 @@ export default function () {
   else S.forEach(function(s){s.classList.add('kx-seen');});
   if(W.matchMedia('(prefers-reduced-motion: reduce)').matches||!W.matchMedia('(hover: hover) and (pointer: fine)').matches)return;
   /* the cursor tilts the card and slides its light: two transforms, once per frame, only while the pointer is on the card */
-  [].forEach.call(D.querySelectorAll('[data-kt]'),function(el){
+  [].forEach.call(D.querySelectorAll('.kb-face[data-kt],.kc-in[data-kt]'),function(el){
     var sh=el.querySelector('[data-ks]'),r=null,x=.5,y=.5,q=0;
     function ap(){q=0;el.style.transform='perspective(1000px) rotateX('+((.5-y)*7).toFixed(2)+'deg) rotateY('+((x-.5)*9).toFixed(2)+'deg)';if(sh)sh.style.transform='translate3d('+((x-.5)*62).toFixed(1)+'%,'+((y-.5)*18).toFixed(1)+'%,0)';}
     el.addEventListener('pointerenter',function(){r=el.getBoundingClientRect();});

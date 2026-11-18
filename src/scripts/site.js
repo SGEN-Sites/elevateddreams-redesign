@@ -233,6 +233,17 @@
   if (thirteen && 'IntersectionObserver' in W) new IntersectionObserver((en) => { thirteenIn = en[0].isIntersecting; if (thirteenIn) onScroll(); }, { rootMargin: '140px 0px' }).observe(thirteen);
   update();
 
+  /* ---------------- dream cards: loops rest off screen; the cursor tilts a card and slides its foil ---------------- */
+  const decks = $$('.ka-deck');
+  if (decks.length && 'IntersectionObserver' in W) { const kio = new IntersectionObserver((en) => en.forEach((e) => { e.target.classList.toggle('kx-off', !e.isIntersecting); if (e.isIntersecting) e.target.classList.add('kx-seen'); }), { rootMargin: '140px 0px' }); decks.forEach((el) => kio.observe(el)); } else decks.forEach((el) => el.classList.add('kx-seen'));
+  if (FINE && !RM) $$('.ka-in[data-kt]').forEach((el) => {
+    const sh = $('[data-ks]', el); let r = null, x = .5, y = .5, q = 0;
+    const ap = () => { q = 0; el.style.transform = `perspective(1000px) rotateX(${((.5 - y) * 7).toFixed(2)}deg) rotateY(${((x - .5) * 9).toFixed(2)}deg)`; if (sh) sh.style.transform = `translate3d(${((x - .5) * 62).toFixed(1)}%, ${((y - .5) * 18).toFixed(1)}%, 0)`; };
+    el.addEventListener('pointerenter', () => { r = el.getBoundingClientRect(); });
+    el.addEventListener('pointermove', (e) => { if (e.pointerType === 'touch') return; if (!r) r = el.getBoundingClientRect(); x = (e.clientX - r.left) / r.width; y = (e.clientY - r.top) / r.height; if (!q) q = W.requestAnimationFrame(ap); }, { passive: true });
+    el.addEventListener('pointerleave', () => { if (q) { W.cancelAnimationFrame(q); q = 0; } r = null; el.style.transform = ''; if (sh) sh.style.transform = ''; });
+  });
+
   /* ---------------- pointer: proximity levitation, 3D tilt, magnetic buttons (fine pointers only) ---------------- */
   if (FINE && !RM) {
     const lifts = new Set();

@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import { esc, u, asset, icon, img, imgSrc, btn, shopAttrs, statusLine } from './html.mjs';
 import { skyline } from './skyline.mjs';
 import { splashMarkup, splashJs } from './splash.mjs';
+import { dreamCards } from './dream-cards.mjs';
 import { store, SHOP, compliance, nav, categories, feelings, home, areas, STORE_ORIGIN } from '../content/site.mjs';
 
 const SITE = 'https://elevateddreamscannabisny.com';
@@ -137,29 +138,7 @@ function header(p) {
 </div>`;
 }
 
-const placards = () => `<div class="placards" data-reveal-group>
-  <article class="placard placard--plaque" data-reveal data-tilt>
-    <span class="screw screw--tl"></span><span class="screw screw--tr"></span><span class="screw screw--bl"></span><span class="screw screw--br"></span>
-    <h2 class="placard__h">${compliance.licenseTitle}</h2>
-    <p class="placard__p">${esc(compliance.licenseLine)}</p>
-    <p class="placard__lic">${store.license}</p>
-  </article>
-  <article class="placard placard--sign" data-reveal data-tilt>
-    <p class="placard__badge">21+ ONLY</p>
-    <h2 class="placard__h">${compliance.warningTitle}</h2>
-    <p class="placard__p">${esc(compliance.warning)}</p>
-    <h3 class="placard__h2">${compliance.addTitle}</h3>
-    <p class="placard__p">${esc(compliance.additional)}</p>
-  </article>
-  <article class="placard placard--transit" data-reveal data-tilt>
-    <h2 class="placard__h"><span class="placard__dot" aria-hidden="true">H</span>${compliance.hopeTitle}</h2>
-    <ul class="placard__rows">
-      <li><span>CALL</span><a href="tel:${compliance.hopeTel}">${compliance.hopeCall}</a></li>
-      <li><span>TEXT</span><a href="sms:${compliance.hopeTextTo}?body=${compliance.hopeText}">${compliance.hopeText} to ${compliance.hopeTextTo}</a></li>
-      <li><span>WEB</span><a href="${compliance.hopeUrl}" target="_blank" rel="noopener">${compliance.hopeWeb}</a></li>
-    </ul>
-  </article>
-</div>`;
+const placards = () => dreamCards();
 export { placards };
 
 function footer(ctx) {
