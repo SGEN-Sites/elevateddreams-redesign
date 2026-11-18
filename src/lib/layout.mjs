@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 // layout.mjs: the page shell. Head, smoke loader, routing age gate, altitude stage + fog layer, chrome, footer, pickup bar.
 import { esc, u, asset, icon, img, imgSrc, btn, shopAttrs, statusLine } from './html.mjs';
 import { skyline } from './skyline.mjs';
@@ -29,7 +30,6 @@ function head(p, ctx) {
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1A1424">
 <link rel="icon" type="image/svg+xml" href="${asset('img/favicon.svg')}">
-<link rel="preload" href="${asset('fonts/ultra-400.woff2')}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="${asset('fonts/barlow-condensed-700.woff2')}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="${asset('fonts/barlow-400.woff2')}" as="font" type="font/woff2" crossorigin>
 ${p.preload || ''}
@@ -255,8 +255,9 @@ const altimeter = () => `<div class="alt" aria-hidden="true" data-alt>
   <span class="alt__track"><i data-alt-bar></i></span>
 </div>`;
 
-const LAB = [['/lab/', 'All options'], ['/lab/hero-a/', 'Hero A'], ['/lab/hero-b/', 'Hero B'], ['/lab/hero-c/', 'Hero C'], ['/lab/splash-1/', 'Splash 1'], ['/lab/splash-2/', 'Splash 2'], ['/lab/splash-3/', 'Splash 3'], ['/lab/fonts/', 'Fonts']];
-const labBar = (p) => `<div class="labbar" role="navigation" aria-label="Design options"><span class="labbar__k">DESIGN OPTIONS</span>${LAB.map(([h, l]) => `<a href="${u(h)}"${p.path === h ? ' aria-current="page"' : ''}>${l}</a>`).join('')}${p.replay ? '<button type="button" class="labbar__replay" onclick="window.labReplay&&window.labReplay()">Replay splash</button>' : ''}</div>`;
+const LAB = [['/lab/', 'All options'], ['/lab/hero-a/', 'Hero A'], ['/lab/hero-b/', 'Hero B'], ['/lab/hero-c/', 'Hero C'], ['/lab/hero-d/', 'Hero D'], ['/lab/hero-e/', 'Hero E'], ['/lab/splash-1/', 'Splash 1'], ['/lab/splash-2/', 'Splash 2'], ['/lab/splash-3/', 'Splash 3'], ['/lab/fonts/', 'Fonts']];
+const labExists = (h) => h === '/lab/' || fs.existsSync(new URL(`../lab/${h.replace(/^\/lab\/|\/$/g, '')}.mjs`, import.meta.url));
+const labBar = (p) => `<div class="labbar" role="navigation" aria-label="Design options"><span class="labbar__k">DESIGN OPTIONS</span>${LAB.filter(([h]) => labExists(h)).map(([h, l]) => `<a href="${u(h)}"${p.path === h ? ' aria-current="page"' : ''}>${l}</a>`).join('')}${p.replay ? '<button type="button" class="labbar__replay" onclick="window.labReplay&&window.labReplay()">Replay splash</button>' : ''}</div>`;
 export function layout(p, ctx) {
   return `${head(p, ctx)}
 <body class="${p.bodyClass || ''}">

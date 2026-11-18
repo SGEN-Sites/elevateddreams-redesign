@@ -82,10 +82,10 @@
 }
 
 /* ---------- design-option lab bar (review pages only) ---------- */
-.labbar { position: relative; z-index: 75; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding: 8px var(--gutter); background: #f1ecf8; color: #1A1424; font: 700 14px/20px var(--f-ui); letter-spacing: .1em; text-transform: uppercase; }
-.labbar__k { color: #7B6AC4; letter-spacing: .24em; margin-right: 6px; }
-.labbar a { color: #1A1424; text-decoration: none; padding: 4px 8px; border-radius: 6px; line-height: 20px; }
-.labbar a[aria-current] { background: #1A1424; color: #f1ecf8; }
+.labbar { position: relative; z-index: 75; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding: 8px var(--gutter); background: rgba(10, 8, 16, .88); color: #f1ecf8; box-shadow: inset 0 -1px 0 rgba(241, 236, 248, .1); font: 700 14px/20px var(--f-ui); letter-spacing: .1em; text-transform: uppercase; }
+.labbar__k { color: #A99BF0; letter-spacing: .24em; margin-right: 6px; }
+.labbar a { color: #f1ecf8; text-decoration: none; padding: 4px 8px; border-radius: 6px; line-height: 20px; }
+.labbar a[aria-current] { background: #f1ecf8; color: #1A1424; }
 .labbar__replay { margin-left: auto; border: 0; border-radius: 999px; padding: 4px 14px; line-height: 20px; background: #7B6AC4; color: #fff; font: inherit; letter-spacing: .1em; }
 
 /* main home (until a layout option is chosen): the storefront's own sign carries the name, so the giant lockup

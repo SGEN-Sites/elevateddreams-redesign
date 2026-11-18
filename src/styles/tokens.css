@@ -1,3 +1,9 @@
+/* Display face = the live logo's font. The live CSS asks for Clarendon, Rockwell, "Roboto Slab", Georgia; Clarendon is
+   never loaded, so the logo renders in Rockwell Bold (a Monotype face installed on macOS and with Microsoft Office).
+   Rockwell is commercial and is NOT hosted here: the visitor's installed copy is used, else Roboto Slab Bold (open,
+   the next font in the live stack). A production launch needs a Rockwell web-font license. One face for all weights,
+   so headings never get a synthetic bold. */
+@font-face { font-family: 'ED Display'; font-style: normal; font-weight: 100 900; font-display: swap; src: local('Rockwell Bold'), local('Rockwell-Bold'), url(../fonts/opt/roboto-slab-700.woff2) format('woff2'); }
 /* =====================================================================================================
    LEVITATION NOIR: Elevated Dreams after dark.
    Kept from the live site (its theme settings, /api/store-settings): violet #7B6AC4, plum #302842,
@@ -41,7 +47,8 @@
   --brick: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28'%3E%3Crect width='56' height='28' fill='%232b1a2b'/%3E%3Cpath d='M0 13.5h56M0 27.5h56M28 0v13.5M0 14v14M56 14v14' stroke='%23120a12' stroke-width='1.6'/%3E%3C/svg%3E");
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 
-  --f-display: 'Ultra', 'Rockwell Extra Bold', 'Clarendon', 'Roboto Slab', Georgia, serif;
+  /* the live logo's rendered font (owner's pick, round 4): Rockwell Bold, see @font-face 'ED Display' below */
+  --f-display: 'ED Display', Rockwell, 'Roboto Slab', Georgia, serif;
   --f-ui: 'Barlow Condensed', 'Arial Narrow', 'Roboto Condensed', sans-serif;
   --f-body: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --lh-display: .92;

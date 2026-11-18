@@ -4,6 +4,17 @@ A design concept for **Elevated Dreams LLC**, 190 South Plank Road, Unit 10, New
 (license OCM-CAURD-26-000353). Built 2026-11-18 from the live site, https://elevateddreamscannabisny.com/.
 The preview is `noindex`; it is a pitch, not the client's official website.
 
+## Round 4 (owner review, 2026-11-18)
+
+- **Display font = the live logo's font, Rockwell Bold** (chosen from four pairings at `/lab/fonts/`). Verified with
+  Chrome's platform-font report: the live logo's CSS asks for Clarendon, Rockwell, "Roboto Slab", Georgia at 700, and
+  renders Rockwell-Bold (Clarendon is never loaded). Rockwell is a commercial Monotype face, so the preview uses the
+  visitor's installed copy (Macs, PCs with Microsoft Office) and otherwise Roboto Slab Bold, the next font in the live
+  stack. **A Rockwell web-font license is needed before launch.** UI and body stay Barlow Condensed and Barlow.
+- **Hero wordmark:** ELEVATED and DREAMS left-aligned with each other and lowered, clear of the menu.
+- **Two more hero options with seamless transitions** into the bars above and the sections below: D "Open sky" and
+  E "One sky, golden hour to night", at `/lab/hero-d/` and `/lab/hero-e/` once built.
+
 ## Round 3 (owner review, 2026-11-18)
 
 - **Hero background:** the store's own storefront photo, edited to golden hour with the ground replaced by a sea of
