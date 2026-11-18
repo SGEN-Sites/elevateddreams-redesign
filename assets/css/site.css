@@ -172,9 +172,9 @@ main { display: block; outline: none; }
 .status.is-closed .status__dot { background: var(--sodium); box-shadow: 0 0 10px rgba(255, 155, 66, .7); }
 
 /* ---------- reveal: content levitates into place ---------- */
-html.js [data-reveal] { opacity: 0; translate: 0 34px; filter: blur(8px) brightness(.7); transition: opacity .9s var(--ease), translate 1.1s var(--ease), filter 1s var(--ease); transition-delay: calc(var(--i, 0) * 90ms); }
-html.js [data-reveal].is-in, html.js.reveal-all [data-reveal] { opacity: 1; translate: 0 0; filter: none; }
-html.rm [data-reveal] { opacity: 1 !important; translate: none !important; filter: none !important; transition: none !important; }
+html.js [data-reveal] { opacity: 0; translate: 0 34px; transition: opacity .9s var(--ease), translate 1.1s var(--ease); transition-delay: calc(var(--i, 0) * 90ms); }
+html.js [data-reveal].is-in, html.js.reveal-all [data-reveal] { opacity: 1; translate: 0 0; }
+html.rm [data-reveal] { opacity: 1 !important; translate: none !important; transition: none !important; }
 
 /* ---------- breadcrumbs ---------- */
 .crumbs ol { display: flex; flex-wrap: wrap; gap: .4em; list-style: none; margin: 0 0 18px; font: 600 .95rem var(--f-ui); letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); }
@@ -203,13 +203,13 @@ html.rm [data-reveal] { opacity: 1 !important; translate: none !important; filte
 .sky__moon { position: absolute; top: 9vh; right: 9vw; width: 84px; height: 84px; border-radius: 50%; background: radial-gradient(circle at 38% 36%, #fffaf0, #f2e6c8 45%, #cdbb93 75%); box-shadow: 0 0 60px 18px rgba(234, 213, 154, .22), 0 0 160px 40px rgba(123, 106, 196, .18); opacity: calc(var(--alt) * 1.4 - .15); transform: translate3d(0, calc((1 - var(--alt)) * 30vh), 0); }
 .sky__city { position: absolute; left: -4%; right: -4%; bottom: 0; }
 .sky__city .skyline { width: 100%; height: 100%; }
-.sky__city--far { height: 50vh; opacity: .5; filter: blur(1.2px); transform: translate3d(0, calc(var(--alt) * 52vh), 0); }
+.sky__city--far { height: 50vh; opacity: .5; transform: translate3d(0, calc(var(--alt) * 52vh), 0); }
 .sky__city--far .skyline__mass { fill: #2a1e3a; }
 .sky__city--near { height: 38vh; transform: translate3d(0, calc(var(--alt) * 95vh), 0); }
 .sky__clouds { position: absolute; inset: auto 0 0; height: 55vh; background-size: cover; background-position: 50% 100%; opacity: calc((var(--alt) - .62) * 2.6); transform: translate3d(0, calc((1 - var(--alt)) * 40vh), 0); -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%); mask-image: linear-gradient(180deg, transparent, #000 40%); }
 .skyline__mass { fill: #0c0911; }
-.skyline__lit .w1 { fill: #FFB766; opacity: .85; animation: win 9s steps(1) infinite; animation-delay: var(--wd); }
-.skyline__lit .w2 { fill: #BBAAFF; opacity: .7; animation: win 11s steps(1) infinite; animation-delay: var(--wd); }
+.skyline__lit .w1 { fill: #FFB766; opacity: .85; }
+.skyline__lit .w2 { fill: #BBAAFF; opacity: .7; }
 
 /* =============================== TOPBAR + LED TICKER =============================== */
 .topbar { position: relative; z-index: 60; background: #0b0810; border-bottom: 1px solid var(--line); font: 600 .9rem/1 var(--f-ui); letter-spacing: .08em; color: var(--text-2); }
@@ -312,7 +312,6 @@ html.rm [data-reveal] { opacity: 1 !important; translate: none !important; filte
 .doors i:last-child::after { left: 22px; }
 html.is-leaving .doors i, html.is-arriving .doors i { transform: none; }
 html.is-arriving .doors i { transition: none; }
-html.is-leaving main, html.is-leaving .hdr { animation: chroma .42s var(--ease-io); }
 
 /* =============================== ELEVATOR LOADER =============================== */
 .lift { position: fixed; inset: 0; z-index: 220; display: none; }
@@ -448,7 +447,7 @@ html.gate-on body { overflow: hidden; }
 /* =============================== LEVITATION =============================== */
 .lev { --float: 16px; position: relative; display: inline-grid; justify-items: center; align-content: end; }
 .lev[data-lift] { translate: none; }
-.lev__obj { position: relative; z-index: 1; width: auto; max-width: 100%; filter: drop-shadow(0 22px 26px rgba(0, 0, 0, .55)) drop-shadow(0 0 22px rgba(123, 106, 196, .25)); translate: 0 calc(var(--lift, 0) * -1px); transition: translate .5s var(--ease); animation: float 6.5s var(--ease-io) infinite alternate; animation-delay: calc(var(--d, 0s) * -1); will-change: transform; }
+.lev__obj { position: relative; z-index: 1; width: auto; max-width: 100%; translate: 0 calc(var(--lift, 0) * -1px); transition: translate .5s var(--ease); animation: float 6.5s var(--ease-io) infinite alternate; animation-delay: calc(var(--d, 0s) * -1); will-change: transform; }
 .lev__shadow { width: 62%; height: 16px; margin-top: 26px; border-radius: 50%; background: radial-gradient(closest-side, rgba(4, 2, 7, .92) 55%, rgba(4, 2, 7, 0) 100%); animation: shadow 6.5s var(--ease-io) infinite alternate; animation-delay: calc(var(--d, 0s) * -1); scale: calc(1 - var(--lift, 0) * .025); transition: scale .5s var(--ease); }
 
 /* =============================== COMPLIANCE PLACARDS =============================== */
@@ -489,7 +488,7 @@ html.gate-on body { overflow: hidden; }
 .ticket__tonight { display: none; position: absolute; top: 20px; right: -10px; padding: 8px 14px; border-radius: 6px; background: var(--sodium); color: #1A1424; font: 800 .86rem/1 var(--f-ui); letter-spacing: .2em; transform: rotate(7deg); box-shadow: 0 0 22px rgba(255, 155, 66, .8); animation: tonight 2.4s ease-in-out infinite; }
 .ticket.is-tonight .ticket__tonight { display: block; }
 .ticket.is-expired { display: none; }
-.ticket__bulbs { position: absolute; left: 22px; right: 22px; bottom: 9px; height: 4px; background: radial-gradient(circle, #FFB766 1.5px, transparent 2px) 0 0 / 14px 4px; opacity: .8; filter: drop-shadow(0 0 3px rgba(255, 155, 66, .9)); animation: bulbs 1.6s steps(2) infinite; }
+.ticket__bulbs { position: absolute; left: 22px; right: 22px; bottom: 9px; height: 4px; background: radial-gradient(circle, #FFB766 1.5px, transparent 2px) 0 0 / 14px 4px; opacity: .85; animation: bulbs 1.6s steps(2) infinite; }
 .tickets--compact .ticket { padding: 28px 24px 24px; }
 .tickets--compact .ticket__big span { font-size: clamp(2.8rem, 4.6vw, 3.8rem); }
 .tickets__foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; margin-top: 30px; }
@@ -514,7 +513,7 @@ html.gate-on body { overflow: hidden; }
 .cat__a:hover .cat__go { color: var(--gold); }
 .cat__guide { display: block; margin-top: 10px; text-align: center; font: 600 .95rem var(--f-ui); letter-spacing: .08em; color: var(--text-3); }
 .cat__guide:hover { color: var(--gold); }
-.cat__allmark { display: grid; place-items: center; width: 118px; height: 118px; margin-bottom: 28px; border-radius: 50%; font: 400 2rem/1 var(--f-display); color: var(--ink); background: var(--gold-leaf); background-size: 200% 100%; box-shadow: 0 0 0 6px rgba(234, 213, 154, .15), 0 0 50px rgba(234, 213, 154, .45); animation: float 6s var(--ease-io) infinite alternate, leaf 9s linear infinite; }
+.cat__allmark { display: grid; place-items: center; width: 118px; height: 118px; margin-bottom: 28px; border-radius: 50%; font: 400 2rem/1 var(--f-display); color: var(--ink); background: var(--gold-leaf); background-size: 200% 100%; box-shadow: 0 0 0 6px rgba(234, 213, 154, .15), 0 0 50px rgba(234, 213, 154, .45); animation: float 6s var(--ease-io) infinite alternate; }
 .cat--all .cat__a { background: radial-gradient(70% 55% at 50% 28%, rgba(234, 213, 154, .22), transparent 72%), linear-gradient(180deg, rgba(60, 46, 30, .55), rgba(14, 10, 20, .9)); }
 .ledge { height: 18px; margin: 22px clamp(-20px, -2vw, 0px) 0; border-radius: 4px; background: linear-gradient(180deg, #3a3342, #1c1722 60%, #0c0a10); box-shadow: 0 18px 30px -10px rgba(0, 0, 0, .9), inset 0 1px 0 rgba(255, 255, 255, .12); }
 
@@ -699,7 +698,7 @@ html.gate-on body { overflow: hidden; }
 .members { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(30px, 6vw, 90px); align-items: center; }
 .members__stage { position: relative; display: grid; justify-items: center; perspective: 1000px; padding: 30px 0 10px; }
 .mcard { position: relative; width: min(420px, 86%); aspect-ratio: 1.586; border-radius: 22px; padding: 26px 28px; background: radial-gradient(120% 90% at 0% 0%, rgba(187, 170, 255, .55), transparent 55%), radial-gradient(90% 80% at 100% 100%, rgba(255, 155, 66, .35), transparent 60%), linear-gradient(135deg, #2c2240, #120d19 70%); box-shadow: 0 0 0 1px rgba(234, 213, 154, .4), 0 50px 80px -30px rgba(0, 0, 0, .95), inset 0 1px 0 rgba(255, 255, 255, .2); transform-style: preserve-3d; animation: floatCard 7s var(--ease-io) infinite alternate; translate: 0 calc(var(--lift, 0) * -1px); }
-.mcard::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, .25) 45%, transparent 60%); background-size: 250% 100%; animation: sheen 6s ease-in-out infinite; pointer-events: none; }
+.mcard::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, .25) 45%, transparent 60%); animation: sheen 6s ease-in-out infinite; pointer-events: none; }
 .mcard__chip { position: absolute; left: 28px; top: 34%; width: 52px; height: 40px; border-radius: 8px; background: var(--brass); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .3); }
 .mcard__brand { position: absolute; left: 28px; top: 24px; font: 400 1.35rem/.95 var(--f-display); background: var(--gold-leaf); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
 .mcard__no { position: absolute; left: 28px; bottom: 24px; font: 700 .85rem var(--f-ui); letter-spacing: .26em; color: var(--text-2); }
@@ -836,7 +835,7 @@ html.gate-on body { overflow: hidden; }
 .thirteen { display: grid; grid-template-columns: auto minmax(0, 1.15fr) minmax(0, .95fr); gap: clamp(24px, 3.4vw, 54px); align-items: center; }
 .thirteen__num { position: relative; font-family: var(--f-display); font-size: clamp(7rem, 13vw, 12.5rem); line-height: .8; letter-spacing: -.02em; }
 .thirteen__out { display: block; color: transparent; -webkit-text-stroke: 2px rgba(234, 213, 154, .55); }
-.thirteen__fill { position: absolute; left: 0; top: 0; background: var(--gold-leaf); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; clip-path: inset(calc((1 - var(--fill, 0)) * 100%) 0 0 0); filter: drop-shadow(0 0 30px rgba(255, 155, 66, .45)); animation: leaf 10s linear infinite; }
+.thirteen__fill { position: absolute; left: 0; top: 0; background: var(--gold-leaf); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; clip-path: inset(calc((1 - var(--fill, 0)) * 100%) 0 0 0); }
 .thirteen__unit { display: block; margin-top: 12px; font: 800 1.1rem var(--f-ui); letter-spacing: .6em; color: #FFB766; text-shadow: 0 0 10px rgba(255, 155, 66, .8); }
 .thirteen__t { font-family: var(--f-display); font-size: clamp(1.9rem, 3.4vw, 3rem); line-height: .98; margin-bottom: 16px; }
 .thirteen__lede { font-size: 1.15rem; color: var(--text); }
@@ -945,15 +944,14 @@ body::after { content: ""; position: fixed; inset: -60%; z-index: 95; pointer-ev
 @keyframes castSm { 0%, 100% { transform: scaleX(1); opacity: .9; } 50% { transform: scaleX(.82); opacity: .6; } }
 @keyframes floatCard { from { transform: translateY(0) rotateX(8deg) rotateY(-14deg) rotateZ(-3deg); } to { transform: translateY(-18px) rotateX(4deg) rotateY(-6deg) rotateZ(-1deg); } }
 @keyframes leaf { from { background-position: 0% 0; } to { background-position: 220% 0; } }
-@keyframes sheen { 0%, 60% { background-position: 150% 0; } 100% { background-position: -100% 0; } }
+@keyframes sheen { 0%, 58%, 100% { opacity: 0; } 79% { opacity: 1; } }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes twinkle { from { opacity: .55; } to { opacity: .95; } }
-@keyframes win { 0%, 100% { opacity: .85; } 47% { opacity: .85; } 48% { opacity: .15; } 63% { opacity: .15; } 64% { opacity: .85; } }
 @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(143, 209, 168, .18), 0 0 12px rgba(143, 209, 168, .9); } 50% { box-shadow: 0 0 0 7px rgba(143, 209, 168, .06), 0 0 18px rgba(143, 209, 168, .6); } }
 @keyframes blink { 50% { opacity: .15; } }
 @keyframes neon { 0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; } 20%, 24%, 55% { opacity: .35; } }
 @keyframes neonOn { 0% { opacity: 0; } 10% { opacity: 1; } 14% { opacity: .2; } 20% { opacity: 1; } 24% { opacity: .4; } 30%, 100% { opacity: 1; } }
-@keyframes bulbs { 50% { background-position: 7px 0; } }
+@keyframes bulbs { 50% { transform: translateX(7px); } }
 @keyframes tonight { 0%, 100% { transform: rotate(7deg) scale(1); } 50% { transform: rotate(5deg) scale(1.06); } }
 @keyframes flick { 0% { opacity: .2; } 20% { opacity: 1; } 30% { opacity: .4; } 45%, 100% { opacity: 1; } }
 @keyframes callLit { 0% { box-shadow: inset 0 -3px 7px rgba(0, 0, 0, .4), 0 0 0 4px #2b2832, 0 0 0 5px rgba(255, 255, 255, .14); } 100% { box-shadow: inset 0 -3px 7px rgba(0, 0, 0, .4), 0 0 0 4px #2b2832, 0 0 0 5px rgba(255, 183, 102, .9), 0 0 22px 6px rgba(255, 155, 66, .6); } }
@@ -963,7 +961,6 @@ body::after { content: ""; position: fixed; inset: -60%; z-index: 95; pointer-ev
 @keyframes gateOut { to { opacity: 0; visibility: hidden; } }
 @keyframes lbIn { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
 @keyframes liftFailsafe { to { visibility: hidden; opacity: 0; } }
-@keyframes chroma { 0% { filter: none; } 40% { filter: drop-shadow(4px 0 0 rgba(255, 60, 120, .55)) drop-shadow(-4px 0 0 rgba(60, 200, 255, .55)); } 100% { filter: blur(2px) brightness(.6); } }
 @keyframes upcue { 0%, 100% { transform: translateY(4px); opacity: .5; } 50% { transform: translateY(-4px); opacity: 1; } }
 @keyframes drift { from { transform: translateY(0) rotate(-1.5deg); } to { transform: translateY(-16px) rotate(1.5deg); } }
 @keyframes stepGlow { 0%, 12%, 100% { fill: rgba(234, 213, 154, .12); } 4% { fill: rgba(255, 183, 102, .85); } }
@@ -1148,9 +1145,8 @@ body::after { content: ""; position: fixed; inset: -60%; z-index: 95; pointer-ev
 
 /* ---------- levitation over a pool of mist ---------- */
 .cat__stage { position: relative; }
-.cat__mist { position: absolute; left: -10%; right: -10%; bottom: 4px; height: 44%; z-index: 2; pointer-events: none; background: var(--fog-v) repeat-x 0 60% / 600px 300px; mix-blend-mode: screen; opacity: .55; -webkit-mask-image: radial-gradient(60% 70% at 50% 75%, #000, transparent 75%); mask-image: radial-gradient(60% 70% at 50% 75%, #000, transparent 75%); animation: mistpan 26s linear infinite; }
+.cat__mist { position: absolute; left: -10%; right: -10%; bottom: 4px; height: 44%; z-index: 2; pointer-events: none; background: var(--fog-v) repeat-x 0 60% / 600px 300px; opacity: .42; -webkit-mask-image: radial-gradient(60% 70% at 50% 75%, #000, transparent 75%); mask-image: radial-gradient(60% 70% at 50% 75%, #000, transparent 75%); }
 .cat__a:hover .cat__mist { opacity: .85; }
-@keyframes mistpan { to { background-position: -600px 60%; } }
 .hero__smoke.is-on { opacity: 1; }
 
 /* ---------- smoke loader: the wordmark condenses out of the haze ---------- */
@@ -1176,14 +1172,13 @@ html.mist-on .mist { display: grid; animation: liftFailsafe .01s linear 3.2s for
 .mist.is-gone { display: none !important; }
 
 /* ---------- page haze: the old page drifts into haze, the new one clears out of it (never blocks) ---------- */
-.haze { position: fixed; inset: 0; z-index: 180; pointer-events: none; opacity: 0; background: radial-gradient(80% 70% at 50% 50%, rgba(36, 26, 51, .55), rgba(11, 8, 16, .82)); transition: opacity .9s var(--ease); overflow: hidden; }
-.haze i { position: absolute; inset: -15%; background-repeat: repeat; mix-blend-mode: screen; transition: transform 1.1s var(--ease); }
-.haze i:nth-child(1) { background-image: var(--fog-v); background-size: 1400px 700px; opacity: .55; filter: blur(4px); }
-.haze i:nth-child(2) { background-image: var(--fog-w); background-size: 1800px 900px; opacity: .22; transform: scale(1.1); filter: blur(4px); }
-html.is-leaving .haze { opacity: 1; transition-duration: .32s; }
+.haze { position: fixed; inset: 0; z-index: 180; pointer-events: none; opacity: 0; background: radial-gradient(80% 70% at 50% 50%, rgba(36, 26, 51, .55), rgba(11, 8, 16, .82)); transition: opacity .38s var(--ease); overflow: hidden; }
+.haze i { position: absolute; inset: -15%; background-repeat: repeat; transition: transform .5s var(--ease); }
+.haze i:nth-child(1) { background-image: var(--fog-v); background-size: 1400px 700px; opacity: .4; }
+.haze i:nth-child(2) { background-image: var(--fog-w); background-size: 1800px 900px; opacity: .16; transform: scale(1.1); }
+html.is-leaving .haze { opacity: 1; transition-duration: .16s; }
 html.is-arriving .haze { opacity: 1; transition: none; }
 html.is-arriving .haze i { transform: scale(1.2) translateX(-3%); transition: none; }
-html.is-leaving main, html.is-leaving .hdr { animation: chroma .5s var(--ease-io) both; }
 
 /* ---------- age gate: smoked glass with haze inside ---------- */
 .gate__panel { background: linear-gradient(165deg, rgba(48, 38, 66, .78), rgba(16, 11, 22, .88)); -webkit-backdrop-filter: blur(22px) saturate(140%); backdrop-filter: blur(22px) saturate(140%); box-shadow: 0 60px 120px -30px rgba(0, 0, 0, .95), inset 0 0 0 1px rgba(234, 213, 154, .3), inset 0 0 0 7px rgba(0, 0, 0, .15), inset 0 0 0 8px rgba(234, 213, 154, .14), 0 0 80px -20px rgba(123, 106, 196, .55); overflow: hidden; isolation: isolate; }
@@ -1224,8 +1219,6 @@ html.is-leaving main, html.is-leaving .hdr { animation: chroma .5s var(--ease-io
 .win__a:hover .win__glass { box-shadow: 0 0 0 6px #160e18, 0 0 0 8px #3a2a3c, 0 18px 30px -10px rgba(0, 0, 0, .9), 0 0 110px 10px rgba(var(--c1), .55); }
 
 /* ---------- reveals: content condenses out of the haze ---------- */
-html.js [data-reveal] { filter: blur(12px) brightness(.75); }
-html.js [data-reveal].is-in, html.js.reveal-all [data-reveal] { filter: none; }
 
 /* ---------- reduced motion: the haze stands still, nothing is missing ---------- */
 @media (prefers-reduced-motion: reduce) {
@@ -1249,7 +1242,7 @@ html.js [data-reveal].is-in, html.js.reveal-all [data-reveal] { filter: none; }
 .mist__brand .logo__top { animation: condense 1.25s var(--ease) both; }
 
 /* ---------- skylines: a whisper, not a wall ---------- */
-.sky__city--near { opacity: .2; filter: blur(.5px); }
+.sky__city--near { opacity: .2; }
 .sky__city--far { opacity: .09; }
 .sky .skyline__lit { opacity: .3; }
 .phero__city { opacity: .42; }
@@ -1337,13 +1330,13 @@ html.js [data-reveal].is-in, html.js.reveal-all [data-reveal] { filter: none; }
 /* =====================================================================================================
    SPLASH: "Through the clouds" (round 3 pick; built as lab option 1). The page opens inside warm golden-hour
    cloud, the ELEVATED / DREAMS wordmark rises through it, then the banks part onto the page (and onto the age
-   check for a first visit). 1.75 s, once per visit, any input skips it, removed when done.
+   check for a first visit). About one second, once per visitor, any input skips it, removed when done.
    ===================================================================================================== */
 /* ---------- the splash: shown only on the first page of a visit (the head script sets html.mist-on), never under reduced motion or without JS ---------- */
 .sp1{position:fixed;inset:0;z-index:250;display:none;overflow:hidden;contain:strict;pointer-events:auto;--sp1-cloud:url(../img/gen/hero-plate-b-2400.webp)}
-html.mist-on .sp1{display:block;animation:sp1-failsafe .01s 2.6s forwards}
+html.mist-on .sp1{display:block;animation:sp1-failsafe .01s 1.7s forwards}
 @media (prefers-reduced-motion: reduce){.sp1{display:none!important}}
-.sp1.is-skip{opacity:0;transition:opacity .3s var(--ease-io)}
+.sp1.is-skip{opacity:0;transition:opacity .22s var(--ease-io)}
 @keyframes sp1-failsafe{to{opacity:0;visibility:hidden}}
 .sp1-base{position:absolute;inset:0;background:radial-gradient(80% 70% at 50% 40%,#f8cf9e 0%,#eeb27f 34%,#d99376 60%,#b07a86 84%,#7a6190 100%)}
 .sp1-c{position:absolute;top:-6%;bottom:-6%;width:66%;will-change:transform;background-image:var(--sp1-cloud);background-repeat:no-repeat}
@@ -1376,13 +1369,13 @@ html.mist-on .sp1{display:block;animation:sp1-failsafe .01s 2.6s forwards}
   .sp1-c--l0,.sp1-c--r0{background-size:auto 180%}
   .sp1-sun{width:150vw;height:150vw;margin:-75vw 0 0 -75vw;top:30%;opacity:.8}
 }
-/* the timeline (1.75 s): rise 0.05-0.7 s, hold, part 0.91-1.75 s (the warm base only thins once the gap is opening) */
-.sp1-base{animation:sp1-base 1.75s linear both}
-.sp1-sun{animation:sp1-sun 1.75s linear both}
-.sp1-c--l0{animation:sp1-l0 1.75s linear both}.sp1-c--r0{animation:sp1-r0 1.75s linear both}
-.sp1-c--l1{animation:sp1-l1 1.75s linear both}.sp1-c--r1{animation:sp1-r1 1.75s linear both}
-.sp1-c--l2{animation:sp1-l2 1.75s linear both}.sp1-c--r2{animation:sp1-r2 1.75s linear both}
-.sp1-mark{animation:sp1-mark 1.75s linear both}
+/* the timeline (1.05 s): rise to 0.42 s, a short hold, part from 0.59 s (the warm base only thins once the gap is opening) */
+.sp1-base{animation:sp1-base 1.05s linear both}
+.sp1-sun{animation:sp1-sun 1.05s linear both}
+.sp1-c--l0{animation:sp1-l0 1.05s linear both}.sp1-c--r0{animation:sp1-r0 1.05s linear both}
+.sp1-c--l1{animation:sp1-l1 1.05s linear both}.sp1-c--r1{animation:sp1-r1 1.05s linear both}
+.sp1-c--l2{animation:sp1-l2 1.05s linear both}.sp1-c--r2{animation:sp1-r2 1.05s linear both}
+.sp1-mark{animation:sp1-mark 1.05s linear both}
 @keyframes sp1-base{0%,58%{opacity:1}78%,100%{opacity:0}}
 @keyframes sp1-sun{0%{opacity:.55;transform:scale(.9)}44%{opacity:1;transform:scale(1)}56%{opacity:1;transform:scale(1.04);animation-timing-function:cubic-bezier(.5,0,.6,1)}82%,100%{opacity:0;transform:scale(1.25)}}
 @keyframes sp1-l0{0%{transform:translate3d(0,0,0) scale(1);animation-timing-function:cubic-bezier(.3,.4,.6,1)}52%{transform:translate3d(-2.5vw,-.6vh,0) scale(1.03);animation-timing-function:cubic-bezier(.4,0,.2,1)}100%{transform:translate3d(-66vw,-6vh,0) scale(1.16)}}
@@ -1393,18 +1386,18 @@ html.mist-on .sp1{display:block;animation:sp1-failsafe .01s 2.6s forwards}
 @keyframes sp1-r2{0%{transform:translate3d(0,2vh,0) scale(1);animation-timing-function:cubic-bezier(.3,.4,.6,1)}52%{transform:translate3d(5vw,0,0) scale(1.05);animation-timing-function:cubic-bezier(.4,0,.2,1)}100%{transform:translate3d(98vw,-3vh,0) scale(1.38)}}
 @keyframes sp1-mark{0%,3%{opacity:0;transform:translate3d(0,17vh,0) scale(.94);filter:blur(14px);animation-timing-function:cubic-bezier(.16,1,.3,1)}40%{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0)}56%{opacity:1;transform:translate3d(0,-1vh,0) scale(1.02);filter:blur(0);animation-timing-function:cubic-bezier(.5,0,.75,.5)}82%,100%{opacity:0;transform:translate3d(0,-7vh,0) scale(1.16);filter:blur(10px)}}
 /* the home hero's own entrance waits for the clouds to part (only on the visit's first page) */
-html.mist-on .hxa-lift{animation-delay:1s!important}
-html.mist-on .hxa-wi{animation-delay:1.1s!important}
-html.mist-on .hxa-w2 .hxa-wi{animation-delay:1.25s!important}
-html.mist-on .hxa-copy{animation-delay:1.2s!important}
-html.mist-on .hxa-bob{animation-delay:2.7s!important}
+html.mist-on .hxe-lift{animation-delay:.55s!important}
+html.mist-on .hxe-wi{animation-delay:.62s!important}
+html.mist-on .hxe-w2 .hxe-wi{animation-delay:.72s!important}
+html.mist-on .hxe-copy{animation-delay:.68s!important}
+html.mist-on .hxe-bob{animation-delay:2.1s!important}
 
 /* fix.css */
 /* fix.css: loaded last, one commented rule per integration fix. */
 /* word-by-word rise for [data-words] headings (set up by site.js; without JS the words are plain text) */
-html.js [data-words] .w { display: inline-block; opacity: 0; translate: 0 .45em; filter: blur(6px); transition: opacity .8s var(--ease), translate 1s var(--ease), filter .8s var(--ease); transition-delay: calc(var(--wi, 0) * 55ms); }
-html.js [data-words].is-in .w { opacity: 1; translate: 0 0; filter: none; }
-html.js [data-words][data-reveal] { opacity: 1; translate: none; filter: none; }
+html.js [data-words] .w { display: inline-block; opacity: 0; translate: 0 .45em; transition: opacity .8s var(--ease), translate 1s var(--ease); transition-delay: calc(var(--wi, 0) * 55ms); }
+html.js [data-words].is-in .w { opacity: 1; translate: 0 0; }
+html.js [data-words][data-reveal] { opacity: 1; translate: none; }
 /* altimeter reads CLOUD 9 at the top of the climb */
 .alt.is-cloud9 .alt__k, .alt.is-cloud9 .alt__u { display: none; }
 .alt.is-cloud9 .alt__v { grid-column: 1 / -1; text-align: left; color: var(--gold); text-shadow: 0 0 10px rgba(234, 213, 154, .9); }
@@ -1452,3 +1445,34 @@ html.in-climb .alt { opacity: 0; }
 /* pickup bar: the long label where it fits, the short one on phones */
 .pbar__short { display: none; }
 @media (max-width: 520px) { .pbar__long { display: none; } .pbar__short { display: inline; } }
+
+/* ---------- altitude on the compositor: the sky and the altimeter bar follow the page's scroll with no script at all ---------- */
+.alt { contain: layout style; }
+@supports (animation-timeline: scroll()) {
+  html.js:not(.rm) .sky__street { animation: alt-street linear both; animation-timeline: scroll(root); }
+  html.js:not(.rm) .sky__stars { animation: twinkle 7s ease-in-out infinite alternate, alt-stars linear both; animation-timeline: auto, scroll(root); }
+  html.js:not(.rm) .sky__moon { animation: alt-moon linear both; animation-timeline: scroll(root); }
+  html.js:not(.rm) .sky__city--far { animation: alt-far linear both; animation-timeline: scroll(root); }
+  html.js:not(.rm) .sky__city--near { animation: alt-near linear both; animation-timeline: scroll(root); }
+  html.js:not(.rm) .sky__clouds { animation: alt-clouds linear both; animation-timeline: scroll(root); }
+  html.js:not(.rm) .alt__track i { animation: alt-bar linear both; animation-timeline: scroll(root); }
+}
+@keyframes alt-street { 0% { opacity: 1; } 80%, 100% { opacity: 0; } }
+@keyframes alt-stars { to { transform: translate3d(0, 12vh, 0); } }
+@keyframes alt-moon { 0% { opacity: 0; transform: translate3d(0, 30vh, 0); } 32% { opacity: 0; } 73.7%, 83.3% { opacity: 1; } 100% { opacity: 0; transform: translate3d(0, 0, 0); } }
+@keyframes alt-far { to { transform: translate3d(0, 52vh, 0); } }
+@keyframes alt-near { to { transform: translate3d(0, 95vh, 0); } }
+@keyframes alt-clouds { 0% { opacity: 0; transform: translate3d(0, 40vh, 0); } 62% { opacity: 0; } 100% { opacity: 1; transform: translate3d(0, 0, 0); } }
+@keyframes alt-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+/* while the hero's sky covers the window, the page's own sky stops altogether */
+html.sky-covered .sky { visibility: hidden; }
+html.sky-covered .sky *, html.sky-covered .sky { animation-play-state: paused !important; }
+
+/* phones: the pickup bar's label and button no longer collide (Rockwell runs wider than the old display face) */
+@media (max-width: 430px) {
+  .pbar__where { flex: 1 1 auto; }
+  .pbar__st { overflow: hidden; text-overflow: ellipsis; }
+  .pbar__acts { flex: none; gap: 4px; }
+  .pbar__acts .btn .ic { display: none; }
+  .pbar__x { width: 36px; }
+}

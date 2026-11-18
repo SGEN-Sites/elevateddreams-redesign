@@ -20,7 +20,8 @@
 <link rel="preload" href="/elevateddreams-redesign/assets/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="stylesheet" href="/elevateddreams-redesign/assets/css/site.css">
-<script>(function(d,w){var h=d.documentElement,c='js';try{var rm=w.matchMedia('(prefers-reduced-motion: reduce)').matches;if(rm)c+=' rm';var ss=w.sessionStorage,ls=w.localStorage;if(!rm&&!ss.getItem('ed.mist'))c+=' mist-on';if(ls.getItem('ed.age')!=='1')c+=' gate-on';if(!rm&&ss.getItem('ed.haze')==='1'){c+=' is-arriving';ss.removeItem('ed.haze');}}catch(e){}h.className+=' '+c;w.setTimeout(function(){if(!h.classList.contains('site-ready')){h.classList.remove('gate-on','mist-on','is-arriving');h.classList.add('reveal-all');}},4000);})(document,window);</script>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/elevateddreams-redesign/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
+<script>(function(d,w){var h=d.documentElement,c='js';try{var rm=w.matchMedia('(prefers-reduced-motion: reduce)').matches;if(rm)c+=' rm';var ss=w.sessionStorage,ls=w.localStorage;if(!rm&&!ls.getItem('ed.intro'))c+=' mist-on';if(ls.getItem('ed.age')!=='1')c+=' gate-on';if(!rm&&ss.getItem('ed.haze')==='1'){c+=' is-arriving';ss.removeItem('ed.haze');}}catch(e){}h.className+=' '+c;w.setTimeout(function(){if(!h.classList.contains('site-ready')){h.classList.remove('gate-on','mist-on','is-arriving');h.classList.add('reveal-all');}},4000);})(document,window);</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://elevateddreamscannabisny.com/"},{"@type":"ListItem","position":2,"name":"Visit","item":"https://elevateddreamscannabisny.com/visit"},{"@type":"ListItem","position":3,"name":"Pickup","item":"https://elevateddreamscannabisny.com/pickup"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I order for pickup?","acceptedAnswer":{"@type":"Answer","text":"Place your order through our online storefront and select pickup at checkout. Bring a valid ID when you arrive."}},{"@type":"Question","name":"What do I need when I arrive?","acceptedAnswer":{"@type":"Answer","text":"All customers must present a valid, government-issued photo ID confirming they are 21 years of age or older. Accepted forms include a driver's license, state ID, or passport. Expired identification is not accepted. You may also want to browse the live menu online before visiting to plan your purchase."}},{"@type":"Question","name":"When can I pick up?","acceptedAnswer":{"@type":"Answer","text":"During store hours: Monday – Saturday 10:00 AM – 9:00 PM, Sunday 11:00 AM – 7:00 PM."}},{"@type":"Question","name":"Where do I go?","acceptedAnswer":{"@type":"Answer","text":"190 South Plank Road, Unit 10, Newburgh, New York 12550. Get Directions. Parking details coming soon."}}]}</script>
 
@@ -40,14 +41,14 @@
   if(!el)return;
   var still=W.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!root.classList.contains('mist-on')||still){el.parentNode.removeChild(el);return;}
-  try{W.sessionStorage.setItem('ed.mist','1');}catch(e){}
+  try{W.localStorage.setItem('ed.intro','1');}catch(e){}
   var timer=0,armT=0,armed=false,EV=['keydown','pointerdown','wheel','touchstart'];
   function disarm(){if(!armed)return;armed=false;EV.forEach(function(e){W.removeEventListener(e,skip,true);});}
   function arm(){armed=true;EV.forEach(function(e){W.addEventListener(e,skip,{capture:true,passive:true});});}
   function finish(){W.clearTimeout(timer);W.clearTimeout(armT);disarm();if(el&&el.parentNode)el.parentNode.removeChild(el);el=null;
     var y=d.querySelector('[data-gate-yes]');if(y&&root.classList.contains('gate-on'))y.focus();}
-  function skip(){if(!el||el.classList.contains('is-skip'))return;disarm();el.classList.add('is-skip');W.clearTimeout(timer);timer=W.setTimeout(finish,320);}
-  timer=W.setTimeout(finish,1800);armT=W.setTimeout(arm,60);
+  function skip(){if(!el||el.classList.contains('is-skip'))return;disarm();el.classList.add('is-skip');W.clearTimeout(timer);timer=W.setTimeout(finish,240);}
+  timer=W.setTimeout(finish,1120);armT=W.setTimeout(arm,60);
 })();</script>
 <div class="gate" role="dialog" aria-modal="true" aria-labelledby="gate-q" data-gate>
   <div class="gate__panel">

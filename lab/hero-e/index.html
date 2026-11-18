@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Hero E: One sky | Elevated Dreams redesign</title>
-<meta name="description" content="Hero option E: one continuous sky from the top of the page to the deals. Golden hour behind the header, dusk behind the compliance signs, night by Tonight’s deals; the storefront’s windows light up as you scroll.">
+<meta name="description" content="Hero E, now on the home page: one continuous sky from the top of the page to the deals.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://elevateddreamscannabisny.com/lab/hero-e">
 <meta property="og:site_name" content="Elevated Dreams">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hero E: One sky | Elevated Dreams redesign">
-<meta property="og:description" content="Hero option E: one continuous sky from the top of the page to the deals. Golden hour behind the header, dusk behind the compliance signs, night by Tonight’s deals; the storefront’s windows light up as you scroll.">
+<meta property="og:description" content="Hero E, now on the home page: one continuous sky from the top of the page to the deals.">
 <meta property="og:url" content="https://elevateddreamscannabisny.com/lab/hero-e">
 <meta property="og:image" content="/elevateddreams-redesign/assets/img/gen/scene-hero-river-1400.webp">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,13 +20,14 @@
 <link rel="preload" href="/elevateddreams-redesign/assets/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" imagesrcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" imagesizes="(max-width: 760px) 210vw, 106vw" fetchpriority="high"><link rel="preload" as="image" imagesrcset="/elevateddreams-redesign/assets/img/gen/hero-building-b-1381.webp 1381w, /elevateddreams-redesign/assets/img/gen/hero-building-b-900.webp 900w" imagesizes="(max-width: 760px) 106vw, 54vw">
 <link rel="stylesheet" href="/elevateddreams-redesign/assets/css/site.css">
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/elevateddreams-redesign/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
 <script>(function(d,w){var h=d.documentElement,c='js';try{var rm=w.matchMedia('(prefers-reduced-motion: reduce)').matches;if(rm)c+=' rm';var ss=w.sessionStorage,ls=w.localStorage;if(!rm&&ss.getItem('ed.haze')==='1'){c+=' is-arriving';ss.removeItem('ed.haze');}}catch(e){}h.className+=' '+c;w.setTimeout(function(){if(!h.classList.contains('site-ready')){h.classList.remove('gate-on','mist-on','is-arriving');h.classList.add('reveal-all');}},4000);})(document,window);</script>
 
 <style>
 /* ===================== HERO E: one sky, golden hour to night (hero rules scoped to .hxe) ===================== */
-/* --hxe-up: page top to hero top; --hxe-pl / --hxe-dl: the placards and deals bands' heights. The script measures all
-   three; these are the no-JS fallbacks. The sky reaches from the page top to the bottom of the deals band. */
-.hxe{--hxe-up:110px;--hxe-pl:510px;--hxe-dl:835px;--hxe-pad:max(var(--gutter),calc((100cqw - 1360px)/2 + var(--gutter)));--hxe-cw:min(540px,calc(41.5cqw - var(--hxe-pad) - 30px));position:relative;isolation:isolate;container-type:inline-size;margin-top:calc(-1*var(--hdr-h));min-height:max(600px,calc(100svh - var(--top-h) - var(--tick-h)));display:grid;align-items:center;padding:calc(var(--hdr-h) + 28px) 0 clamp(76px,11vh,128px)}
+/* --hxe-up: page top to hero top; --hxe-h: the hero's height; --hxe-pl: hero bottom to deals top (the menu and the signs);
+   --hxe-dl: the deals band. The script measures all four; these are the no-JS fallbacks. */
+.hxe{--hxe-up:110px;--hxe-h:820px;--hxe-pl:1560px;--hxe-dl:835px;--hxe-pad:max(var(--gutter),calc((100cqw - 1360px)/2 + var(--gutter)));--hxe-cw:min(540px,calc(41.5cqw - var(--hxe-pad) - 30px));position:relative;isolation:isolate;container-type:inline-size;margin-top:calc(-1*var(--hdr-h));min-height:max(600px,calc(100svh - var(--top-h) - var(--tick-h)));display:grid;align-items:center;padding:calc(var(--hdr-h) + 28px) 0 clamp(76px,11vh,128px)}
 
 /* ---------- the one sky: a tall backdrop behind the chrome, the hero and the next two bands ---------- */
 /* --a hero top, --b end of the golden clouds (the hero bottom; the art bottom when stacked), --h hero bottom, --c deals top */
@@ -39,22 +40,24 @@
 /* behind the chrome: the upper sky, warmer on the sun's side, cooler and deeper on the right */
 .hxe-sky__top{top:0;height:calc(var(--a) + var(--hdr-h) + 170px);background:radial-gradient(46% 100% at 18% 100%,rgba(236,170,118,.4),rgba(236,170,118,0) 72%),radial-gradient(34% 80% at 62% 100%,rgba(226,150,120,.2),rgba(226,150,120,0) 72%),linear-gradient(90deg,rgba(140,90,92,.26),rgba(140,90,92,0) 46%,rgba(26,24,52,0) 66%,rgba(26,24,52,.16));-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,1.000) calc(55% + (100% - (55%))*0.000),rgba(0,0,0,0.957) calc(55% + (100% - (55%))*0.125),rgba(0,0,0,0.844) calc(55% + (100% - (55%))*0.250),rgba(0,0,0,0.684) calc(55% + (100% - (55%))*0.375),rgba(0,0,0,0.500) calc(55% + (100% - (55%))*0.500),rgba(0,0,0,0.316) calc(55% + (100% - (55%))*0.625),rgba(0,0,0,0.156) calc(55% + (100% - (55%))*0.750),rgba(0,0,0,0.043) calc(55% + (100% - (55%))*0.875),rgba(0,0,0,0.000) calc(55% + (100% - (55%))*1.000));mask-image:linear-gradient(180deg,rgba(0,0,0,1.000) calc(55% + (100% - (55%))*0.000),rgba(0,0,0,0.957) calc(55% + (100% - (55%))*0.125),rgba(0,0,0,0.844) calc(55% + (100% - (55%))*0.250),rgba(0,0,0,0.684) calc(55% + (100% - (55%))*0.375),rgba(0,0,0,0.500) calc(55% + (100% - (55%))*0.500),rgba(0,0,0,0.316) calc(55% + (100% - (55%))*0.625),rgba(0,0,0,0.156) calc(55% + (100% - (55%))*0.750),rgba(0,0,0,0.043) calc(55% + (100% - (55%))*0.875),rgba(0,0,0,0.000) calc(55% + (100% - (55%))*1.000))}
 /* the afterglow under the clouds (the script cools it as you scroll) */
-.hxe-sky__warm{top:calc(var(--b) - 320px);height:calc(320px + (var(--c) - var(--b))*.8);will-change:opacity;background:radial-gradient(52% 40% at 22% 40%,rgba(255,178,116,.42),rgba(255,160,110,.14) 58%,rgba(255,160,110,0) 80%),radial-gradient(40% 36% at 84% 44%,rgba(196,120,150,.26),rgba(196,120,150,0) 75%),linear-gradient(180deg,rgba(198,134,94,0),rgba(198,134,94,.72) 24%,rgba(184,116,96,.66) 40%,rgba(146,90,104,.3) 64%,rgba(146,90,104,0))}
+.hxe-sky__warm{top:calc(var(--b) - 320px);height:calc(320px + min((var(--c) - var(--b))*.8,420px));will-change:opacity;background:radial-gradient(52% 40% at 22% 40%,rgba(255,178,116,.42),rgba(255,160,110,.14) 58%,rgba(255,160,110,0) 80%),radial-gradient(40% 36% at 84% 44%,rgba(196,120,150,.26),rgba(196,120,150,0) 75%),linear-gradient(180deg,rgba(198,134,94,0),rgba(198,134,94,.72) 24%,rgba(184,116,96,.66) 40%,rgba(146,90,104,.3) 64%,rgba(146,90,104,0))}
 /* the cloud sea continues below the hero (the plate's own clouds, mirrored and graded to dusk), thinning as it darkens;
    the mask rides on the moving element, so the parallax never slides an image edge into view */
 .hxe-sky__clouds{top:calc(var(--b) - 150px);height:min(980px,calc((var(--c) - var(--b))*.9 + 150px))}
-.hxe-sky__cl{position:absolute;left:-6%;top:0;width:112%;aspect-ratio:2752/1536;will-change:transform;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(0% + (20% - (0%))*0.000),rgba(0,0,0,0.043) calc(0% + (20% - (0%))*0.125),rgba(0,0,0,0.156) calc(0% + (20% - (0%))*0.250),rgba(0,0,0,0.316) calc(0% + (20% - (0%))*0.375),rgba(0,0,0,0.500) calc(0% + (20% - (0%))*0.500),rgba(0,0,0,0.684) calc(0% + (20% - (0%))*0.625),rgba(0,0,0,0.844) calc(0% + (20% - (0%))*0.750),rgba(0,0,0,0.957) calc(0% + (20% - (0%))*0.875),rgba(0,0,0,1.000) calc(0% + (20% - (0%))*1.000),rgba(0,0,0,.8) 28%,rgba(0,0,0,.5) 38%,rgba(0,0,0,.22) 50%,rgba(0,0,0,.06) 58%,transparent 64%);mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(0% + (20% - (0%))*0.000),rgba(0,0,0,0.043) calc(0% + (20% - (0%))*0.125),rgba(0,0,0,0.156) calc(0% + (20% - (0%))*0.250),rgba(0,0,0,0.316) calc(0% + (20% - (0%))*0.375),rgba(0,0,0,0.500) calc(0% + (20% - (0%))*0.500),rgba(0,0,0,0.684) calc(0% + (20% - (0%))*0.625),rgba(0,0,0,0.844) calc(0% + (20% - (0%))*0.750),rgba(0,0,0,0.957) calc(0% + (20% - (0%))*0.875),rgba(0,0,0,1.000) calc(0% + (20% - (0%))*1.000),rgba(0,0,0,.8) 28%,rgba(0,0,0,.5) 38%,rgba(0,0,0,.22) 50%,rgba(0,0,0,.06) 58%,transparent 64%)}
+.hxe-sky__cl{position:absolute;left:-6%;top:0;width:112%;aspect-ratio:2752/1536;will-change:transform,translate;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(0% + (20% - (0%))*0.000),rgba(0,0,0,0.043) calc(0% + (20% - (0%))*0.125),rgba(0,0,0,0.156) calc(0% + (20% - (0%))*0.250),rgba(0,0,0,0.316) calc(0% + (20% - (0%))*0.375),rgba(0,0,0,0.500) calc(0% + (20% - (0%))*0.500),rgba(0,0,0,0.684) calc(0% + (20% - (0%))*0.625),rgba(0,0,0,0.844) calc(0% + (20% - (0%))*0.750),rgba(0,0,0,0.957) calc(0% + (20% - (0%))*0.875),rgba(0,0,0,1.000) calc(0% + (20% - (0%))*1.000),rgba(0,0,0,.8) 28%,rgba(0,0,0,.5) 38%,rgba(0,0,0,.22) 50%,rgba(0,0,0,.06) 58%,transparent 64%);mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(0% + (20% - (0%))*0.000),rgba(0,0,0,0.043) calc(0% + (20% - (0%))*0.125),rgba(0,0,0,0.156) calc(0% + (20% - (0%))*0.250),rgba(0,0,0,0.316) calc(0% + (20% - (0%))*0.375),rgba(0,0,0,0.500) calc(0% + (20% - (0%))*0.500),rgba(0,0,0,0.684) calc(0% + (20% - (0%))*0.625),rgba(0,0,0,0.844) calc(0% + (20% - (0%))*0.750),rgba(0,0,0,0.957) calc(0% + (20% - (0%))*0.875),rgba(0,0,0,1.000) calc(0% + (20% - (0%))*1.000),rgba(0,0,0,.8) 28%,rgba(0,0,0,.5) 38%,rgba(0,0,0,.22) 50%,rgba(0,0,0,.06) 58%,transparent 64%)}
 .hxe-sky__img{position:absolute;inset:0;width:100%;height:100%;max-width:none;transform:scaleY(-1)}
-.hxe-sky__img--dusk{filter:hue-rotate(-42deg) saturate(.8) brightness(.74) contrast(.96);opacity:.9}
-.hxe-sky__img--night{filter:sepia(.5) hue-rotate(230deg) saturate(1.1) brightness(.56) contrast(1);-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(14% + (40% - (14%))*0.000),rgba(0,0,0,0.043) calc(14% + (40% - (14%))*0.125),rgba(0,0,0,0.156) calc(14% + (40% - (14%))*0.250),rgba(0,0,0,0.316) calc(14% + (40% - (14%))*0.375),rgba(0,0,0,0.500) calc(14% + (40% - (14%))*0.500),rgba(0,0,0,0.684) calc(14% + (40% - (14%))*0.625),rgba(0,0,0,0.844) calc(14% + (40% - (14%))*0.750),rgba(0,0,0,0.957) calc(14% + (40% - (14%))*0.875),rgba(0,0,0,1.000) calc(14% + (40% - (14%))*1.000));mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(14% + (40% - (14%))*0.000),rgba(0,0,0,0.043) calc(14% + (40% - (14%))*0.125),rgba(0,0,0,0.156) calc(14% + (40% - (14%))*0.250),rgba(0,0,0,0.316) calc(14% + (40% - (14%))*0.375),rgba(0,0,0,0.500) calc(14% + (40% - (14%))*0.500),rgba(0,0,0,0.684) calc(14% + (40% - (14%))*0.625),rgba(0,0,0,0.844) calc(14% + (40% - (14%))*0.750),rgba(0,0,0,0.957) calc(14% + (40% - (14%))*0.875),rgba(0,0,0,1.000) calc(14% + (40% - (14%))*1.000))}
+.hxe-sky__img--dusk{opacity:.9}
+.hxe-sky__img--night{-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(14% + (40% - (14%))*0.000),rgba(0,0,0,0.043) calc(14% + (40% - (14%))*0.125),rgba(0,0,0,0.156) calc(14% + (40% - (14%))*0.250),rgba(0,0,0,0.316) calc(14% + (40% - (14%))*0.375),rgba(0,0,0,0.500) calc(14% + (40% - (14%))*0.500),rgba(0,0,0,0.684) calc(14% + (40% - (14%))*0.625),rgba(0,0,0,0.844) calc(14% + (40% - (14%))*0.750),rgba(0,0,0,0.957) calc(14% + (40% - (14%))*0.875),rgba(0,0,0,1.000) calc(14% + (40% - (14%))*1.000));mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(14% + (40% - (14%))*0.000),rgba(0,0,0,0.043) calc(14% + (40% - (14%))*0.125),rgba(0,0,0,0.156) calc(14% + (40% - (14%))*0.250),rgba(0,0,0,0.316) calc(14% + (40% - (14%))*0.375),rgba(0,0,0,0.500) calc(14% + (40% - (14%))*0.500),rgba(0,0,0,0.684) calc(14% + (40% - (14%))*0.625),rgba(0,0,0,0.844) calc(14% + (40% - (14%))*0.750),rgba(0,0,0,0.957) calc(14% + (40% - (14%))*0.875),rgba(0,0,0,1.000) calc(14% + (40% - (14%))*1.000))}
 /* haze drifting across the dusk: one tile wider than its box, sliding exactly one tile */
-.hxe-sky__mist{top:calc(var(--b) - 40px);height:calc((var(--c) - var(--b)) + 120px);left:-24px;right:-24px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 22%,rgba(0,0,0,.7) 55%,transparent);mask-image:linear-gradient(180deg,transparent,#000 22%,rgba(0,0,0,.7) 55%,transparent)}
+.hxe-sky__mist{top:calc(var(--b) - 40px);height:min(680px,calc((var(--c) - var(--b)) + 120px));left:-24px;right:-24px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 22%,rgba(0,0,0,.7) 55%,transparent);mask-image:linear-gradient(180deg,transparent,#000 22%,rgba(0,0,0,.7) 55%,transparent)}
 .hxe-sky__mist i{position:absolute;left:0;width:calc(100% + 1200px);background-repeat:repeat-x;background-size:1200px 100%;mix-blend-mode:screen;will-change:transform;-webkit-mask-image:linear-gradient(180deg,transparent,#000 35%,#000 70%,transparent);mask-image:linear-gradient(180deg,transparent,#000 35%,#000 70%,transparent)}
 .hxe-sky__mist i:nth-child(1){top:0;height:46%;background-image:url(/elevateddreams-redesign/assets/img/fog-sodium.svg);opacity:.3}
 .hxe-sky__mist i:nth-child(2){top:18%;height:52%;background-image:url(/elevateddreams-redesign/assets/img/fog-violet.svg);opacity:.55}
 .hxe-sky__mist i:nth-child(3){top:44%;height:50%;background-image:url(/elevateddreams-redesign/assets/img/fog-violet.svg);background-size:1200px 130%;opacity:.4}
 /* stars come out as the sky darkens toward the deals */
-.hxe-sky__stars{top:calc(var(--c) - var(--hxe-pl)*.75);bottom:0;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.000),rgba(0,0,0,0.043) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.125),rgba(0,0,0,0.156) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.250),rgba(0,0,0,0.316) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.375),rgba(0,0,0,0.500) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.500),rgba(0,0,0,0.684) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.625),rgba(0,0,0,0.844) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.750),rgba(0,0,0,0.957) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.875),rgba(0,0,0,1.000) calc(0px + (var(--hxe-pl)*.7 - (0px))*1.000));mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.000),rgba(0,0,0,0.043) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.125),rgba(0,0,0,0.156) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.250),rgba(0,0,0,0.316) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.375),rgba(0,0,0,0.500) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.500),rgba(0,0,0,0.684) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.625),rgba(0,0,0,0.844) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.750),rgba(0,0,0,0.957) calc(0px + (var(--hxe-pl)*.7 - (0px))*0.875),rgba(0,0,0,1.000) calc(0px + (var(--hxe-pl)*.7 - (0px))*1.000))}
+.hxe-sky__stars{top:calc(var(--c) - min(var(--hxe-pl)*.75,400px));bottom:0;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.000),rgba(0,0,0,0.043) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.125),rgba(0,0,0,0.156) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.250),rgba(0,0,0,0.316) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.375),rgba(0,0,0,0.500) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.500),rgba(0,0,0,0.684) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.625),rgba(0,0,0,0.844) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.750),rgba(0,0,0,0.957) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.875),rgba(0,0,0,1.000) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*1.000));mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.000),rgba(0,0,0,0.043) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.125),rgba(0,0,0,0.156) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.250),rgba(0,0,0,0.316) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.375),rgba(0,0,0,0.500) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.500),rgba(0,0,0,0.684) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.625),rgba(0,0,0,0.844) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.750),rgba(0,0,0,0.957) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*0.875),rgba(0,0,0,1.000) calc(0px + (min(var(--hxe-pl)*.7,360px) - (0px))*1.000))}
+/* where the sky starts fading out: the script watches this to know when the page's own sky can be seen again */
+.hxe-sky__end{top:calc(100% - var(--hxe-dl)*.6);height:1px}
 .hxe-sky__stars i{position:absolute;inset:0}
 .hxe-sky__stars i:nth-child(1){background-image:radial-gradient(1.2px 1.2px at 7% 14%,#fff 50%,transparent 52%),radial-gradient(1px 1px at 23% 41%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 38% 9%,#fff3d2 50%,transparent 52%),radial-gradient(1px 1px at 52% 63%,#fff 50%,transparent 52%),radial-gradient(1.2px 1.2px at 67% 27%,#d9d0ff 50%,transparent 52%),radial-gradient(1px 1px at 81% 72%,#fff 50%,transparent 52%),radial-gradient(1.3px 1.3px at 93% 18%,#fff 50%,transparent 52%),radial-gradient(1px 1px at 15% 84%,#d9d0ff 50%,transparent 52%);background-size:560px 420px;opacity:.85}
 .hxe-sky__stars i:nth-child(2){background-image:radial-gradient(1.6px 1.6px at 31% 22%,#fff 50%,transparent 52%),radial-gradient(1.2px 1.2px at 74% 53%,#fff3d2 50%,transparent 52%),radial-gradient(1px 1px at 12% 61%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 88% 86%,#d9d0ff 50%,transparent 52%);background-size:880px 640px;background-position:130px 90px;opacity:.7}
@@ -63,23 +66,21 @@
 /* frame geometry, resolved against the stage (a size container): --fw width, --fl left, --ft top of the golden-b
    frame; --wf the brand words' size (its third limit keeps both lines above the roof's left end on short screens) */
 .hxe-stage{--fw:max(103cqw,184.5cqh);--fl:calc((100cqw - var(--fw))*.415);--ft:calc((100cqh - var(--fw)/1.7917)*.12);--wf:min(calc(var(--fw)*.081),calc((58.5cqw - var(--gutter))/6.25),calc((var(--ft) + var(--fw)*.232 - var(--hdr-h) - max(7cqh,56px))/1.692));position:absolute;inset:0;z-index:0;container-type:size;overflow:clip;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,1.000) calc(100% - 300px + (100% - (100% - 300px))*0.000),rgba(0,0,0,0.957) calc(100% - 300px + (100% - (100% - 300px))*0.125),rgba(0,0,0,0.844) calc(100% - 300px + (100% - (100% - 300px))*0.250),rgba(0,0,0,0.684) calc(100% - 300px + (100% - (100% - 300px))*0.375),rgba(0,0,0,0.500) calc(100% - 300px + (100% - (100% - 300px))*0.500),rgba(0,0,0,0.316) calc(100% - 300px + (100% - (100% - 300px))*0.625),rgba(0,0,0,0.156) calc(100% - 300px + (100% - (100% - 300px))*0.750),rgba(0,0,0,0.043) calc(100% - 300px + (100% - (100% - 300px))*0.875),rgba(0,0,0,0.000) calc(100% - 300px + (100% - (100% - 300px))*1.000));mask-image:linear-gradient(180deg,rgba(0,0,0,1.000) calc(100% - 300px + (100% - (100% - 300px))*0.000),rgba(0,0,0,0.957) calc(100% - 300px + (100% - (100% - 300px))*0.125),rgba(0,0,0,0.844) calc(100% - 300px + (100% - (100% - 300px))*0.250),rgba(0,0,0,0.684) calc(100% - 300px + (100% - (100% - 300px))*0.375),rgba(0,0,0,0.500) calc(100% - 300px + (100% - (100% - 300px))*0.500),rgba(0,0,0,0.316) calc(100% - 300px + (100% - (100% - 300px))*0.625),rgba(0,0,0,0.156) calc(100% - 300px + (100% - (100% - 300px))*0.750),rgba(0,0,0,0.043) calc(100% - 300px + (100% - (100% - 300px))*0.875),rgba(0,0,0,0.000) calc(100% - 300px + (100% - (100% - 300px))*1.000))}
-.hxe-f{position:absolute;left:var(--fl);top:var(--ft);width:var(--fw);aspect-ratio:2752/1536;will-change:transform}
+.hxe-f{position:absolute;left:var(--fl);top:var(--ft);width:var(--fw);aspect-ratio:2752/1536;will-change:transform,translate}
 .hxe-plate{position:absolute;left:0;top:0;width:100%;height:100%;max-width:none;object-fit:cover}
 /* the sky plate fades in under the header, so the sky above it (behind the chrome) runs straight on into the photo */
 .hxe-sk{-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.000),rgba(0,0,0,0.043) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.125),rgba(0,0,0,0.156) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.250),rgba(0,0,0,0.316) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.375),rgba(0,0,0,0.500) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.500),rgba(0,0,0,0.684) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.625),rgba(0,0,0,0.844) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.750),rgba(0,0,0,0.957) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.875),rgba(0,0,0,1.000) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*1.000));mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.000),rgba(0,0,0,0.043) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.125),rgba(0,0,0,0.156) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.250),rgba(0,0,0,0.316) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.375),rgba(0,0,0,0.500) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.500),rgba(0,0,0,0.684) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.625),rgba(0,0,0,0.844) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.750),rgba(0,0,0,0.957) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*0.875),rgba(0,0,0,1.000) calc(var(--hdr-h)*.25 + (var(--hdr-h) + 170px - (var(--hdr-h)*.25))*1.000))}
-/* the passing of time: static graded copies of the same plate, crossfaded by opacity only */
+/* the passing of time: pre-graded copies of the same plate, crossfaded by opacity only */
 .hxe-pl--dusk,.hxe-pl--night{opacity:0;will-change:opacity}
-.hxe-pl--dusk{filter:hue-rotate(-42deg) saturate(.8) brightness(.62) contrast(1.05)}
-.hxe-pl--night{filter:sepia(.5) hue-rotate(230deg) saturate(1.15) brightness(.5) contrast(1.1)}
 .hxe-nightsky{position:absolute;inset:0;opacity:0;will-change:opacity;background:radial-gradient(34% 40% at 12% 8%,rgba(214,208,255,.22),rgba(214,208,255,0) 70%),linear-gradient(180deg,rgba(12,12,38,.62) 0%,rgba(20,18,52,.3) 38%,rgba(20,18,52,0) 64%);-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(0px + (var(--hdr-h) + 180px - (0px))*0.000),rgba(0,0,0,0.043) calc(0px + (var(--hdr-h) + 180px - (0px))*0.125),rgba(0,0,0,0.156) calc(0px + (var(--hdr-h) + 180px - (0px))*0.250),rgba(0,0,0,0.316) calc(0px + (var(--hdr-h) + 180px - (0px))*0.375),rgba(0,0,0,0.500) calc(0px + (var(--hdr-h) + 180px - (0px))*0.500),rgba(0,0,0,0.684) calc(0px + (var(--hdr-h) + 180px - (0px))*0.625),rgba(0,0,0,0.844) calc(0px + (var(--hdr-h) + 180px - (0px))*0.750),rgba(0,0,0,0.957) calc(0px + (var(--hdr-h) + 180px - (0px))*0.875),rgba(0,0,0,1.000) calc(0px + (var(--hdr-h) + 180px - (0px))*1.000));mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(0px + (var(--hdr-h) + 180px - (0px))*0.000),rgba(0,0,0,0.043) calc(0px + (var(--hdr-h) + 180px - (0px))*0.125),rgba(0,0,0,0.156) calc(0px + (var(--hdr-h) + 180px - (0px))*0.250),rgba(0,0,0,0.316) calc(0px + (var(--hdr-h) + 180px - (0px))*0.375),rgba(0,0,0,0.500) calc(0px + (var(--hdr-h) + 180px - (0px))*0.500),rgba(0,0,0,0.684) calc(0px + (var(--hdr-h) + 180px - (0px))*0.625),rgba(0,0,0,0.844) calc(0px + (var(--hdr-h) + 180px - (0px))*0.750),rgba(0,0,0,0.957) calc(0px + (var(--hdr-h) + 180px - (0px))*0.875),rgba(0,0,0,1.000) calc(0px + (var(--hdr-h) + 180px - (0px))*1.000))}
 /* the cinematic grade sits UNDER the words and the building: one soft plum pool behind the copy, fading out in every
    direction (no band across the page), and easing in from the hero's top so the chrome's sky never steps darker */
 .hxe-skygrade{position:absolute;inset:0;background:radial-gradient(calc((var(--hxe-pad) + var(--hxe-cw))*1.52) 78% at calc((var(--hxe-pad) + var(--hxe-cw))*.36) 54%,rgba(32,21,50,.86) 0,rgba(32,21,50,.84) 42%,rgba(32,21,50,.7) 54%,rgba(32,21,50,.42) 66%,rgba(32,21,50,.16) 76%,rgba(32,21,50,.04) 81%,rgba(32,21,50,0) 84%);-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(0px + (var(--hdr-h) + 150px - (0px))*0.000),rgba(0,0,0,0.043) calc(0px + (var(--hdr-h) + 150px - (0px))*0.125),rgba(0,0,0,0.156) calc(0px + (var(--hdr-h) + 150px - (0px))*0.250),rgba(0,0,0,0.316) calc(0px + (var(--hdr-h) + 150px - (0px))*0.375),rgba(0,0,0,0.500) calc(0px + (var(--hdr-h) + 150px - (0px))*0.500),rgba(0,0,0,0.684) calc(0px + (var(--hdr-h) + 150px - (0px))*0.625),rgba(0,0,0,0.844) calc(0px + (var(--hdr-h) + 150px - (0px))*0.750),rgba(0,0,0,0.957) calc(0px + (var(--hdr-h) + 150px - (0px))*0.875),rgba(0,0,0,1.000) calc(0px + (var(--hdr-h) + 150px - (0px))*1.000));mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(0px + (var(--hdr-h) + 150px - (0px))*0.000),rgba(0,0,0,0.043) calc(0px + (var(--hdr-h) + 150px - (0px))*0.125),rgba(0,0,0,0.156) calc(0px + (var(--hdr-h) + 150px - (0px))*0.250),rgba(0,0,0,0.316) calc(0px + (var(--hdr-h) + 150px - (0px))*0.375),rgba(0,0,0,0.500) calc(0px + (var(--hdr-h) + 150px - (0px))*0.500),rgba(0,0,0,0.684) calc(0px + (var(--hdr-h) + 150px - (0px))*0.625),rgba(0,0,0,0.844) calc(0px + (var(--hdr-h) + 150px - (0px))*0.750),rgba(0,0,0,0.957) calc(0px + (var(--hdr-h) + 150px - (0px))*0.875),rgba(0,0,0,1.000) calc(0px + (var(--hdr-h) + 150px - (0px))*1.000))}
 /* the brand words, behind the building, left-aligned with each other; never past the hero's gutter, and their cap
    line stays at least 40px clear of the header (the box top sits about .11em below the glyph tops' line) */
-.hxe-words{position:absolute;inset:0;will-change:transform}
+.hxe-words{position:absolute;inset:0;will-change:transform,translate}
 .hxe-wbox{position:absolute;top:max(calc(var(--ft) + var(--fw)*.2071 - 1.55*var(--wf)),calc(var(--hdr-h) + max(7cqh,56px)));right:max(calc(100cqw - var(--fl) - var(--fw)*.934),var(--gutter));margin:0;font:400 calc(var(--wf)*.94)/.9 var(--f-display);text-align:left;white-space:nowrap}
-.hxe-w{display:block;will-change:transform}
+.hxe-w{display:block;will-change:translate}
 .hxe-wi{display:block;color:#fff;letter-spacing:.004em;text-shadow:0 2px 0 rgba(26,20,36,.16),0 16px 44px rgba(26,20,36,.42),0 0 54px rgba(169,155,240,.62)}
 .hxe-w2 .hxe-wi{color:#F3EEFF;text-shadow:0 2px 0 rgba(26,20,36,.16),0 16px 44px rgba(26,20,36,.42),0 0 64px rgba(123,106,196,.72)}
 /* the building: exactly where it sits in the golden-b frame; its ragged base fades out under the cloud bank */
@@ -97,12 +98,12 @@
 /* front cloud bank: the same plate, only on the building's side, below a cloud line that climbs to the right */
 .hxe-bank{-webkit-mask-image:linear-gradient(90deg,transparent 36%,#000 44%),radial-gradient(26% 21% at 91% 79%,#000 35%,rgba(0,0,0,.55) 62%,transparent 100%),linear-gradient(180deg,transparent 69%,rgba(0,0,0,.7) 76%,#000 82%);-webkit-mask-composite:source-in,source-over,source-over;mask-image:linear-gradient(90deg,transparent 36%,#000 44%),radial-gradient(26% 21% at 91% 79%,#000 35%,rgba(0,0,0,.55) 62%,transparent 100%),linear-gradient(180deg,transparent 69%,rgba(0,0,0,.7) 76%,#000 82%);mask-composite:intersect,add,add}
 /* drifting haze in front of everything: warm strips at golden hour, a violet one after dark */
-.hxe-fog{position:absolute;left:-24px;right:-24px;bottom:-12px;height:56%;mix-blend-mode:screen;will-change:transform;-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.18) 18%,#000 52%),linear-gradient(180deg,transparent,#000 42%);-webkit-mask-composite:source-in,source-over;mask-image:linear-gradient(90deg,rgba(0,0,0,.18) 18%,#000 52%),linear-gradient(180deg,transparent,#000 42%);mask-composite:intersect,add}
+.hxe-fog{position:absolute;left:-24px;right:-24px;bottom:-12px;height:56%;mix-blend-mode:screen;will-change:transform,translate;-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.18) 18%,#000 52%),linear-gradient(180deg,transparent,#000 42%);-webkit-mask-composite:source-in,source-over;mask-image:linear-gradient(90deg,rgba(0,0,0,.18) 18%,#000 52%),linear-gradient(180deg,transparent,#000 42%);mask-composite:intersect,add}
 .hxe-fog i{position:absolute;left:0;width:calc(100% + 1200px);background-repeat:repeat-x;background-size:1200px 100%;will-change:transform;-webkit-mask-image:linear-gradient(180deg,transparent,#000 38%,#000 72%,transparent);mask-image:linear-gradient(180deg,transparent,#000 38%,#000 72%,transparent)}
 .hxe-fog i:nth-child(1){bottom:0;height:78%;background-image:url(/elevateddreams-redesign/assets/img/fog-sodium.svg);opacity:.6}
 .hxe-fog i:nth-child(2){bottom:14%;height:58%;background-image:url(/elevateddreams-redesign/assets/img/fog-silver.svg);opacity:.48}
 .hxe-fog i:nth-child(3){bottom:-6%;height:66%;background-image:url(/elevateddreams-redesign/assets/img/fog-violet.svg);background-size:1200px 130%;opacity:0}
-.hxe-haze{position:absolute;inset:0;opacity:0;background:radial-gradient(70% 70% at 60% 100%,rgba(196,182,255,.5),rgba(150,130,220,.2) 45%,transparent 75%)}
+.hxe-haze{position:absolute;inset:0;opacity:0;will-change:opacity;background:radial-gradient(70% 70% at 60% 100%,rgba(196,182,255,.5),rgba(150,130,220,.2) 45%,transparent 75%)}
 /* copy */
 .hxe-in{position:relative;z-index:2;width:100%;padding:0 var(--hxe-pad)}
 .hxe-copy{max-width:var(--hxe-cw);text-shadow:0 2px 20px rgba(10,7,14,.5)}
@@ -143,34 +144,63 @@ body.hxe-page .hdr.is-solid:not(.hxe-stuck):not(.mega-open)::before{opacity:0}
 html:not(.js) body.hxe-page .hdr{position:relative}
 /* the compliance signs float on the dusk: no brick wall, a soft violet halo that never reaches the band's edges */
 body.hxe-page .band--placards-top::before{background:radial-gradient(48% 44% at 50% 50%,rgba(123,106,196,.2),rgba(123,106,196,.06) 55%,rgba(123,106,196,0) 92%);opacity:1}
-/* owner rule: eyebrows are words only, so the deals eyebrow on this page draws no rule beside it either */
-body.hxe-page .band--deals .kicker::before{content:none}
+/* the menu sits straight on the sky: no scrim, and no rooftop ledge up here */
+body.hxe-page .band--cats::before{background:none}
+body.hxe-page .ledge{display:none}
 
 /* far off screen the heavy layers leave the compositor altogether */
 .hxe.hxe-off .hxe-stage,.hxe.hxe-skyoff .hxe-sky{visibility:hidden}
 
 /* motion: only with JS and without a reduced-motion preference; loops pause while off screen */
 @media (prefers-reduced-motion: no-preference){
-  html.js:not(.rm) .hxe-lift{animation:hxe-rise 1.7s var(--ease) .05s both}
-  html.js:not(.rm) .hxe-wi{animation:hxe-wordin 1.25s var(--ease) .15s both}
-  html.js:not(.rm) .hxe-w2 .hxe-wi{animation-delay:.32s}
-  html.js:not(.rm) .hxe-copy{animation:hxe-copyin .95s var(--ease) .2s both}
-  html.js:not(.rm) .hxe-bob{animation:hxe-bob 6.5s var(--ease-io) 1.6s infinite alternate}
+  html.js:not(.rm) .hxe-lift{animation:hxe-rise 1.5s var(--ease) .05s both}
+  html.js:not(.rm) .hxe-wi{animation:hxe-wordin 1.1s var(--ease) .12s both}
+  html.js:not(.rm) .hxe-w2 .hxe-wi{animation-delay:.24s}
+  html.js:not(.rm) .hxe-copy{animation:hxe-copyin .9s var(--ease) .16s both}
+  html.js:not(.rm) .hxe-bob{animation:hxe-bob 6.5s var(--ease-io) 1.5s infinite alternate}
   html.js:not(.rm) .hxe-fog i{animation:hxe-drift 110s linear infinite}
   html.js:not(.rm) .hxe-fog i:nth-child(2){animation-duration:74s;animation-direction:reverse}
   html.js:not(.rm) .hxe-fog i:nth-child(3){animation-duration:150s}
   html.js:not(.rm) .hxe-sky__mist i{animation:hxe-drift 130s linear infinite}
   html.js:not(.rm) .hxe-sky__mist i:nth-child(2){animation-duration:90s;animation-direction:reverse}
   html.js:not(.rm) .hxe-sky__stars i:nth-child(2){animation:hxe-twinkle 5.5s ease-in-out infinite alternate}
-  html.js:not(.rm) .hxe.hxe-off .hxe-bob,html.js:not(.rm) .hxe.hxe-off .hxe-fog i,html.js:not(.rm) .hxe.hxe-skyoff .hxe-sky__mist i,html.js:not(.rm) .hxe.hxe-skyoff .hxe-sky__stars i{animation-play-state:paused}
-  /* each sign drifts on its own slow breath once it has risen into place (after the reveal's own translate) */
+  /* each sign drifts on its own slow breath once it has risen into place */
   html.js:not(.rm) body.hxe-page .placard.is-in{animation:hxe-hover 7.2s var(--ease-io) 1.3s infinite alternate}
   html.js:not(.rm) body.hxe-page .placard--sign.is-in{animation-duration:8.6s}
   html.js:not(.rm) body.hxe-page .placard--transit.is-in{animation-duration:6.4s}
+  /* cursor depth: the compositor eases each layer to where the script last pointed it */
+  @media (hover: hover) and (pointer: fine){
+    html.js:not(.rm) .hxe-sk,html.js:not(.rm) .hxe-words,html.js:not(.rm) .hxe-bld,html.js:not(.rm) .hxe-bank,html.js:not(.rm) .hxe-fog,html.js:not(.rm) .hxe-sky__cl{transition:transform .62s cubic-bezier(.2,.72,.28,1)}
+  }
+  /* the scroll: lifts, sinks and the passing of time, all on the compositor */
+  @supports (animation-timeline: scroll()){
+    html.js:not(.rm) .hxe-sk{--dy:calc(var(--hxe-h)*.16);animation:hxe-y linear both;animation-timeline:scroll(root);animation-range:0 var(--hxe-h)}
+    html.js:not(.rm) .hxe-words{--dy:calc(var(--hxe-h)*-.08);animation:hxe-y linear both;animation-timeline:scroll(root);animation-range:0 var(--hxe-h)}
+    html.js:not(.rm) .hxe-w1{--dy:calc(var(--hxe-h)*-.05);animation:hxe-y linear both;animation-timeline:scroll(root);animation-range:0 var(--hxe-h)}
+    html.js:not(.rm) .hxe-w2{--dy:calc(var(--hxe-h)*.04);animation:hxe-y linear both;animation-timeline:scroll(root);animation-range:0 var(--hxe-h)}
+    html.js:not(.rm) .hxe-bld{--dy:calc(var(--hxe-h)*-.24);animation:hxe-y linear both;animation-timeline:scroll(root);animation-range:0 var(--hxe-h)}
+    html.js:not(.rm) .hxe-bank{--dy:calc(var(--hxe-h)*.14);animation:hxe-y linear both;animation-timeline:scroll(root);animation-range:0 var(--hxe-h)}
+    html.js:not(.rm) .hxe-fog{--dy:calc(var(--hxe-h)*.08);animation:hxe-y linear both;animation-timeline:scroll(root);animation-range:0 var(--hxe-h)}
+    html.js:not(.rm) .hxe-sky__cl{--dy:calc((var(--hxe-h) + min(var(--hxe-pl),600px))*.1);animation:hxe-y linear both;animation-timeline:scroll(root);animation-range:0 (var(--hxe-h) + min(var(--hxe-pl),600px))}
+    html.js:not(.rm) .hxe-sk .hxe-pl--dusk{--o0:0;--o1:1;animation:hxe-o ease-in-out both;animation-timeline:scroll(root);animation-range:calc(var(--hxe-h)*.03) calc(var(--hxe-h)*.5)}
+    html.js:not(.rm) .hxe-sk .hxe-pl--night{--o0:0;--o1:1;animation:hxe-o ease-in-out both;animation-timeline:scroll(root);animation-range:calc(var(--hxe-h)*.32) calc(var(--hxe-h)*.92)}
+    html.js:not(.rm) .hxe-nightsky{--o0:0;--o1:.9;animation:hxe-o ease-in-out both;animation-timeline:scroll(root);animation-range:calc(var(--hxe-h)*.38) calc(var(--hxe-h)*.95)}
+    html.js:not(.rm) .hxe-night{--o0:0;--o1:1;animation:hxe-o ease-in-out both;animation-timeline:scroll(root);animation-range:calc(var(--hxe-h)*.1) calc(var(--hxe-h)*.56)}
+    html.js:not(.rm) .hxe-bank .hxe-pl--night{--o0:0;--o1:1;animation:hxe-o ease-in-out both;animation-timeline:scroll(root);animation-range:calc(var(--hxe-h)*.1) calc(var(--hxe-h)*.82)}
+    html.js:not(.rm) .hxe-wisp .hxe-pl--night{--o0:0;--o1:1;animation:hxe-o ease-in-out both;animation-timeline:scroll(root);animation-range:calc(var(--hxe-h)*.1) calc(var(--hxe-h)*.82)}
+    html.js:not(.rm) .hxe-sky__warm{--o0:1;--o1:.18;animation:hxe-o ease-in-out both;animation-timeline:scroll(root);animation-range:calc(var(--hxe-h)*.04) calc(var(--hxe-h)*.85)}
+    html.js:not(.rm) .hxe-haze{--o0:0;--o1:.75;animation:hxe-o ease-in-out both;animation-timeline:scroll(root);animation-range:calc(var(--hxe-h)*.25) calc(var(--hxe-h)*1)}
+    html.js:not(.rm) .hxe-fog i:nth-child(1){--o0:.6;--o1:.09;animation:hxe-drift 110s linear infinite,hxe-o ease-in-out both;animation-timeline:auto,scroll(root);animation-range:normal,calc(var(--hxe-h)*.04) calc(var(--hxe-h)*.85)}
+    html.js:not(.rm) .hxe-fog i:nth-child(2){--o0:.48;--o1:.072;animation:hxe-drift 74s linear infinite reverse,hxe-o ease-in-out both;animation-timeline:auto,scroll(root);animation-range:normal,calc(var(--hxe-h)*.04) calc(var(--hxe-h)*.85)}
+    html.js:not(.rm) .hxe-fog i:nth-child(3){--o0:0;--o1:.62;animation:hxe-drift 150s linear infinite,hxe-o ease-in-out both;animation-timeline:auto,scroll(root);animation-range:normal,calc(var(--hxe-h)*.04) calc(var(--hxe-h)*.85)}
+  }
+  html.js:not(.rm) .hxe.hxe-off .hxe-bob,html.js:not(.rm) .hxe.hxe-off .hxe-fog i,html.js:not(.rm) .hxe.hxe-skyoff .hxe-sky__mist i,html.js:not(.rm) .hxe.hxe-skyoff .hxe-sky__stars i{animation-play-state:paused}
   html.js:not(.rm) body.hxe-page .hxe.hxe-ploff ~ .band--placards-top .placard{animation-play-state:paused}
 }
+@keyframes hxe-y{to{translate:0 var(--dy)}}
+@keyframes hxe-o{from{opacity:var(--o0)}to{opacity:var(--o1)}}
 @keyframes hxe-rise{from{transform:translate3d(0,12%,0);opacity:0}35%{opacity:1}to{transform:none;opacity:1}}
-@keyframes hxe-wordin{from{transform:translate3d(0,.3em,0);opacity:0;filter:blur(10px)}to{transform:none;opacity:1;filter:none}}
+@keyframes hxe-wordin{from{transform:translate3d(0,.3em,0);opacity:0}to{transform:none;opacity:1}}
 @keyframes hxe-copyin{from{transform:translate3d(0,16px,0);opacity:0}to{transform:none;opacity:1}}
 @keyframes hxe-bob{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,-1.7%,0)}}
 @keyframes hxe-drift{to{transform:translate3d(-1200px,0,0)}}
@@ -180,7 +210,7 @@ body.hxe-page .band--deals .kicker::before{content:none}
 /* ---------- stacked: phones and portrait screens. The art on top, the copy on the dusk below it ---------- */
 @media (max-width: 760px), (max-aspect-ratio: 11/10){
   /* --hxe-art: art height above the copy; --hxe-fwq: frame width; --hxe-bt: building top below the header */
-  .hxe{--hxe-up:74px;--hxe-pl:900px;--hxe-dl:1350px;--hxe-art:min(87cqw,56svh);--hxe-fwq:max(150cqw,min(207cqw,133svh));--hxe-bt:min(24cqw,15.4svh);--hxe-cw:calc(100cqw - 2*var(--hxe-pad));align-items:start;padding:calc(var(--hdr-h) + var(--hxe-art)) 0 40px}
+  .hxe{--hxe-up:74px;--hxe-pl:2600px;--hxe-dl:1350px;--hxe-art:min(87cqw,56svh);--hxe-fwq:max(150cqw,min(207cqw,133svh));--hxe-bt:min(24cqw,15.4svh);--hxe-cw:calc(100cqw - 2*var(--hxe-pad));align-items:start;padding:calc(var(--hdr-h) + var(--hxe-art)) 0 40px}
   .hxe-stage{--fw:var(--hxe-fwq);--fl:calc(50cqw - var(--fw)*.666);--ft:calc(var(--hdr-h) + var(--hxe-bt) - var(--fw)*.1697);--wf:calc(var(--fw)*.0655);-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,1.000) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.000),rgba(0,0,0,0.957) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.125),rgba(0,0,0,0.844) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.250),rgba(0,0,0,0.684) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.375),rgba(0,0,0,0.500) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.500),rgba(0,0,0,0.316) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.625),rgba(0,0,0,0.156) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.750),rgba(0,0,0,0.043) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.875),rgba(0,0,0,0.000) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*1.000));mask-image:linear-gradient(180deg,rgba(0,0,0,1.000) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.000),rgba(0,0,0,0.957) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.125),rgba(0,0,0,0.844) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.250),rgba(0,0,0,0.684) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.375),rgba(0,0,0,0.500) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.500),rgba(0,0,0,0.316) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.625),rgba(0,0,0,0.156) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.750),rgba(0,0,0,0.043) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*0.875),rgba(0,0,0,0.000) calc(var(--hdr-h) + var(--hxe-art) - 118px + (var(--hdr-h) + var(--hxe-art) - 2px - (var(--hdr-h) + var(--hxe-art) - 118px))*1.000))}
   .hxe-sk{-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.000),rgba(0,0,0,0.043) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.125),rgba(0,0,0,0.156) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.250),rgba(0,0,0,0.316) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.375),rgba(0,0,0,0.500) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.500),rgba(0,0,0,0.684) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.625),rgba(0,0,0,0.844) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.750),rgba(0,0,0,0.957) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.875),rgba(0,0,0,1.000) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*1.000));mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.000),rgba(0,0,0,0.043) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.125),rgba(0,0,0,0.156) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.250),rgba(0,0,0,0.316) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.375),rgba(0,0,0,0.500) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.500),rgba(0,0,0,0.684) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.625),rgba(0,0,0,0.844) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.750),rgba(0,0,0,0.957) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*0.875),rgba(0,0,0,1.000) calc(var(--hdr-h)*.1 + (var(--hdr-h) + 84px - (var(--hdr-h)*.1))*1.000))}
   .hxe-wbox{right:auto;left:calc(var(--fl) + var(--fw)*.666);top:calc(var(--ft) + var(--fw)*.086);transform:translateX(-50%);text-align:left;line-height:.88}
@@ -192,15 +222,15 @@ body.hxe-page .band--deals .kicker::before{content:none}
     background:linear-gradient(180deg,#2a1e2c 0,#3a2a38 calc(var(--a) - 40px),#533a45 var(--a),#6f5258 calc(var(--a) + var(--hdr-h)),#94797f calc(var(--a) + var(--hdr-h) + 80px),#7a6080 calc(var(--b) - 130px),#5a4464 calc(var(--b) - 44px),#463450 var(--b),#3b2c4c calc(var(--b) + 110px),#352841 calc(var(--b) + 300px),#33263f var(--h),#2a2039 calc(var(--h) + var(--hxe-pl)*.55),#221a31 var(--c),#1a1424 calc(var(--c) + 260px),#1a1424 100%)}
   /* the afterglow stops just above the eyebrow, and the copy sits on a clean dusk (the clouds resume below it) */
   .hxe-sky__warm{top:calc(var(--b) - 230px);height:300px;background:radial-gradient(60% 40% at 30% 44%,rgba(255,178,116,.4),rgba(255,160,110,0) 75%),linear-gradient(180deg,rgba(198,134,94,0),rgba(198,134,94,.66) 42%,rgba(186,116,94,.4) 60%,rgba(186,116,94,0) 76%)}
-  .hxe-sky__clouds{top:calc(var(--h) - 70px);height:calc(var(--hxe-pl)*.6)}
+  .hxe-sky__clouds{top:calc(var(--h) - 70px);height:min(calc(var(--hxe-pl)*.6),560px)}
   .hxe-sky__cl{left:-55%;width:210%;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(0% + (30% - (0%))*0.000),rgba(0,0,0,0.043) calc(0% + (30% - (0%))*0.125),rgba(0,0,0,0.156) calc(0% + (30% - (0%))*0.250),rgba(0,0,0,0.316) calc(0% + (30% - (0%))*0.375),rgba(0,0,0,0.500) calc(0% + (30% - (0%))*0.500),rgba(0,0,0,0.684) calc(0% + (30% - (0%))*0.625),rgba(0,0,0,0.844) calc(0% + (30% - (0%))*0.750),rgba(0,0,0,0.957) calc(0% + (30% - (0%))*0.875),rgba(0,0,0,1.000) calc(0% + (30% - (0%))*1.000),rgba(0,0,0,.7) 38%,rgba(0,0,0,.4) 48%,rgba(0,0,0,.14) 58%,transparent 66%);mask-image:linear-gradient(180deg,rgba(0,0,0,0.000) calc(0% + (30% - (0%))*0.000),rgba(0,0,0,0.043) calc(0% + (30% - (0%))*0.125),rgba(0,0,0,0.156) calc(0% + (30% - (0%))*0.250),rgba(0,0,0,0.316) calc(0% + (30% - (0%))*0.375),rgba(0,0,0,0.500) calc(0% + (30% - (0%))*0.500),rgba(0,0,0,0.684) calc(0% + (30% - (0%))*0.625),rgba(0,0,0,0.844) calc(0% + (30% - (0%))*0.750),rgba(0,0,0,0.957) calc(0% + (30% - (0%))*0.875),rgba(0,0,0,1.000) calc(0% + (30% - (0%))*1.000),rgba(0,0,0,.7) 38%,rgba(0,0,0,.4) 48%,rgba(0,0,0,.14) 58%,transparent 66%)}
-  .hxe-sky__mist{top:calc(var(--h) - 160px);height:calc(var(--hxe-pl)*.85 + 160px)}
+  .hxe-sky__mist{top:calc(var(--h) - 160px);height:min(calc(var(--hxe-pl)*.85 + 160px),920px)}
   .hxe-sky__mist i:nth-child(1){opacity:.14}
   .hxe-sky__mist i:nth-child(2){opacity:.3}
   .hxe-sky__mist i:nth-child(3){opacity:.22}
 }
 @media (min-width: 761px) and (max-aspect-ratio: 11/10){
-  .hxe{--hxe-up:150px;--hxe-pl:610px;--hxe-dl:1050px;--hxe-art:min(64cqw,48svh);--hxe-fwq:max(150cqw,min(165cqw,124svh));--hxe-bt:min(17.5cqw,13.1svh);--hxe-cw:min(640px,calc(100cqw - 2*var(--hxe-pad)))}
+  .hxe{--hxe-up:150px;--hxe-pl:1900px;--hxe-dl:1050px;--hxe-art:min(64cqw,48svh);--hxe-fwq:max(150cqw,min(165cqw,124svh));--hxe-bt:min(17.5cqw,13.1svh);--hxe-cw:min(640px,calc(100cqw - 2*var(--hxe-pad)))}
 }
 /* short phones: a smaller building so the buttons still reach the first screen */
 @media (max-width: 760px) and (max-height: 700px){
@@ -218,7 +248,7 @@ body.hxe-page .band--deals .kicker::before{content:none}
 </head>
 <body class="is-lab is-home hxe-page">
 <a class="skip" href="#main">Skip to content</a>
-<div class="labbar" role="navigation" aria-label="Design options"><span class="labbar__k">DESIGN OPTIONS</span><a href="/elevateddreams-redesign/lab/">All options</a><a href="/elevateddreams-redesign/lab/hero-a/">Hero A</a><a href="/elevateddreams-redesign/lab/hero-b/">Hero B</a><a href="/elevateddreams-redesign/lab/hero-c/">Hero C</a><a href="/elevateddreams-redesign/lab/hero-d/">Hero D</a><a href="/elevateddreams-redesign/lab/hero-e/" aria-current="page">Hero E</a><a href="/elevateddreams-redesign/lab/splash-1/">Splash 1</a><a href="/elevateddreams-redesign/lab/splash-2/">Splash 2</a><a href="/elevateddreams-redesign/lab/splash-3/">Splash 3</a><a href="/elevateddreams-redesign/lab/fonts/">Fonts</a></div>
+<div class="labbar" role="navigation" aria-label="Design options"><span class="labbar__k">DESIGN OPTIONS</span><a href="/elevateddreams-redesign/lab/">All options</a><a href="/elevateddreams-redesign/lab/hero-a/">Hero A</a><a href="/elevateddreams-redesign/lab/hero-b/">Hero B</a><a href="/elevateddreams-redesign/lab/hero-c/">Hero C</a><a href="/elevateddreams-redesign/lab/hero-d/">Hero D</a><a href="/elevateddreams-redesign/lab/hero-e/" aria-current="page">Hero E</a><a href="/elevateddreams-redesign/lab/splash-1/">Splash 1</a><a href="/elevateddreams-redesign/lab/splash-2/">Splash 2</a><a href="/elevateddreams-redesign/lab/splash-3/">Splash 3</a><a href="/elevateddreams-redesign/lab/fonts/">Fonts</a><a href="/elevateddreams-redesign/lab/cards/">Sign cards</a></div>
 <div class="sky" aria-hidden="true">
   <div class="sky__street"></div>
   <div class="sky__stars"></div>
@@ -315,17 +345,18 @@ body.hxe-page .band--deals .kicker::before{content:none}
   <div class="hxe-sky" aria-hidden="true">
     <div class="hxe-sky__top"></div>
     <div class="hxe-sky__warm"></div>
-    <div class="hxe-sky__clouds"><div class="hxe-sky__cl"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-sky__img hxe-sky__img--dusk" alt="" width="2400" height="1340" decoding="async" loading="lazy" data-ai="generated"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-sky__img hxe-sky__img--night" alt="" width="2400" height="1340" decoding="async" loading="lazy" data-ai="generated"></div></div>
+    <div class="hxe-sky__clouds"><div class="hxe-sky__cl"><img src="/elevateddreams-redesign/assets/img/gen/hero-sky-dusk-960.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-sky-dusk-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-sky-dusk-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-sky__img hxe-sky__img--dusk" alt="" width="1600" height="893" decoding="async" loading="lazy" data-ai="generated"><img src="/elevateddreams-redesign/assets/img/gen/hero-sky-night-960.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-sky-night-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-sky-night-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-sky__img hxe-sky__img--night" alt="" width="1600" height="893" decoding="async" loading="lazy" data-ai="generated"></div></div>
     <div class="hxe-sky__mist"><i></i><i></i><i></i></div>
     <div class="hxe-sky__stars"><i></i><i></i></div>
+    <i class="hxe-sky__end"></i>
   </div>
   <div class="hxe-stage" aria-hidden="true">
-    <div class="hxe-f hxe-sk"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-plate hxe-pl--gold" alt="" width="2400" height="1340" decoding="async" fetchpriority="high" data-ai="generated"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-plate hxe-pl--dusk" alt="" width="2400" height="1340" decoding="async" loading="lazy" data-ai="generated"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-plate hxe-pl--night" alt="" width="2400" height="1340" decoding="async" loading="lazy" data-ai="generated"></div>
+    <div class="hxe-f hxe-sk"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-plate hxe-pl--gold" alt="" width="2400" height="1340" decoding="async" fetchpriority="high" data-ai="generated"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-dusk-960.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-dusk-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-dusk-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-plate hxe-pl--dusk" alt="" width="1600" height="893" decoding="async" loading="lazy" data-ai="generated"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-night-960.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-night-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-night-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-plate hxe-pl--night" alt="" width="1600" height="893" decoding="async" loading="lazy" data-ai="generated"></div>
     <div class="hxe-nightsky"></div>
     <div class="hxe-skygrade"></div>
     <div class="hxe-words"><p class="hxe-wbox"><span class="hxe-w hxe-w1"><span class="hxe-wi">ELEVATED</span></span><span class="hxe-w hxe-w2"><span class="hxe-wi">DREAMS</span></span></p></div>
-    <div class="hxe-f hxe-bld"><div class="hxe-bob"><div class="hxe-lift"><span class="hxe-back"><img src="/elevateddreams-redesign/assets/img/gen/hero-golden-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-golden-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-golden-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-golden-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-backimg" alt="" width="2400" height="1340" decoding="async" fetchpriority="high" data-ai="generated"></span><img src="/elevateddreams-redesign/assets/img/gen/hero-building-b-900.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-building-b-1381.webp 1381w, /elevateddreams-redesign/assets/img/gen/hero-building-b-900.webp 900w" sizes="(max-width: 760px) 106vw, 54vw" class="hxe-bimg" alt="" width="1381" height="791" decoding="async" fetchpriority="high" data-ai="generated"><span class="hxe-night"><span class="hxe-back"><img src="/elevateddreams-redesign/assets/img/gen/hero-night-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-night-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-night-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-night-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-backimg" alt="" width="2400" height="1340" decoding="async" loading="lazy" data-ai="generated"></span><span class="hxe-nbld"><img src="/elevateddreams-redesign/assets/img/gen/hero-night-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-night-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-night-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-night-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-backimg" alt="" width="2400" height="1340" decoding="async" loading="lazy" data-ai="generated"></span></span></div></div><div class="hxe-wisp"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-plate hxe-pl--gold" alt="" width="2400" height="1340" decoding="async" loading="lazy" data-ai="generated"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-plate hxe-pl--night" alt="" width="2400" height="1340" decoding="async" loading="lazy" data-ai="generated"></div></div>
-    <div class="hxe-f hxe-bank"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-plate hxe-pl--gold" alt="" width="2400" height="1340" decoding="async" fetchpriority="high" data-ai="generated"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-plate hxe-pl--night" alt="" width="2400" height="1340" decoding="async" loading="lazy" data-ai="generated"></div>
+    <div class="hxe-f hxe-bld"><div class="hxe-bob"><div class="hxe-lift"><span class="hxe-back"><img src="/elevateddreams-redesign/assets/img/gen/hero-golden-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-golden-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-golden-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-golden-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-backimg" alt="" width="2400" height="1340" decoding="async" fetchpriority="high" data-ai="generated"></span><img src="/elevateddreams-redesign/assets/img/gen/hero-building-b-900.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-building-b-1381.webp 1381w, /elevateddreams-redesign/assets/img/gen/hero-building-b-900.webp 900w" sizes="(max-width: 760px) 106vw, 54vw" class="hxe-bimg" alt="" width="1381" height="791" decoding="async" fetchpriority="high" data-ai="generated"><span class="hxe-night"><span class="hxe-back"><img src="/elevateddreams-redesign/assets/img/gen/hero-night-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-night-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-night-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-night-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-backimg" alt="" width="2400" height="1340" decoding="async" loading="lazy" data-ai="generated"></span><span class="hxe-nbld"><img src="/elevateddreams-redesign/assets/img/gen/hero-night-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-night-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-night-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-night-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-backimg" alt="" width="2400" height="1340" decoding="async" loading="lazy" data-ai="generated"></span></span></div></div><div class="hxe-wisp"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-plate hxe-pl--gold" alt="" width="2400" height="1340" decoding="async" loading="lazy" data-ai="generated"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-night-960.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-night-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-night-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-plate hxe-pl--night" alt="" width="1600" height="893" decoding="async" loading="lazy" data-ai="generated"></div></div>
+    <div class="hxe-f hxe-bank"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-plate hxe-pl--gold" alt="" width="2400" height="1340" decoding="async" fetchpriority="high" data-ai="generated"><img src="/elevateddreams-redesign/assets/img/gen/hero-plate-night-960.webp" srcset="/elevateddreams-redesign/assets/img/gen/hero-plate-night-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-night-960.webp 960w" sizes="(max-width: 760px) 210vw, 106vw" class="hxe-plate hxe-pl--night" alt="" width="1600" height="893" decoding="async" loading="lazy" data-ai="generated"></div>
     <div class="hxe-fog"><i class="hxe-fw"></i><i class="hxe-fw"></i><i class="hxe-fv"></i><b class="hxe-haze"></b></div>
   </div>
   <div class="hxe-in">
@@ -338,6 +369,67 @@ body.hxe-page .band--deals .kicker::before{content:none}
     </div>
   </div>
 </section>
+<section class="band band--cats" aria-labelledby="cats-t"><div class="band__in"><header class="shead "><p class="kicker ">SHOP BY CATEGORY</p><h2 class="shead__t" id="cats-t" data-words>Shop Our Menu</h2><p class="shead__lede">Browse live inventory across all categories through our secure online storefront.</p></header>
+<ul class="cats" role="list">
+  <li class="cat" data-reveal style="--i:0">
+    <a class="cat__a" href="https://elevateddreamscannabisny.com/locations/newburgh/menu" target="_blank" rel="noopener" data-shop data-tilt data-cat="flower">
+      <span class="cat__stage"><span class="lev " style="--d:0s" data-lift><img src="/elevateddreams-redesign/assets/img/gen/obj-flower.webp" class="lev__obj" alt="" width="575" height="900" decoding="async" loading="lazy" data-ai="generated"><span class="lev__shadow" aria-hidden="true"></span></span><span class="cat__mist" aria-hidden="true"></span></span>
+      <span class="cat__name">Flower</span>
+      <span class="cat__go">Shop Now <svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+    </a>
+    
+  </li><li class="cat" data-reveal style="--i:1">
+    <a class="cat__a" href="https://elevateddreamscannabisny.com/locations/newburgh/menu" target="_blank" rel="noopener" data-shop data-tilt data-cat="pre-rolls">
+      <span class="cat__stage"><span class="lev " style="--d:0.7s" data-lift><img src="/elevateddreams-redesign/assets/img/product/preroll.webp" class="lev__obj" alt="" width="548" height="554" decoding="async" loading="lazy"><span class="lev__shadow" aria-hidden="true"></span></span><span class="cat__mist" aria-hidden="true"></span></span>
+      <span class="cat__name">Pre-Rolls</span>
+      <span class="cat__go">Shop Now <svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+    </a>
+    
+  </li><li class="cat" data-reveal style="--i:2">
+    <a class="cat__a" href="https://elevateddreamscannabisny.com/locations/newburgh/menu" target="_blank" rel="noopener" data-shop data-tilt data-cat="edibles">
+      <span class="cat__stage"><span class="lev " style="--d:1.4s" data-lift><img src="/elevateddreams-redesign/assets/img/gen/obj-edibles.webp" class="lev__obj" alt="" width="898" height="900" decoding="async" loading="lazy" data-ai="generated"><span class="lev__shadow" aria-hidden="true"></span></span><span class="cat__mist" aria-hidden="true"></span></span>
+      <span class="cat__name">Edibles</span>
+      <span class="cat__go">Shop Now <svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+    </a>
+    
+  </li><li class="cat" data-reveal style="--i:3">
+    <a class="cat__a" href="https://elevateddreamscannabisny.com/locations/newburgh/menu" target="_blank" rel="noopener" data-shop data-tilt data-cat="vapes">
+      <span class="cat__stage"><span class="lev " style="--d:2.0999999999999996s" data-lift><img src="/elevateddreams-redesign/assets/img/gen/obj-vape.webp" class="lev__obj" alt="" width="162" height="900" decoding="async" loading="lazy" data-ai="generated"><span class="lev__shadow" aria-hidden="true"></span></span><span class="cat__mist" aria-hidden="true"></span></span>
+      <span class="cat__name">Vapes</span>
+      <span class="cat__go">Shop Now <svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+    </a>
+    
+  </li><li class="cat" data-reveal style="--i:4">
+    <a class="cat__a" href="https://elevateddreamscannabisny.com/locations/newburgh/menu" target="_blank" rel="noopener" data-shop data-tilt data-cat="concentrates">
+      <span class="cat__stage"><span class="lev " style="--d:0s" data-lift><img src="/elevateddreams-redesign/assets/img/gen/obj-concentrate.webp" class="lev__obj" alt="" width="682" height="649" decoding="async" loading="lazy" data-ai="generated"><span class="lev__shadow" aria-hidden="true"></span></span><span class="cat__mist" aria-hidden="true"></span></span>
+      <span class="cat__name">Concentrates</span>
+      <span class="cat__go">Shop Now <svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+    </a>
+    
+  </li><li class="cat" data-reveal style="--i:5">
+    <a class="cat__a" href="https://elevateddreamscannabisny.com/locations/newburgh/menu" target="_blank" rel="noopener" data-shop data-tilt data-cat="cbd">
+      <span class="cat__stage"><span class="lev " style="--d:0.7s" data-lift><img src="/elevateddreams-redesign/assets/img/gen/obj-cbd.webp" class="lev__obj" alt="" width="316" height="900" decoding="async" loading="lazy" data-ai="generated"><span class="lev__shadow" aria-hidden="true"></span></span><span class="cat__mist" aria-hidden="true"></span></span>
+      <span class="cat__name">CBD</span>
+      <span class="cat__go">Shop Now <svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+    </a>
+    
+  </li><li class="cat" data-reveal style="--i:6">
+    <a class="cat__a" href="https://elevateddreamscannabisny.com/locations/newburgh/menu" target="_blank" rel="noopener" data-shop data-tilt data-cat="accessories">
+      <span class="cat__stage"><span class="lev " style="--d:1.4s" data-lift><img src="/elevateddreams-redesign/assets/img/gen/obj-accessory.webp" class="lev__obj" alt="" width="693" height="627" decoding="async" loading="lazy" data-ai="generated"><span class="lev__shadow" aria-hidden="true"></span></span><span class="cat__mist" aria-hidden="true"></span></span>
+      <span class="cat__name">Accessories</span>
+      <span class="cat__go">Shop Now <svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+    </a>
+    
+  </li>
+  <li class="cat cat--all" data-reveal style="--i:7">
+    <a class="cat__a" href="https://elevateddreamscannabisny.com/locations/newburgh/menu" target="_blank" rel="noopener" data-shop data-tilt>
+      <span class="cat__stage"><span class="cat__allmark" aria-hidden="true">ALL</span></span>
+      <span class="cat__name">All Products</span>
+      <span class="cat__go">View Full Menu <svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+    </a>
+  </li>
+</ul>
+<div class="ledge" aria-hidden="true"></div></div></section>
 <section class="band band--brick band--placards band--placards-top" aria-label="License, warnings and HOPEline"><div class="band__in"><div class="placards" data-reveal-group>
   <article class="placard placard--plaque" data-reveal data-tilt>
     <span class="screw screw--tl"></span><span class="screw screw--tr"></span><span class="screw screw--bl"></span><span class="screw screw--br"></span>
@@ -441,71 +533,71 @@ body.hxe-page .band--deals .kicker::before{content:none}
 
 <script>(function(){
   var hero=document.querySelector('[data-hxe]');if(!hero)return;
-  var W=window,D=document,root=D.documentElement;
-  var pl=D.querySelector('.band--placards-top'),dl=D.querySelector('.band--deals');
-  var hdr=D.querySelector('[data-hdr]'),upY=0;
-  var H=hero.offsetHeight||1,PL=pl?pl.offsetHeight:0,onMeasure=null;
+  var W=window,D=document,root=D.documentElement,dl=D.querySelector('.band--deals'),pl=D.querySelector('.band--placards-top'),hdr=D.querySelector('[data-hdr]'),end=hero.querySelector('.hxe-sky__end');
+  var bands=[],n=hero.nextElementSibling;while(n){bands.push(n);if(n===dl)break;n=n.nextElementSibling;}
+  var upY=0,H=hero.offsetHeight||1,PL=0,was={},onMeasure=null;
+  function put(k,v){if(was[k]!==v){was[k]=v;hero.style.setProperty(k,v);}}
   /* the header's glass waits until the header has reached the top of the window */
   function stuck(){if(hdr)hdr.classList.toggle('hxe-stuck',(W.pageYOffset||0)>=upY-6);}
-  /* the one sky spans page top to the deals band's bottom: measure where those are (layout, so it runs under reduced motion too) */
+  /* the sky spans page top to the deals band's bottom, and the scroll animations run over the hero's height: measure those (layout only, so it also runs under reduced motion) */
   function measure(){
-    var top=hero.getBoundingClientRect().top+(W.pageYOffset||0);
-    H=hero.offsetHeight||1;PL=pl?pl.offsetHeight:0;upY=Math.max(0,Math.round(top));
-    hero.style.setProperty('--hxe-up',upY+'px');
-    if(pl)hero.style.setProperty('--hxe-pl',PL+'px');
-    if(dl)hero.style.setProperty('--hxe-dl',dl.offsetHeight+'px');
-    stuck();
-    if(onMeasure)onMeasure();
+    var y=W.pageYOffset||0,r=hero.getBoundingClientRect(),top=r.top+y,dt=dl?dl.getBoundingClientRect().top+y:top+r.height;
+    H=Math.max(1,Math.round(r.height));PL=Math.max(0,Math.round(dt-top-r.height));upY=Math.max(0,Math.round(top));
+    put('--hxe-up',upY+'px');put('--hxe-h',H+'px');put('--hxe-pl',PL+'px');if(dl)put('--hxe-dl',dl.offsetHeight+'px');
+    stuck();if(onMeasure)onMeasure();
   }
   measure();
   W.addEventListener('scroll',stuck,{passive:true});
-  if('ResizeObserver' in W){var ro=new ResizeObserver(measure);[hero,pl,dl].forEach(function(e){if(e)ro.observe(e);});}
+  if('ResizeObserver' in W){var ro=new ResizeObserver(measure);[hero].concat(bands).forEach(function(e){ro.observe(e);});}
   else W.addEventListener('resize',measure,{passive:true});
   W.addEventListener('load',measure);
+  /* while this sky fills the window the page's own sky and fog canvas have nothing to show: they stop */
+  if(end&&'IntersectionObserver' in W)new IntersectionObserver(function(en){var e=en[en.length-1],c=!e.isIntersecting&&e.boundingClientRect.top>0;if(root.classList.contains('sky-covered')!==c){root.classList.toggle('sky-covered',c);W.dispatchEvent(new Event('ed:skycover'));}},{rootMargin:'0px 0px 320px 0px'}).observe(end);
+  var vis={hero:true};
+  if('IntersectionObserver' in W){
+    var seen=new Map(),io=new IntersectionObserver(function(en){
+      en.forEach(function(e){seen.set(e.target,e.isIntersecting);});
+      vis.hero=seen.get(hero)!==false;
+      var any=false;seen.forEach(function(v){any=any||v;});
+      hero.classList.toggle('hxe-off',!vis.hero);
+      hero.classList.toggle('hxe-ploff',!pl||!seen.get(pl));
+      hero.classList.toggle('hxe-skyoff',!any);
+      if(onMeasure)onMeasure();
+    },{rootMargin:'160px 0px'});
+    [hero].concat(bands).forEach(function(e){io.observe(e);});
+  }
   if(W.matchMedia('(prefers-reduced-motion: reduce)').matches||root.classList.contains('rm'))return;
-  var FINE=W.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var FINE=W.matchMedia('(hover: hover) and (pointer: fine)').matches,SDA=!!(W.CSS&&CSS.supports&&CSS.supports('animation-timeline: scroll()'));
   var q=function(s){return hero.querySelector(s);};
   var L={sky:q('.hxe-sk'),words:q('.hxe-words'),bld:q('.hxe-bld'),bank:q('.hxe-bank'),fog:q('.hxe-fog'),dusk:q('.hxe-sky__cl')};
-  /* depth per layer: [cursor x px, cursor y px, scroll factor]; negative = rises faster than the page (lift), positive = sinks */
+  /* depth per layer: [cursor x px, cursor y px, scroll factor]; negative = rises faster than the page, positive = sinks */
   var DP={sky:[5,3,.16],words:[9,5,-.08],bld:[14,8,-.24],bank:[18,10,.14],fog:[22,12,.08],dusk:[4,2,.1]};
-  var w1=q('.hxe-w1'),w2=q('.hxe-w2');
-  var X={dusk:q('.hxe-sk .hxe-pl--dusk'),night:q('.hxe-sk .hxe-pl--night'),nsky:q('.hxe-nightsky'),nbld:q('.hxe-night'),nbank:q('.hxe-bank .hxe-pl--night'),nwisp:q('.hxe-wisp .hxe-pl--night'),warm:q('.hxe-sky__warm'),haze:q('.hxe-haze')};
-  var fw=hero.querySelectorAll('.hxe-fw'),fv=q('.hxe-fv');
-  var tx=0,ty=0,cx=0,cy=0,raf=0,vis={hero:true,pl:false,dl:false};
+  if(FINE){
+    var tx=0,ty=0,tm=0;
+    var push=function(){tm=0;for(var k in DP)if(L[k])L[k].style.transform='translate3d('+(-tx*DP[k][0]).toFixed(1)+'px,'+(-ty*DP[k][1]).toFixed(1)+'px,0)';};
+    var soon=function(){if(!tm)tm=W.setTimeout(push,48);};
+    W.addEventListener('pointermove',function(e){if(e.pointerType==='touch'||!vis.hero)return;tx=e.clientX/W.innerWidth*2-1;ty=e.clientY/W.innerHeight*2-1;soon();},{passive:true});
+    D.addEventListener('mouseleave',function(){tx=0;ty=0;soon();});
+  }
+  if(SDA)return;
+  /* no scroll timelines: the same motion from one rAF, and on touch screens only the crossfades (a scripted lift would trail the finger) */
+  var w1=q('.hxe-w1'),w2=q('.hxe-w2'),X={dusk:q('.hxe-sk .hxe-pl--dusk'),night:q('.hxe-sk .hxe-pl--night'),nsky:q('.hxe-nightsky'),nbld:q('.hxe-night'),nbank:q('.hxe-bank .hxe-pl--night'),nwisp:q('.hxe-wisp .hxe-pl--night'),warm:q('.hxe-sky__warm'),haze:q('.hxe-haze')};
+  var fw=hero.querySelectorAll('.hxe-fw'),fv=q('.hxe-fv'),raf=0;
   function ss(a,b,x){x=(x-a)/(b-a);x=x<0?0:x>1?1:x;return x*x*(3-2*x);}
   function op(el,v){if(el)el.style.opacity=v.toFixed(3);}
-  function tf(el,x,y){if(el)el.style.transform='translate3d('+x.toFixed(2)+'px,'+y.toFixed(2)+'px,0)';}
+  function ty2(el,y){if(el&&FINE)el.style.translate='0 '+y.toFixed(1)+'px';}
   function frame(){
-    raf=0;cx+=(tx-cx)*.075;cy+=(ty-cy)*.075;
-    var y=W.pageYOffset||0,s=Math.max(0,Math.min(y,H+PL)),sh=Math.min(s,H),p=sh/H;
-    for(var k in DP)tf(L[k],-cx*DP[k][0],-cy*DP[k][1]+(k==='dusk'?s:sh)*DP[k][2]);
-    tf(w1,0,-sh*.05);tf(w2,0,sh*.04);
-    /* time passes with the scroll: golden hour, dusk, night */
+    raf=0;var y=W.pageYOffset||0,s=Math.max(0,Math.min(y,H+Math.min(PL,600))),sh=Math.min(s,H),p=sh/H;
+    for(var k in DP)ty2(L[k],(k==='dusk'?s:sh)*DP[k][2]);
+    ty2(w1,-sh*.05);ty2(w2,sh*.04);
     var c=ss(.04,.85,p);
     op(X.dusk,ss(.03,.5,p));op(X.night,ss(.32,.92,p));op(X.nsky,ss(.38,.95,p)*.9);
     op(X.nbld,ss(.1,.56,p));op(X.nbank,ss(.1,.82,p));op(X.nwisp,ss(.1,.82,p));op(X.warm,1-c*.82);op(X.haze,ss(.25,1,p)*.75);
     for(var i=0;i<fw.length;i++)op(fw[i],(i?.48:.6)*(1-c*.85));
     op(fv,c*.62);
-    if(Math.abs(tx-cx)>.002||Math.abs(ty-cy)>.002)raf=W.requestAnimationFrame(frame);
   }
-  function kick(){if(!raf&&(vis.hero||vis.pl))raf=W.requestAnimationFrame(frame);}
-  onMeasure=kick;
-  W.addEventListener('scroll',kick,{passive:true});
-  if(FINE){
-    W.addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;tx=e.clientX/W.innerWidth*2-1;ty=e.clientY/W.innerHeight*2-1;kick();},{passive:true});
-    D.addEventListener('mouseleave',function(){tx=0;ty=0;kick();});
-  }
-  if('IntersectionObserver' in W){
-    var io=new IntersectionObserver(function(en){
-      en.forEach(function(e){vis[e.target===hero?'hero':e.target===pl?'pl':'dl']=e.isIntersecting;});
-      hero.classList.toggle('hxe-off',!vis.hero);
-      hero.classList.toggle('hxe-ploff',!vis.pl);
-      hero.classList.toggle('hxe-skyoff',!(vis.hero||vis.pl||vis.dl));
-      kick();
-    },{rootMargin:'160px 0px'});
-    [hero,pl,dl].forEach(function(e){if(e)io.observe(e);});
-  }
-  kick();
+  function kick(){if(!raf&&vis.hero)raf=W.requestAnimationFrame(frame);}
+  onMeasure=kick;W.addEventListener('scroll',kick,{passive:true});kick();
 })();</script>
 </body>
 </html>

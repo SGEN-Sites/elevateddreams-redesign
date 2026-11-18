@@ -194,21 +194,24 @@
   const climbRent = climb ? $('[data-climb-rent]', climb) : null;
   const sky = $('.sky__clouds');
   if (sky) { const img = $('.ftr__sky img'); if (img) sky.style.backgroundImage = `url("${img.currentSrc || img.src}")`; }
-  let ticking = false, lastStep = -1, moveT;
+  let ticking = false, lastStep = -1, moveT, lastV = '', lastZ = '', thirteenIn = !('IntersectionObserver' in W);
+  /* where the browser has scroll timelines the sky and the altimeter bar move by CSS alone (fix.css); otherwise the value goes only to the two elements that read it */
+  const SDA = !!(W.CSS && CSS.supports && CSS.supports('animation-timeline: scroll()')), skyEl = $('.sky');
   const ZONES = [[0.06, 'STREET LEVEL'], [0.28, 'ROOFTOPS'], [0.52, 'ABOVE THE SKYLINE'], [0.78, 'NIGHT SKY'], [0.965, 'ABOVE THE CLOUDS']];
   function update() {
     ticking = false;
     const y = W.scrollY, vh = W.innerHeight, max = Math.max(1, root.scrollHeight - vh), p = clamp(y / max);
-    root.style.setProperty('--alt', p.toFixed(4));
+    if (!SDA) { const a = p.toFixed(4); if (skyEl) skyEl.style.setProperty('--alt', a); if (alt) alt.style.setProperty('--alt', a); }
     if (alt) {
       const cloud9 = p > 0.965;
       alt.classList.toggle('is-cloud9', cloud9);
-      altV.textContent = cloud9 ? 'ELEVATED' : (Math.round(p * 900) * 10).toLocaleString('en-US');
-      altZ.textContent = cloud9 ? 'YOU MADE IT' : (ZONES.find((z) => p < z[0]) || ZONES[4])[1];
+      const v = cloud9 ? 'ELEVATED' : String(Math.round(p * 900) * 10).replace(/\B(?=(\d{3})+$)/g, ','), z = cloud9 ? 'YOU MADE IT' : (ZONES.find((n) => p < n[0]) || ZONES[4])[1];
+      if (v !== lastV) { altV.textContent = v; lastV = v; }
+      if (z !== lastZ) { altZ.textContent = z; lastZ = z; }
     }
     if (hdr) hdr.classList.toggle('is-solid', y > 24);
     evalBar();
-    if (thirteen) { const r = thirteen.getBoundingClientRect(); thirteen.style.setProperty('--fill', clamp((vh - r.top) / (vh * 0.9 + r.height * 0.4)).toFixed(3)); }
+    if (thirteen && thirteenIn) { const r = thirteen.getBoundingClientRect(); thirteen.style.setProperty('--fill', clamp((vh - r.top) / (vh * 0.9 + r.height * 0.4)).toFixed(3)); }
     if (climb && climbSteps.length && root.classList.contains('js') && !RM) {
       const r = climb.getBoundingClientRect(); const cp = clamp(-r.top / Math.max(1, r.height - vh));
       root.classList.toggle('in-climb', r.top < vh * 0.5 && r.bottom > vh * 0.5);
@@ -227,6 +230,7 @@
   const onScroll = () => { if (!ticking) { ticking = true; W.requestAnimationFrame(update); } };
   W.addEventListener('scroll', onScroll, { passive: true });
   W.addEventListener('resize', onScroll, { passive: true });
+  if (thirteen && 'IntersectionObserver' in W) new IntersectionObserver((en) => { thirteenIn = en[0].isIntersecting; if (thirteenIn) onScroll(); }, { rootMargin: '140px 0px' }).observe(thirteen);
   update();
 
   /* ---------------- pointer: proximity levitation, 3D tilt, magnetic buttons (fine pointers only) ---------------- */
