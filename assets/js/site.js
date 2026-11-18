@@ -195,7 +195,7 @@
   const sky = $('.sky__clouds');
   if (sky) { const img = $('.ftr__sky img'); if (img) sky.style.backgroundImage = `url("${img.currentSrc || img.src}")`; }
   let ticking = false, lastStep = -1, moveT;
-  const ZONES = [[0.06, 'STREET LEVEL'], [0.28, 'ROOFTOPS'], [0.52, 'ABOVE THE SKYLINE'], [0.78, 'NIGHT SKY'], [0.965, 'CLOUD LAYER']];
+  const ZONES = [[0.06, 'STREET LEVEL'], [0.28, 'ROOFTOPS'], [0.52, 'ABOVE THE SKYLINE'], [0.78, 'NIGHT SKY'], [0.965, 'ABOVE THE CLOUDS']];
   function update() {
     ticking = false;
     const y = W.scrollY, vh = W.innerHeight, max = Math.max(1, root.scrollHeight - vh), p = clamp(y / max);
@@ -203,7 +203,7 @@
     if (alt) {
       const cloud9 = p > 0.965;
       alt.classList.toggle('is-cloud9', cloud9);
-      altV.textContent = cloud9 ? 'CLOUD 9' : (Math.round(p * 900) * 10).toLocaleString('en-US');
+      altV.textContent = cloud9 ? 'ELEVATED' : (Math.round(p * 900) * 10).toLocaleString('en-US');
       altZ.textContent = cloud9 ? 'YOU MADE IT' : (ZONES.find((z) => p < z[0]) || ZONES[4])[1];
     }
     if (hdr) hdr.classList.toggle('is-solid', y > 24);
