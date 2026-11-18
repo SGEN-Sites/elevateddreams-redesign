@@ -18,7 +18,7 @@ The preview is `noindex`; it is a pitch, not the client's official website.
 - **Eyebrows carry no dashes** (owner rule): the short line drawn before every eyebrow is gone, and the hero eyebrow
   reads PREMIUM LICENSED DISPENSARY · NEWBURGH, NY (the em dash became the middle dot the site already uses).
 - **Two more hero options with seamless transitions** into the bars above and the sections below: D "Open sky" and
-  E "One sky, golden hour to night", at `/lab/hero-d/` and `/lab/hero-e/` once built.
+  E "One sky, golden hour to night", at `/lab/hero-d/` and `/lab/hero-e/`.
 
 ## Round 3 (owner review, 2026-11-18)
 
