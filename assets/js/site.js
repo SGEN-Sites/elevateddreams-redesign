@@ -48,16 +48,14 @@
   }
   paintStatus(); W.setInterval(paintStatus, 60000);
 
-  /* ---------------- elevator loader (once per session, any input skips it) ---------------- */
-  const lift = $('[data-lift-loader]');
-  if (lift && root.classList.contains('lift-on')) {
-    ss.set('ed.lift', '1');
-    const floor = $('[data-lift-floor]', lift);
-    const seq = ['G', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'ED'];
-    let i = 0, done = false;
-    const open = () => { if (done) return; done = true; W.clearInterval(t); floor.textContent = 'ED'; lift.classList.add('is-open'); W.setTimeout(() => { lift.classList.add('is-gone'); root.classList.remove('lift-on'); focusGate(); }, 900); };
-    const t = W.setInterval(() => { floor.textContent = seq[i++]; if (i >= seq.length) open(); }, 68);
-    ['keydown', 'pointerdown', 'wheel', 'touchstart'].forEach((ev) => W.addEventListener(ev, open, { once: true, passive: true }));
+  /* ---------------- smoke loader: the wordmark condenses out of the haze (once per session, any input skips) ---------------- */
+  const mist = $('[data-mist]');
+  if (mist && root.classList.contains('mist-on')) {
+    ss.set('ed.mist', '1');
+    let done = false;
+    const clear = () => { if (done) return; done = true; W.clearTimeout(t); mist.classList.add('is-clearing'); W.setTimeout(() => { mist.classList.add('is-gone'); root.classList.remove('mist-on'); focusGate(); }, 800); };
+    const t = W.setTimeout(clear, 1250);
+    ['keydown', 'pointerdown', 'wheel', 'touchstart'].forEach((ev) => W.addEventListener(ev, clear, { once: true, passive: true }));
   }
 
   /* ---------------- age gate that routes: pickup / delivery / just browsing ---------------- */
@@ -83,7 +81,7 @@
       if (!f.length) return; const first = f[0], last = f[f.length - 1];
       if (e.shiftKey && d.activeElement === first) { e.preventDefault(); last.focus(); } else if (!e.shiftKey && d.activeElement === last) { e.preventDefault(); first.focus(); }
     });
-    if (!root.classList.contains('lift-on')) focusGate();
+    if (!root.classList.contains('mist-on')) focusGate();
   }
 
   /* ---------------- header: solid on scroll, mega panels ---------------- */
@@ -109,7 +107,7 @@
   const q = new URLSearchParams(W.location.search).get('mega');
   if (q) { const it = $(`[data-mega-item="${q}"]`); if (it) setMega(it, true); }
 
-  /* ---------------- drawer: steel elevator doors ---------------- */
+  /* ---------------- drawer: the menu drifts in out of the haze ---------------- */
   const drawer = $('[data-drawer]'), burger = $('[data-burger]');
   function openDrawer() {
     drawer.hidden = false; burger.setAttribute('aria-expanded', 'true'); d.body.style.overflow = 'hidden'; hideBar();
@@ -118,7 +116,7 @@
   }
   function closeDrawer(focusBurger = true) {
     drawer.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); d.body.style.overflow = '';
-    W.setTimeout(() => { drawer.hidden = true; evalBar(); }, RM ? 0 : 640);
+    W.setTimeout(() => { drawer.hidden = true; evalBar(); }, RM ? 0 : 420);
     if (focusBurger) burger.focus();
   }
   if (drawer && burger) {
@@ -127,21 +125,19 @@
     drawer.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
   }
 
-  /* ---------------- page transitions: the doors close, the next floor opens ---------------- */
+  /* ---------------- page transitions: the page drifts into haze and the next one clears out of it.
+     Never blocks: the link navigates at once; the haze is pure decoration (pointer-events: none). ---------------- */
   if (!RM) {
     d.addEventListener('click', (e) => {
       const a = e.target.closest('a[href]');
       if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      if ((a.target && a.target !== '_self') || a.hasAttribute('download') || a.hasAttribute('data-no-doors')) return;
+      if ((a.target && a.target !== '_self') || a.hasAttribute('download')) return;
       const href = a.getAttribute('href') || '';
       if (/^(mailto|tel|sms|javascript):/i.test(href) || href.charAt(0) === '#') return;
       let url; try { url = new URL(a.href, W.location.href); } catch (err) { return; }
       if (url.origin !== W.location.origin) return;
       if (url.pathname === W.location.pathname && url.search === W.location.search) return;
-      e.preventDefault();
-      if (drawer && !drawer.hidden) { drawer.classList.remove('is-open'); }
-      ss.set('ed.door', '1'); root.classList.add('is-leaving');
-      W.setTimeout(() => { W.location.href = url.href; }, 430);
+      ss.set('ed.haze', '1'); root.classList.add('is-leaving');
     });
   }
   W.addEventListener('pageshow', () => { root.classList.remove('is-leaving'); });
