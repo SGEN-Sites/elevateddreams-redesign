@@ -20,7 +20,7 @@ export default function shopPages() {
     body: `${pageHero({ k: shopCopy.hubKicker, title: shopCopy.hubTitle, lede: shopCopy.hubLede, crumbs: [['Home', '/'], ['Shop', '/menu/']], art: 'scene-rooftops', obj: 'obj-vape', cta: `${shopBtn('Shop the live menu')}${btn('Tonight’s deals', '/deals/', { kind: 'ghost' })}` })}
 <section class="band band--cats" aria-labelledby="cats-t"><div class="band__in">${catsGrid({ guides: true }).replace('class="shead__t"', 'class="shead__t" id="cats-t"')}</div></section>
 <section class="band band--feel" aria-labelledby="feel-t"><div class="band__in">${feelingsFacade().replace('class="shead__t"', 'class="shead__t" id="feel-t"')}</div></section>
-<section class="band band--how" aria-labelledby="how-t"><div class="band__in">${sectionHead({ k: 'HOW ORDERING WORKS', t: 'Three floors to the counter', id: 'how-t' })}${howOrder()}
+<section class="band band--how" aria-labelledby="how-t"><div class="band__in">${sectionHead({ k: 'HOW ORDERING WORKS', t: 'Three steps to the counter', id: 'how-t' })}${howOrder()}
   <p class="center">${btn('Order for pickup', '/pickup/', { kind: 'ghost' })} ${btn('Delivery', '/delivery/', { kind: 'ghost' })}</p></div></section>
 <section class="band band--deals" aria-labelledby="deals-t"><div class="band__in">${dealsGrid({ compact: true }).replace('class="shead__t"', 'class="shead__t" id="deals-t"')}</div></section>
 ${finale()}`,
@@ -59,7 +59,7 @@ ${finale()}`,
       <div class="members__cta">${btn('Log In', SHOP.account, { shop: true, kind: 'ghost' })}${btn('Sign Up Free', SHOP.account, { shop: true })}</div></div>
   </div>
 </section>
-<section class="band band--how" aria-labelledby="rhow-t"><div class="band__in">${sectionHead({ k: 'HOW IT WORKS', t: 'Members ride express', id: 'rhow-t' })}
+<section class="band band--how" aria-labelledby="rhow-t"><div class="band__in">${sectionHead({ k: 'HOW IT WORKS', t: 'Join in three steps', id: 'rhow-t' })}
 <ol class="howto" role="list">
   <li class="howto__step glass" data-reveal style="--i:0"><span class="howto__n">1</span><h3>Create a free account</h3><p>Sign up or log in through our secure online storefront.</p></li>
   <li class="howto__step glass" data-reveal style="--i:1"><span class="howto__n">2</span><h3>Shop as a member</h3><p>Access eligible offers, account features, and available rewards.</p></li>

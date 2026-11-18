@@ -25,12 +25,12 @@ void main(){
   vec2 q=vec2(fbm(p+vec2(0.,tt)),fbm(p+vec2(5.2,1.3)-tt*.8));
   vec2 w=vec2(fbm(p+3.4*q+vec2(1.7,9.2)+tt*.6),fbm(p+3.4*q+vec2(8.3,2.8)-tt*.45));
   float f=fbm(p+3.*w+vec2(tt*.5,0.));
-  float dens=smoothstep(.42,1.,f);
+  float dens=smoothstep(.37,1.,f);
   dens*=smoothstep(.04,.38,uv.y)*(1.-smoothstep(.62,.96,uv.y));
   dens*=1.-clamp(part,0.,1.)*.92;
   vec3 col=mix(vec3(.50,.42,.80),vec3(1.,.62,.28),smoothstep(.25,.95,w.x*q.y*1.6));
   col=mix(col,vec3(.93,.85,.62),.18*smoothstep(.5,1.,q.x));
-  gl_FragColor=vec4(col*dens*1.15,dens*.6);
+  gl_FragColor=vec4(col*dens*1.2,dens*.68);
 }`;
   const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return gl.getShaderParameter(s, gl.COMPILE_STATUS) ? s : null; };
   const vs = sh(gl.VERTEX_SHADER, VS), fs = sh(gl.FRAGMENT_SHADER, FS);

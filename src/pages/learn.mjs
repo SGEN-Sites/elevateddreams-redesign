@@ -15,7 +15,7 @@ export default function learnPages({ articles }) {
     bodyClass: 'is-education', schema: [crumbsSchema([['Home', '/'], ['Education', '/education/']])],
     body: `${pageHero({ k: 'EDUCATION', title: esc(education.title), lede: esc(education.lede), crumbs: [['Home', '/'], ['Education', '/education/']], art: 'scene-fire-escape', obj: 'obj-cbd' })}
 <section class="band band--floors" aria-label="Education topics"><div class="band__in floors-wrap">
-  <nav class="floors__nav" aria-label="On this page"><p class="kicker">FLOORS</p><ol>${education.sections.map((s, i) => `<li><a href="#${s.id}"><b>${String(i + 1).padStart(2, '0')}</b> ${esc(s.t)}</a></li>`).join('')}</ol></nav>
+  <nav class="floors__nav" aria-label="On this page"><p class="kicker">TOPICS</p><ol>${education.sections.map((s, i) => `<li><a href="#${s.id}"><b>${String(i + 1).padStart(2, '0')}</b> ${esc(s.t)}</a></li>`).join('')}</ol></nav>
   <div class="floors">${education.sections.map(eduSection).join('')}
     <p class="disclaimer glass">${esc(education.disclaimer)}</p>
   </div>
@@ -80,7 +80,7 @@ ${finale()}`,
     path: '/first-visit/', title: 'Your First Visit | Elevated Dreams LLC, Newburgh NY',
     desc: 'First time at a dispensary? What to bring, what to expect and how to start at Elevated Dreams in Newburgh, NY. 15% off your first visit.',
     bodyClass: 'is-first', schema: [crumbsSchema([['Home', '/'], ['Your first visit', '/first-visit/']]), faqSchema(ff)],
-    body: `${pageHero({ k: home.newKicker, title: 'First time? <em>Take the elevator.</em>', lede: 'Four floors from the front door to the counter. Ask us anything, we’ve heard it all.', crumbs: [['Home', '/'], ['Your first visit', '/first-visit/']], art: 'scene-hero-river', obj: 'obj-preroll', cta: shopBtn('Browse the live menu') })}
+    body: `${pageHero({ k: home.newKicker, title: 'First time? <em>Dream bigger. Start low.</em>', lede: 'Four easy steps from the front door to the counter. Ask us anything, we’ve heard it all.', crumbs: [['Home', '/'], ['Your first visit', '/first-visit/']], art: 'scene-hero-river', obj: 'obj-preroll', cta: shopBtn('Browse the live menu') })}
 <section class="band band--steps" aria-labelledby="steps-t"><div class="band__in split">
   <div>${stepsPanel({ head: false })}</div>
   <div>${kicker(home.newKicker)}<h2 class="shead__t" id="steps-t">${esc(home.newTitle)}</h2>

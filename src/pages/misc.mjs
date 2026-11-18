@@ -80,13 +80,13 @@ export function sitemapPage(allPages) {
   return {
     path: '/sitemap/', title: 'Site Map | Elevated Dreams LLC', desc: 'Every page on the Elevated Dreams website.', bodyClass: 'is-sitemap',
     schema: [crumbsSchema([['Home', '/'], ['Site map', '/sitemap/']])],
-    body: `${pageHero({ k: 'SITE MAP', title: 'Every floor, <em>one directory.</em>', lede: 'All the pages on this site, plus the live online store.', crumbs: [['Home', '/'], ['Site map', '/sitemap/']], art: null, small: true })}
+    body: `${pageHero({ k: 'SITE MAP', title: 'Every page, <em>one directory.</em>', lede: 'All the pages on this site, plus the live online store.', crumbs: [['Home', '/'], ['Site map', '/sitemap/']], art: null, small: true })}
 <section class="band"><div class="band__in"><div class="smap">${groups.map(([g, f]) => `<div class="smap__col glass"><h2>${g}</h2><ul>${allPages.filter(f).map((p) => `<li><a href="${u(p.path)}">${esc(p.title.split(' | ')[0])}</a></li>`).join('')}</ul></div>`).join('')}
 <div class="smap__col glass"><h2>Online store</h2><ul><li><a href="${SHOP.menu}" target="_blank" rel="noopener">Live Menu ↗</a></li><li><a href="${SHOP.discounts}" target="_blank" rel="noopener">Discounts ↗</a></li><li><a href="${SHOP.account}" target="_blank" rel="noopener">Customer Account ↗</a></li></ul></div></div></div></section>`,
   };
 }
 
 export const notFound = () => ({
-  path: '/404.html', file: '404.html', title: 'Wrong floor | Elevated Dreams LLC', desc: 'This page is not on any floor of the building.', bodyClass: 'is-404',
-  body: `${pageHero({ k: 'ERROR 404', title: 'Wrong floor.', lede: 'The doors opened on a floor that does not exist. Take the elevator back down.', art: 'scene-sky', cta: `${btn('Back to the lobby', '/')}${shopBtn('Shop the menu', 'ghost')}` })}`,
+  path: '/404.html', file: '404.html', title: 'Page not found | Elevated Dreams LLC', desc: 'This page drifted off.', bodyClass: 'is-404',
+  body: `${pageHero({ k: 'ERROR 404', title: 'This page <em>drifted off.</em>', lede: 'Whatever was here floated away into the haze. Head back home, or open the menu.', art: 'scene-sky', cta: `${btn('Back home', '/')}${shopBtn('Shop the menu', 'ghost')}` })}`,
 });

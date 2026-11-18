@@ -1,4 +1,4 @@
-// layout.mjs: the page shell. Head, elevator loader, routing age gate, altitude stage, chrome, footer, pickup bar.
+// layout.mjs: the page shell. Head, smoke loader, routing age gate, altitude stage + fog layer, chrome, footer, pickup bar.
 import { esc, u, asset, icon, img, imgSrc, btn, shopAttrs, statusLine } from './html.mjs';
 import { skyline } from './skyline.mjs';
 import { store, SHOP, compliance, nav, categories, feelings, home, areas, STORE_ORIGIN } from '../content/site.mjs';
@@ -33,7 +33,7 @@ function head(p, ctx) {
 <link rel="preload" href="${asset('fonts/barlow-400.woff2')}" as="font" type="font/woff2" crossorigin>
 ${p.preload || ''}
 <link rel="stylesheet" href="${asset('css/site.css')}">
-<script>(function(d,w){var h=d.documentElement,c='js';try{var rm=w.matchMedia('(prefers-reduced-motion: reduce)').matches;if(rm)c+=' rm';var ss=w.sessionStorage,ls=w.localStorage;if(!rm&&!ss.getItem('ed.lift'))c+=' lift-on';if(ls.getItem('ed.age')!=='1')c+=' gate-on';if(!rm&&ss.getItem('ed.door')==='1'){c+=' is-arriving';ss.removeItem('ed.door');}}catch(e){}h.className+=' '+c;w.setTimeout(function(){if(!h.classList.contains('site-ready')){h.classList.remove('gate-on','lift-on','is-arriving');h.classList.add('reveal-all');}},4000);})(document,window);</script>
+<script>(function(d,w){var h=d.documentElement,c='js';try{var rm=w.matchMedia('(prefers-reduced-motion: reduce)').matches;if(rm)c+=' rm';var ss=w.sessionStorage,ls=w.localStorage;if(!rm&&!ss.getItem('ed.mist'))c+=' mist-on';if(ls.getItem('ed.age')!=='1')c+=' gate-on';if(!rm&&ss.getItem('ed.haze')==='1'){c+=' is-arriving';ss.removeItem('ed.haze');}}catch(e){}h.className+=' '+c;w.setTimeout(function(){if(!h.classList.contains('site-ready')){h.classList.remove('gate-on','mist-on','is-arriving');h.classList.add('reveal-all');}},4000);})(document,window);</script>
 ${ld}
 </head>`;
 }
@@ -48,7 +48,7 @@ function megaShop() {
     </div>
     <div class="mega__col">
       <p class="mega__h">Shop by feeling</p>
-      <ul class="mega__list">${feelings.map((f) => `<li><a href="${SHOP.menu}" ${shopAttrs}><b>${f.floor}</b> ${esc(f.label)}${icon('ne')}</a></li>`).join('')}</ul>
+      <ul class="mega__list">${feelings.map((f) => `<li><a href="${SHOP.menu}" ${shopAttrs}><span><b class="mega__dot mega__dot--${f.id}" aria-hidden="true"></b>${esc(f.label)}</span>${icon('ne')}</a></li>`).join('')}</ul>
       <p class="mega__h">Save</p>
       <ul class="mega__list"><li><a href="${u('/deals/')}">Tonight's deals${icon('arrow')}</a></li><li><a href="${SHOP.discounts}" ${shopAttrs}>Live discounts${icon('ne')}</a></li><li><a href="${u('/rewards/')}">Elevated Rewards${icon('arrow')}</a></li></ul>
     </div>
@@ -116,9 +116,9 @@ function header(p) {
   </div>
 </header>
 <div class="drawer" id="drawer" data-drawer hidden>
-  <div class="drawer__doors" aria-hidden="true"><i></i><i></i></div>
+  <div class="drawer__fog" aria-hidden="true"><i></i><i></i></div>
   <div class="drawer__in">
-    <div class="drawer__top"><span class="drawer__floor" aria-hidden="true"><b>▲</b> MENU</span><button class="drawer__x" type="button" data-drawer-close aria-label="Close menu">${icon('close')}</button></div>
+    <div class="drawer__top"><span class="drawer__floor" aria-hidden="true">MENU</span><button class="drawer__x" type="button" data-drawer-close aria-label="Close menu">${icon('close')}</button></div>
     <ul class="drawer__nav">
       <li><a href="${u('/')}">Home</a></li>
       ${nav.map((n, i) => `<li style="--i:${i + 1}"><a href="${u(n.href)}"${cur(n.href)}>${esc(n.label)}</a></li>`).join('')}
@@ -164,6 +164,7 @@ function footer(ctx) {
   return `<footer class="ftr" data-ftr>
   <div class="ftr__sky" aria-hidden="true">${img('scene-sky', { alt: '', sizes: '100vw' })}</div>
   <div class="ftr__cloud9" aria-hidden="true"><span>CLOUD</span><b>9</b></div>
+  <div class="fogband fogband--ftr" aria-hidden="true"><i></i><i></i></div>
   <div class="band__in ftr__in">
     <div class="ftr__brand">
       <a class="logo logo--ftr" href="${u('/')}" aria-label="Elevated Dreams, home">${brandMark('logo')}</a>
@@ -194,7 +195,7 @@ function footer(ctx) {
 
 const gate = () => `<div class="gate" role="dialog" aria-modal="true" aria-labelledby="gate-q" data-gate>
   <div class="gate__panel">
-    <div class="gate__ind" aria-hidden="true"><span>▲</span><b data-gate-floor>21</b></div>
+    <div class="gate__fog" aria-hidden="true"><i></i><i></i></div>
     <p class="gate__brand">${brandMark('logo')}</p>
     <p class="kicker">AGE VERIFICATION</p>
     <div class="gate__step" data-gate-step="age">
@@ -208,9 +209,9 @@ const gate = () => `<div class="gate" role="dialog" aria-modal="true" aria-label
     <div class="gate__step" data-gate-step="route" hidden>
       <h2 class="gate__q" tabindex="-1" data-gate-route-h>Where to tonight?</h2>
       <div class="gate__floors">
-        <a class="gate__floor" href="${SHOP.menu}" ${shopAttrs} data-gate-mode="pickup"><span class="gate__btn">P</span><span><b>Pickup</b><small>Order ahead, collect on South Plank Road</small></span></a>
-        <a class="gate__floor" href="${u('/delivery/')}" data-gate-mode="delivery"><span class="gate__btn">D</span><span><b>Delivery</b><small>Delivery now available</small></span></a>
-        <button class="gate__floor" type="button" data-gate-mode="browse"><span class="gate__btn">B</span><span><b>Just browsing</b><small>Look around the building first</small></span></button>
+        <a class="gate__floor" href="${SHOP.menu}" ${shopAttrs} data-gate-mode="pickup"><span class="gate__btn">${icon('bag')}</span><span><b>Pickup</b><small>Order ahead, collect on South Plank Road</small></span></a>
+        <a class="gate__floor" href="${u('/delivery/')}" data-gate-mode="delivery"><span class="gate__btn">${icon('truck')}</span><span><b>Delivery</b><small>Delivery now available</small></span></a>
+        <button class="gate__floor" type="button" data-gate-mode="browse"><span class="gate__btn">${icon('spark')}</span><span><b>Just browsing</b><small>Drift around first</small></span></button>
       </div>
     </div>
     <div class="gate__step" data-gate-step="no" hidden>
@@ -220,10 +221,9 @@ const gate = () => `<div class="gate" role="dialog" aria-modal="true" aria-label
   </div>
 </div>`;
 
-const loader = () => `<div class="lift" aria-hidden="true" data-lift-loader>
-  <div class="lift__doors"><i></i><i></i></div>
-  <div class="lift__panel"><span class="lift__arrow">▲</span><span class="lift__floor" data-lift-floor>G</span></div>
-  <p class="lift__brand">${brandMark('logo')}</p>
+const loader = () => `<div class="mist" aria-hidden="true" data-mist>
+  <div class="mist__fog mist__fog--a"></div><div class="mist__fog mist__fog--b"></div><div class="mist__fog mist__fog--c"></div>
+  <p class="mist__brand">${brandMark('logo')}</p>
 </div>`;
 
 const sky = () => `<div class="sky" aria-hidden="true">
@@ -233,7 +233,8 @@ const sky = () => `<div class="sky" aria-hidden="true">
   <div class="sky__city sky__city--far">${skyline({ seed: 21, windows: true })}</div>
   <div class="sky__city sky__city--near">${skyline({ seed: 7, windows: true })}</div>
   <div class="sky__clouds"></div>
-</div>`;
+</div>
+<canvas class="fog" data-fog aria-hidden="true"></canvas>`;
 
 const pbar = () => `<aside class="pbar" data-pbar hidden aria-label="Order ahead">
   <div class="pbar__in">
@@ -268,9 +269,10 @@ ${p.noPlacards ? '' : `<section class="band band--brick band--placards" aria-lab
 ${footer(ctx)}
 ${pbar()}
 ${altimeter()}
-<div class="doors" aria-hidden="true"><i></i><i></i></div>
+<div class="haze" aria-hidden="true"><i></i><i></i></div>
 <dialog class="lb" data-lb aria-label="Photo"><button class="lb__x" type="button" data-lb-close aria-label="Close photo">${icon('close')}</button><figure><img alt="" data-lb-img><figcaption data-lb-cap></figcaption></figure></dialog>
 <script src="${asset('js/site.js')}" defer></script>
+<script src="${asset('js/fog.js')}" defer></script>
 ${(p.scripts || []).map((s) => `<script src="${asset('js/' + s)}" defer></script>`).join('\n')}
 </body>
 </html>

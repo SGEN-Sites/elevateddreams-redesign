@@ -16,15 +16,20 @@ fat Clarendon slab (Ultra), paired with a tight condensed grotesk (Barlow Conden
   cursor comes near.
 - **Altitude.** A fixed altimeter counts up as you scroll ("ALT 0 FT, STREET LEVEL" at the hero, "CLOUD 9" at the
   footer) while the backdrop rises: street glow, then rooftops falling away, then stars, a moon and a cloud sea.
-- **Elevator.** The first visit opens on brushed-steel doors under a floor indicator counting G to ED (once per
-  session, any input skips it). The age check is an elevator panel with brass call buttons. The phone menu opens
-  as steel doors; moving between pages closes the doors and opens them on the next floor, with a brief chromatic
-  shift and film grain.
+- **Dream haze (round 2).** Night fog is the connective tissue. The first visit opens with the wordmark condensing
+  out of smoke (once per session, about a second, any input skips it). A site-wide WebGL fog layer drifts behind
+  every page and changes with the altitude: orange streetlight haze at street level, a violet cloud layer midway,
+  clearing to stars, then the cloud sea at Cloud 9. The cursor or a finger parts it anywhere. Haze rolls across the
+  hero skyline and the floating products, drifts in front of the lit "Shop by feeling" windows, pools under every
+  levitating category object and dissolves the seams between sections. Page changes never wait: the old page drifts
+  into haze as the link fires and the new one clears out of it. The age check is smoked glass with haze inside.
+  Ambient fog only: it never comes off a product or a person, so nothing reads as consumption.
 - **Dream logic.** A mirrored, upside-down skyline rippling in the river under the hero; a slow WebGL smoke field the
   cursor parts; an impossible (Penrose) staircase on Our Story with a light that climbs it forever.
-- **Rise from the ground up.** Our Story is a 13-floor climb: the car rises month by month ("RENT PAID · MONTH 07"),
-  the floor indicator steps through the Planning Board, the public hearing, the December 2025 testimony, and at the
-  penthouse the steel doors open on the real storefront and a neon OPEN.
+- **Rise from the ground up (the one elevator).** Our Story is a 13-floor climb: the car rises month by month
+  ("RENT PAID · MONTH 07"), the floor indicator steps through the Planning Board, the public hearing, the December
+  2025 testimony, and at the penthouse the steel doors open on the real storefront and a neon OPEN. The elevator lives
+  only here, where the 13 months of locked doors make it literal; round 1 used it site-wide and it was cut back.
 - **Compliance in the brand.** License as a brass building plaque, warnings as an enamel street sign, HOPEline as a
   transit information panel. All wording verbatim from the live site.
 
@@ -120,6 +125,7 @@ List-price spend: about $1.20 (13 stills at $0.06, 7 cut-outs, one 5-second vide
 
 - Every page rendered headless at 1440 and 390 px: no script errors, no failed requests, no sideways overflow, one H1.
 - Interactions driven in a browser: loader, age gate (focus, routing, close), mega menu, pickup bar (past the hero,
-  hidden at the footer), altimeter ("CLOUD 9" at the bottom), page doors, phone drawer.
+  hidden at the footer), altimeter ("CLOUD 9" at the bottom), smoke loader, page haze (navigation is never
+  delayed), fog layer, phone drawer. Re-run after round 2 (dream haze), 2026-11-18.
 - Not checked: the site-reforge gate (this is a pitch preview, not a handoff package), a Lighthouse run, and the live
   Sweed category pages (403 from outside the US).

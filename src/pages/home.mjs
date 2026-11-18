@@ -44,6 +44,7 @@ export default function homePage({ articles }) {
     ${lev('obj-preroll', { cls: 'hero__prop hero__prop--a', sizes: '(max-width: 760px) 30vw, 220px', delay: 0.4 })}
     ${lev('obj-flower', { cls: 'hero__prop hero__prop--b', sizes: '(max-width: 760px) 26vw, 170px', delay: 1.6 })}
   </div>
+  <div class="fogband fogband--home" aria-hidden="true"><i></i><i></i><i></i></div>
   <button class="hero__pause" type="button" data-video-toggle aria-label="Pause background video" hidden>${icon('pause')}</button>
   <a class="hero__down" href="#tonight"><span>GOING UP</span>${icon('up')}</a>
 </section>

@@ -48,7 +48,7 @@ ${finale()}`,
     desc: 'Order cannabis online for pickup at Elevated Dreams, 190 South Plank Road, Newburgh, NY. Select pickup at checkout and bring a valid 21+ ID.',
     bodyClass: 'is-pickup', schema: [crumbsSchema([['Home', '/'], ['Visit', '/visit/'], ['Pickup', '/pickup/']]), faqSchema(pf)],
     body: `${pageHero({ k: 'ONLINE PICKUP ORDERS', title: 'Order ahead. <em>Skip the wait.</em>', lede: esc(home.pickupHow), crumbs: [['Home', '/'], ['Visit', '/visit/'], ['Pickup', '/pickup/']], art: 'scene-rooftops', obj: 'obj-flower', cta: shopBtn('Start a pickup order') })}
-<section class="band band--how" aria-labelledby="pk-t"><div class="band__in">${sectionHead({ k: 'HOW PICKUP WORKS', t: 'Four floors, no waiting', id: 'pk-t' })}
+<section class="band band--how" aria-labelledby="pk-t"><div class="band__in">${sectionHead({ k: 'HOW PICKUP WORKS', t: 'Four steps, no waiting', id: 'pk-t' })}
 <ol class="howto howto--4" role="list">
   <li class="howto__step glass" data-reveal style="--i:0"><span class="howto__n">1</span><h3>Browse</h3><p>${esc(home.steps[2])}.</p></li>
   <li class="howto__step glass" data-reveal style="--i:1"><span class="howto__n">2</span><h3>Choose pickup</h3><p>Place your order through our online storefront and select pickup at checkout.</p></li>

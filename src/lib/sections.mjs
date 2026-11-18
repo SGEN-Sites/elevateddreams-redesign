@@ -10,6 +10,7 @@ export const activeDeals = () => deals.filter((d) => !d.expires || new Date(d.ex
 export function pageHero({ kicker: k, title, lede, crumbs, art = 'scene-rooftops', obj = null, objAlt = '', cta = '', h1 = true, small = false, extra = '' }) {
   return `<section class="phero${small ? ' phero--sm' : ''}${obj ? ' phero--obj' : ''}" data-hero>
   <div class="phero__bg" aria-hidden="true">${art ? img(art, { alt: '', sizes: '100vw', eager: true }) : ''}<div class="phero__city">${skyline({ seed: (title.length * 13) % 97 + 3 })}</div></div>
+  <div class="fogband fogband--hero" aria-hidden="true"><i></i><i></i></div>
   <div class="band__in phero__in">
     ${crumbs ? breadcrumb(crumbs) : ''}
     ${k ? kicker(k) : ''}
@@ -47,7 +48,7 @@ export function catsGrid({ head = true, guides = false } = {}) {
 <ul class="cats" role="list">
   ${categories.map((c, i) => `<li class="cat" data-reveal style="--i:${i}">
     <a class="cat__a" href="${SHOP.menu}" ${shopAttrs} data-tilt data-cat="${c.id}">
-      <span class="cat__stage">${lev(c.img, { alt: '', sizes: '(max-width: 760px) 34vw, 180px', delay: (i % 4) * 0.7 })}</span>
+      <span class="cat__stage">${lev(c.img, { alt: '', sizes: '(max-width: 760px) 34vw, 180px', delay: (i % 4) * 0.7 })}<span class="cat__mist" aria-hidden="true"></span></span>
       <span class="cat__name">${esc(c.label)}</span>
       <span class="cat__go">Shop Now ${icon('ne')}</span>
     </a>
@@ -64,21 +65,21 @@ export function catsGrid({ head = true, guides = false } = {}) {
 <div class="ledge" aria-hidden="true"></div>`;
 }
 
-// Shop by feeling: four lit windows on one building, one floor each.
+// Shop by feeling: four lit windows on one building, haze drifting across them.
 export function feelingsFacade({ head = true } = {}) {
-  return `${head ? sectionHead({ k: 'SHOP BY FEELING', t: 'Pick a window. <em>Every light is on.</em>', lede: 'Four moods, four floors. Each window opens the live menu.' }) : ''}
+  return `${head ? sectionHead({ k: 'SHOP BY FEELING', t: 'Pick a window. <em>Every light is on.</em>', lede: 'Four moods, four lit windows. Each one opens the live menu.' }) : ''}
 <div class="facade" data-reveal>
   <div class="facade__roof" aria-hidden="true"><span class="facade__tank"></span></div>
   <ul class="facade__grid" role="list">
     ${feelings.map((f, i) => `<li class="win win--${f.id}" style="--i:${i}">
       <a class="win__a" href="${SHOP.menu}" ${shopAttrs} data-lift>
         <span class="win__glass" aria-hidden="true"><span class="win__room"></span><span class="win__blinds"></span><span class="win__sill"></span></span>
-        <span class="win__floor" aria-hidden="true">${f.floor}</span>
         <span class="win__txt"><b>${esc(f.label)}</b><span>${esc(f.line)}</span><em>Shop ${icon('ne')}</em></span>
       </a>
     </li>`).join('')}
   </ul>
   <div class="facade__door" aria-hidden="true"><span>190</span></div>
+  <div class="fogband fogband--facade" aria-hidden="true"><i></i><i></i></div>
 </div>
 <p class="fine fine--center">${esc(feelingsNote)}</p>`;
 }
@@ -111,7 +112,7 @@ export function visitBlock({ head = true, map = true } = {}) {
 export const stepsPanel = ({ head = true } = {}) => `${head ? sectionHead({ k: home.newKicker, t: home.newTitle }) : ''}
 <div class="callpanel" data-reveal data-callpanel>
   <div class="callpanel__plate">
-    <p class="callpanel__label" aria-hidden="true">FLOOR SELECT</p>
+    <p class="callpanel__label" aria-hidden="true">YOUR FIRST VISIT</p>
     <ol class="callpanel__list">
       ${home.steps.map((s, i) => `<li class="callpanel__step" style="--i:${i}"><span class="callpanel__btn" aria-hidden="true">${i + 1}</span><span class="callpanel__txt">${esc(s)}</span></li>`).join('')}
     </ol>

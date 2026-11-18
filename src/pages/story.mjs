@@ -47,7 +47,7 @@ ${climbHtml}
   </div>
 </section>
 <section class="band band--values" aria-labelledby="values-t"><div class="band__in">
-  ${sectionHead({ k: 'WHAT WE STAND ON', t: 'Three floors we built on', id: 'values-t' })}
+  ${sectionHead({ k: 'WHAT WE STAND ON', t: 'Three things we built on', id: 'values-t' })}
   <ul class="plaques plaques--3" role="list">${about.values.map((v, i) => `<li class="plaque" data-reveal style="--i:${i}" data-lift><span class="plaque__n" aria-hidden="true">${['I', 'II', 'III'][i]}</span><h3>${esc(v.t)}</h3><p>${esc(v.d)}</p></li>`).join('')}</ul>
 </div></section>
 <section class="band band--owner" aria-labelledby="owner-t"><div class="band__in owner">
