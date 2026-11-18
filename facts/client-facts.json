@@ -1,0 +1,30 @@
+{
+  "schema": "site-reforge/client-facts@1",
+  "note": "The only sources for a claim that is not on the live site. Every fact names where it came from. Captured 2026-11-18.",
+  "facts": [
+    { "key": "owner", "value": "Shawn Campbell", "src": "Operator brief (2026-11-18) and the brand study doc, citing NYS Cannabis Control Board meeting minutes, Dec 18, 2025: https://cannabis.ny.gov/system/files/documents/2026/01/ccb-meeting-minutes-12.18.25.pdf" },
+    { "key": "license_type", "value": "CAURD (Conditional Adult-Use Retail Dispensary), New York's first-round adult-use retail license, created for people and families harmed by past cannabis enforcement", "src": "Live site license number OCM-CAURD-26-000353; program description from the brand study doc" },
+    { "key": "rent_13_months", "value": "He paid rent for 13 months on a store he could not open", "src": "Operator brief; CCB minutes Dec 18, 2025 (via the brand study doc)" },
+    { "key": "two_regulators", "value": "The town would not issue a building permit without full state licensure, while the state wanted the town's certificate of occupancy first", "src": "Brand study doc summarising the CCB minutes Dec 18, 2025" },
+    { "key": "planning_board", "value": "Town of Newburgh Planning Board: the dispensary was treated as a special use; it came before the board on May 1, 2025, with a public hearing on August 7, 2025", "src": "Brand study doc citing Town of Newburgh engineer review (25-13) and the Aug 7, 2025 Planning Board agenda" },
+    { "key": "plaza", "value": "Algonquin Plaza", "src": "Brand study doc (Town of Newburgh planning documents)" },
+    { "key": "never_quit", "value": "He fought the town and the state for permission to open, and he never quit", "src": "Operator brief" },
+    { "key": "menu_platform", "value": "Sweed (online store at /locations/newburgh/menu)", "src": "Live /menu page: 'Live selection, powered by Sweed.'" },
+    { "key": "brand_lines", "value": ["Dreams take work. Welcome in.", "Rise up, Newburgh.", "Dreams take work. We did it.", "Sleep on it. Or don't.", "Dream bigger. Start low.", "Ask us anything, we've heard it all."], "src": "Brand study doc, 'Signature phrases to test' and 'Voice do's' (operator's own document)" },
+    { "key": "feelings", "value": ["Daydream", "Social", "Wind Down", "Lights Out"], "src": "Operator brief ('Shop by feeling' tiles) and brand study doc" }
+  ],
+  "liveDefects": [
+    "The Sweed online store (/locations/newburgh, /locations/newburgh/menu) answers 403 to non-US connections; checked 2026-11-18 from the Philippines. Category deep links could not be read from here.",
+    "Expired offer still live: 'ROVE 30% off all Rove Products, until October 31, 2026'.",
+    "/api/store-settings holds template defaults (a Los Angeles address, (555) 420-0001, hello@elevateddreams.com) that disagree with the Newburgh details the pages show.",
+    "Contact page email hello@elevateddreams.com uses a different domain than the website.",
+    "/menu says 'Our category shortcuts are being configured.'",
+    "'Visit Our Store' in the hero links to #store-information instead of directions.",
+    "A public 'Admin' link sits in the footer.",
+    "/pages/privacy-policy and /pages/terms render an empty page, while the age gate refers visitors to the Terms of Service and Privacy Policy.",
+    "The 404 page reads 'Did you forget to add the page to the router?'.",
+    "/api/products returns five sample products (e.g. 'Dream OG Flower') created 2026-08-27; they are not shown on the live pages and are not used here.",
+    "'Education' and 'Learn' are two nav items for overlapping content; 'Community' is a coming-soon page.",
+    "Contact page: 'Map integration coming soon'; home: 'Parking details coming soon'."
+  ]
+}

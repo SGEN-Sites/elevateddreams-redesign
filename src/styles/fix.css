@@ -1,0 +1,52 @@
+/* fix.css: loaded last, one commented rule per integration fix. */
+/* word-by-word rise for [data-words] headings (set up by site.js; without JS the words are plain text) */
+html.js [data-words] .w { display: inline-block; opacity: 0; translate: 0 .45em; filter: blur(6px); transition: opacity .8s var(--ease), translate 1s var(--ease), filter .8s var(--ease); transition-delay: calc(var(--wi, 0) * 55ms); }
+html.js [data-words].is-in .w { opacity: 1; translate: 0 0; filter: none; }
+html.js [data-words][data-reveal] { opacity: 1; translate: none; filter: none; }
+/* altimeter reads CLOUD 9 at the top of the climb */
+.alt.is-cloud9 .alt__k, .alt.is-cloud9 .alt__u { display: none; }
+.alt.is-cloud9 .alt__v { grid-column: 1 / -1; text-align: left; color: var(--gold); text-shadow: 0 0 10px rgba(234, 213, 154, .9); }
+/* the sticky bar never covers the last footer lines */
+.ftr { padding-bottom: calc(28px + var(--bottom-stack)); }
+/* the header's place tag only where the nav has room */
+@media (max-width: 1280px) { .logo__sub { display: none; } }
+/* [hidden] always wins over a component's display (the hero pause button showed with no film playing) */
+[hidden] { display: none !important; }
+/* no band may push the page sideways; art still crosses band seams vertically */
+.band { overflow-x: clip; }
+.rooted__art::after { inset: auto 0 -8% 8%; }
+/* phone hero: a tighter plate so the first screen carries the H1 and both buttons */
+@media (max-width: 760px) {
+  .hero__lede { font-size: 1rem; line-height: 1.55; }
+  .hero__sub { font-size: .92rem; margin-bottom: 0; }
+  .hero__cta { gap: 10px; margin: 14px 0 12px; }
+  .hero__cta .btn { --h: 50px; }
+  .hero__prop--a { top: calc(var(--hdr-h) + 18px); right: 3vw; width: 21vw; }
+  .hero__prop--a .lev__obj { max-height: 120px; }
+  .hero__lock { margin-bottom: 16px; }
+  .hero .kicker { font-size: .8rem; letter-spacing: .18em; }
+}
+/* headings that share a row with art or another column run one size down */
+.why .shead__t, .members .shead__t, .rooted .shead__t, .split .shead__t, .stairs .shead__t, .owner .shead__t, .mini .shead__t { font-size: clamp(1.85rem, 3.1vw, 2.85rem); }
+/* 13 months: the numeral heads the story column, the real door sits beside it */
+.thirteen { grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); grid-template-areas: "num photo" "txt photo"; align-items: start; row-gap: 10px; }
+.thirteen__num { grid-area: num; display: flex; align-items: flex-end; gap: 22px; }
+.thirteen__unit { margin: 0 0 .9em; writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: .5em; }
+.thirteen__txt { grid-area: txt; max-width: 620px; }
+.thirteen__photo { grid-area: photo; align-self: center; }
+@media (max-width: 1023px) { .thirteen { grid-template-columns: 1fr; grid-template-areas: "num" "txt" "photo"; } .thirteen__photo { max-width: 620px; } }
+/* inner heroes: the skyline stays low and quiet behind the words; titles leave room for the floating object */
+.phero__city { height: 24%; opacity: .9; -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .55) 40%, #000 75%); mask-image: linear-gradient(90deg, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .55) 40%, #000 75%); }
+.phero__bg::after { background: radial-gradient(60% 70% at 15% 30%, rgba(123, 106, 196, .32), transparent 70%), linear-gradient(90deg, rgba(18, 13, 25, .7) 0%, rgba(18, 13, 25, .2) 60%), linear-gradient(180deg, rgba(18, 13, 25, .55) 0%, rgba(18, 13, 25, .15) 40%, rgba(26, 20, 36, .95) 100%); }
+@media (min-width: 761px) { .phero--obj .phero__in { padding-right: clamp(var(--gutter), 26vw, 400px); } .phero--obj .phero__t { max-width: 15ch; } }
+/* the climb has its own floor indicator: the altimeter steps aside while it is on screen */
+html.in-climb .alt { opacity: 0; }
+.climb__sticky { padding-bottom: calc(40px + var(--bottom-stack)); }
+.climb__shaft { height: min(64vh, 620px); }
+/* a moon that glows instead of a grey disc */
+.sky__moon { background: radial-gradient(circle at 40% 38%, #fffdf6 0%, #f6edd6 38%, #e2d3ad 66%, #c9b78d 100%); box-shadow: 0 0 46px 12px rgba(255, 240, 200, .38), 0 0 150px 50px rgba(187, 170, 255, .22); opacity: calc((var(--alt) - .1) * 2.6); }
+/* phones: Learn topics become one swipe row instead of seven wrapped rows */
+@media (max-width: 760px) { .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(-1 * var(--gutter)); padding: 0 var(--gutter) 6px; -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); } .chips::-webkit-scrollbar { display: none; } .chip { flex: none; } }
+/* pickup bar: the long label where it fits, the short one on phones */
+.pbar__short { display: none; }
+@media (max-width: 520px) { .pbar__long { display: none; } .pbar__short { display: inline; } }

@@ -1,0 +1,37 @@
+{
+  "note": "Elevated Dreams redesign imagery. Mood and category illustration only: never a stand-in for the store, staff, owner, customers, a real product or brand. Colours in words, never codes. Textless.",
+  "styles": {
+    "scene": "Cinematic night photograph, New York after dark, near-black plum shadows, electric violet neon light spilling in from one side and warm sodium-orange streetlight glow from the other, subtle film grain, long exposure, high contrast, premium editorial campaign look, medium format camera. Absolutely no people, no hands, no faces, no text, no letters, no numbers, no signs with words, no logos, no watermarks.",
+    "object": "Levitation product photograph: the object floats weightlessly in mid-air against a plain seamless near-black background with no floor visible, shot at night in a black studio, a violet rim light from the left and a warm amber rim light from the right, soft smoky haze far behind, the whole object centered and fully in frame with generous empty margins on every side, razor sharp focus, premium editorial still life. No text, no labels, no logos, no branding, no people, no hands."
+  },
+  "jobs": [
+    { "id": "scene-hero-river", "kind": "still", "style": "scene", "aspect": "16:9",
+      "prompt": "A wide view across a dark calm river at night toward a long steel truss bridge in the distance. Long-exposure white and red light trails of traffic stream across the bridge. A few lit windows and warm streetlights glow along the far shoreline with low dark hills behind. The still water mirrors every light as long shimmering vertical reflections. Thin low mist hangs over the water. The upper half of the frame is calm deep violet-black night sky with faint stars, empty for a headline." },
+    { "id": "scene-hero-river-tall", "kind": "still", "style": "scene", "aspect": "9:16",
+      "prompt": "A vertical view across a dark calm river at night toward a long steel truss bridge in the distance. Long-exposure white and red light trails of traffic stream across the bridge. Warm streetlights glow along the far shoreline. The still water mirrors every light as long shimmering vertical reflections in the lower third. Thin low mist over the water. The upper two thirds of the frame is calm deep violet-black night sky with faint stars, empty for a headline." },
+    { "id": "scene-rooftops", "kind": "still", "style": "scene", "aspect": "16:9",
+      "prompt": "Old brick rooftops at night with a classic wooden rooftop water tower on steel legs silhouetted against a deep violet night sky, warm sodium-orange glow rising from the street below, a few lit windows in neighboring buildings, light haze drifting. The left half of the frame is open dark sky." },
+    { "id": "scene-street", "kind": "still", "style": "scene", "aspect": "16:9",
+      "prompt": "An empty small-city main street of old brick storefront buildings at night just after rain, wet asphalt mirroring sodium-orange streetlights, a soft violet neon glow spilling from an unseen shop window on the right, long-exposure car light trails, shallow depth of field, every sign blurred and unreadable." },
+    { "id": "scene-sky", "kind": "still", "style": "scene", "aspect": "21:9",
+      "prompt": "High-altitude view above a sea of moonlit clouds at night, the cloud tops softly lit in silver and violet, a deep violet-black sky with sparse stars above, a faint warm amber glow of a distant city shining up through the clouds near the horizon, vast calm empty space in the upper half." },
+    { "id": "scene-fire-escape", "kind": "still", "style": "scene", "aspect": "3:4",
+      "prompt": "Black iron fire escape stairs zigzagging up the side of an old brick building at night, seen from below, a violet neon light spilling across the bricks from the left, warm sodium streetlight from below, haze, strong geometric shadows, the staircase forms a striking repeating pattern." },
+    { "id": "obj-flower", "kind": "still", "style": "object", "aspect": "1:1", "cutout": true,
+      "prompt": "A single large dense cannabis flower bud with orange pistils and frosty white trichomes, natural deep green with hints of purple, slightly rotated." },
+    { "id": "obj-preroll", "kind": "still", "style": "object", "aspect": "1:1", "cutout": true,
+      "prompt": "A single cone-shaped cannabis pre-roll in unbleached natural tan rolling paper, the wide end twisted closed and the narrow end finished with a rolled cardboard crutch, angled diagonally, clearly a cannabis cone and not a cigarette." },
+    { "id": "obj-edibles", "kind": "still", "style": "object", "aspect": "1:1", "cutout": true,
+      "prompt": "Three squares broken from a dark chocolate bar, stacked loosely and slightly askew, a rich glossy snap surface." },
+    { "id": "obj-vape", "kind": "still", "style": "object", "aspect": "1:1", "cutout": true,
+      "prompt": "A single slim cannabis vape cartridge standing upright at a slight angle: a clear glass tank filled with golden amber oil, a matte black ceramic mouthpiece and a silver threaded base, completely blank with no markings." },
+    { "id": "obj-concentrate", "kind": "still", "style": "object", "aspect": "1:1", "cutout": true,
+      "prompt": "A small round clear glass jar with its matte black lid floating just above it, the jar holding a glossy golden amber cannabis wax." },
+    { "id": "obj-cbd", "kind": "still", "style": "object", "aspect": "1:1", "cutout": true,
+      "prompt": "A single amber glass dropper bottle with a matte black dropper cap, completely unlabeled, standing upright." },
+    { "id": "obj-accessory", "kind": "still", "style": "object", "aspect": "1:1", "cutout": true,
+      "prompt": "A polished gunmetal herb grinder with its lid floating open just above the base, the fine teeth visible inside." },
+    { "id": "video-hero-river", "kind": "video", "from": "scene-hero-river", "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video", "duration": 5, "loop": true,
+      "prompt": "Locked-off camera with an extremely slow push-in. The car light trails keep streaming steadily across the bridge, the reflections shimmer and ripple gently on the dark river, the thin mist drifts slowly to the right, faint stars twinkle. Nothing new appears. Calm, hypnotic, seamless loop." }
+  ]
+}

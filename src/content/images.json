@@ -1,0 +1,321 @@
+{
+ "obj-flower": {
+  "src": "img/gen/obj-flower.webp",
+  "w": 575,
+  "h": 900,
+  "ai": true,
+  "bytes": 159760
+ },
+ "obj-preroll": {
+  "src": "img/gen/obj-preroll.webp",
+  "w": 863,
+  "h": 900,
+  "ai": true,
+  "bytes": 47378
+ },
+ "obj-edibles": {
+  "src": "img/gen/obj-edibles.webp",
+  "w": 898,
+  "h": 900,
+  "ai": true,
+  "bytes": 120796
+ },
+ "obj-vape": {
+  "src": "img/gen/obj-vape.webp",
+  "w": 162,
+  "h": 900,
+  "ai": true,
+  "bytes": 19078
+ },
+ "obj-concentrate": {
+  "src": "img/gen/obj-concentrate.webp",
+  "w": 682,
+  "h": 649,
+  "ai": true,
+  "bytes": 49978
+ },
+ "obj-cbd": {
+  "src": "img/gen/obj-cbd.webp",
+  "w": 316,
+  "h": 900,
+  "ai": true,
+  "bytes": 19776
+ },
+ "obj-accessory": {
+  "src": "img/gen/obj-accessory.webp",
+  "w": 693,
+  "h": 627,
+  "ai": true,
+  "bytes": 40526
+ },
+ "scene-hero-river": {
+  "variants": [
+   {
+    "w": 2400,
+    "h": 1340,
+    "src": "img/gen/scene-hero-river-2400.webp"
+   },
+   {
+    "w": 1400,
+    "h": 781,
+    "src": "img/gen/scene-hero-river-1400.webp"
+   },
+   {
+    "w": 800,
+    "h": 447,
+    "src": "img/gen/scene-hero-river-800.webp"
+   }
+  ],
+  "w": 2400,
+  "h": 1340,
+  "ai": true
+ },
+ "scene-rooftops": {
+  "variants": [
+   {
+    "w": 2400,
+    "h": 1340,
+    "src": "img/gen/scene-rooftops-2400.webp"
+   },
+   {
+    "w": 1400,
+    "h": 781,
+    "src": "img/gen/scene-rooftops-1400.webp"
+   },
+   {
+    "w": 800,
+    "h": 447,
+    "src": "img/gen/scene-rooftops-800.webp"
+   }
+  ],
+  "w": 2400,
+  "h": 1340,
+  "ai": true
+ },
+ "scene-sky": {
+  "variants": [
+   {
+    "w": 2400,
+    "h": 1029,
+    "src": "img/gen/scene-sky-2400.webp"
+   },
+   {
+    "w": 1400,
+    "h": 600,
+    "src": "img/gen/scene-sky-1400.webp"
+   },
+   {
+    "w": 800,
+    "h": 343,
+    "src": "img/gen/scene-sky-800.webp"
+   }
+  ],
+  "w": 2400,
+  "h": 1029,
+  "ai": true
+ },
+ "scene-fire-escape": {
+  "variants": [
+   {
+    "w": 1200,
+    "h": 1586,
+    "src": "img/gen/scene-fire-escape-1200.webp"
+   },
+   {
+    "w": 800,
+    "h": 1057,
+    "src": "img/gen/scene-fire-escape-800.webp"
+   }
+  ],
+  "w": 1200,
+  "h": 1586,
+  "ai": true
+ },
+ "scene-hero-river-tall": {
+  "variants": [
+   {
+    "w": 1080,
+    "h": 1935,
+    "src": "img/gen/scene-hero-river-tall-1080.webp"
+   },
+   {
+    "w": 720,
+    "h": 1290,
+    "src": "img/gen/scene-hero-river-tall-720.webp"
+   }
+  ],
+  "w": 1080,
+  "h": 1935,
+  "ai": true
+ },
+ "live-exterior-wide": {
+  "src": "img/live/live-exterior-wide.webp",
+  "w": 644,
+  "h": 463,
+  "bytes": 73560
+ },
+ "live-interior-display": {
+  "src": "img/live/live-interior-display.webp",
+  "w": 552,
+  "h": 463,
+  "bytes": 27024
+ },
+ "live-window-area": {
+  "src": "img/live/live-window-area.webp",
+  "w": 460,
+  "h": 463,
+  "bytes": 22140
+ },
+ "live-exterior-close": {
+  "src": "img/live/live-exterior-close.webp",
+  "w": 644,
+  "h": 470,
+  "bytes": 66370
+ },
+ "live-showroom-wide": {
+  "src": "img/live/live-showroom-wide.webp",
+  "w": 552,
+  "h": 470,
+  "bytes": 27682
+ },
+ "live-reception": {
+  "src": "img/live/live-reception.webp",
+  "w": 460,
+  "h": 470,
+  "bytes": 21868
+ },
+ "live-montage": {
+  "src": "img/live/live-montage.webp",
+  "w": 1672,
+  "h": 941,
+  "bytes": 240294
+ },
+ "learn-cannabis-products-by-budget-elevated-dreams": {
+  "src": "img/learn/cannabis-products-by-budget-elevated-dreams.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 24688
+ },
+ "learn-first-time-dispensary-shopper-cannabis-guide": {
+  "src": "img/learn/first-time-dispensary-shopper-cannabis-guide.webp",
+  "w": 308,
+  "h": 256,
+  "bytes": 20792
+ },
+ "learn-high-thc-cannabis-labels-elevated-dreams": {
+  "src": "img/learn/high-thc-cannabis-labels-elevated-dreams.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 18742
+ },
+ "learn-cannabis-tinctures-to-explore": {
+  "src": "img/learn/cannabis-tinctures-to-explore.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 17540
+ },
+ "learn-cannabis-beverages-newburgh": {
+  "src": "img/learn/cannabis-beverages-newburgh.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 18808
+ },
+ "learn-edibles-to-explore-elevated-dreams": {
+  "src": "img/learn/edibles-to-explore-elevated-dreams.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 21554
+ },
+ "learn-cannabis-vapes-to-explore-elevated-dreams": {
+  "src": "img/learn/cannabis-vapes-to-explore-elevated-dreams.webp",
+  "w": 308,
+  "h": 256,
+  "bytes": 16976
+ },
+ "learn-pre-rolls-to-explore-newburgh": {
+  "src": "img/learn/pre-rolls-to-explore-newburgh.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 15908
+ },
+ "learn-cannabis-flower-to-explore-elevated-dreams": {
+  "src": "img/learn/cannabis-flower-to-explore-elevated-dreams.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 24058
+ },
+ "learn-elevated-dreams-more-than-cannabis-dispensary": {
+  "src": "img/learn/elevated-dreams-more-than-cannabis-dispensary.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 28450
+ },
+ "learn-convenient-cannabis-shopping-newburgh": {
+  "src": "img/learn/convenient-cannabis-shopping-newburgh.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 21890
+ },
+ "learn-elevated-dreams-cannabis-find-your-product-your-way": {
+  "src": "img/learn/elevated-dreams-cannabis-find-your-product-your-way.webp",
+  "w": 308,
+  "h": 256,
+  "bytes": 16028
+ },
+ "learn-licensed-new-york-cannabis-dispensary-matters": {
+  "src": "img/learn/licensed-new-york-cannabis-dispensary-matters.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 17162
+ },
+ "learn-why-cannabis-product-variety-matters": {
+  "src": "img/learn/why-cannabis-product-variety-matters.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 22686
+ },
+ "learn-shop-cannabis-comfortable-environment": {
+  "src": "img/learn/shop-cannabis-comfortable-environment.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 27876
+ },
+ "learn-cannabis-education-matters-elevated-dreams": {
+  "src": "img/learn/cannabis-education-matters-elevated-dreams.webp",
+  "w": 308,
+  "h": 256,
+  "bytes": 22568
+ },
+ "learn-elevated-dreams-new-cannabis-destination-newburgh": {
+  "src": "img/learn/elevated-dreams-new-cannabis-destination-newburgh.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 22000
+ },
+ "learn-why-choose-elevated-dreams-cannabis-newburgh-ny": {
+  "src": "img/learn/why-choose-elevated-dreams-cannabis-newburgh-ny.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 23710
+ },
+ "learn-cannabis-products-to-try-elevated-dreams-newburgh": {
+  "src": "img/learn/cannabis-products-to-try-elevated-dreams-newburgh.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 18290
+ },
+ "learn-cannabis-dispensary-newburgh-community": {
+  "src": "img/learn/cannabis-dispensary-newburgh-community.webp",
+  "w": 307,
+  "h": 256,
+  "bytes": 20522
+ },
+ "video-hero-river": {
+  "src": "video/hero-river.mp4",
+  "poster": "video/hero-river-poster.webp",
+  "w": 1600,
+  "h": 890,
+  "bytes": 148585,
+  "ai": true
+ }
+}
