@@ -255,7 +255,7 @@ const altimeter = () => `<div class="alt" aria-hidden="true" data-alt>
   <span class="alt__track"><i data-alt-bar></i></span>
 </div>`;
 
-const LAB = [['/lab/', 'All options'], ['/lab/hero-a/', 'Hero A'], ['/lab/hero-b/', 'Hero B'], ['/lab/hero-c/', 'Hero C'], ['/lab/splash-1/', 'Splash 1'], ['/lab/splash-2/', 'Splash 2'], ['/lab/splash-3/', 'Splash 3']];
+const LAB = [['/lab/', 'All options'], ['/lab/hero-a/', 'Hero A'], ['/lab/hero-b/', 'Hero B'], ['/lab/hero-c/', 'Hero C'], ['/lab/splash-1/', 'Splash 1'], ['/lab/splash-2/', 'Splash 2'], ['/lab/splash-3/', 'Splash 3'], ['/lab/fonts/', 'Fonts']];
 const labBar = (p) => `<div class="labbar" role="navigation" aria-label="Design options"><span class="labbar__k">DESIGN OPTIONS</span>${LAB.map(([h, l]) => `<a href="${u(h)}"${p.path === h ? ' aria-current="page"' : ''}>${l}</a>`).join('')}${p.replay ? '<button type="button" class="labbar__replay" onclick="window.labReplay&&window.labReplay()">Replay splash</button>' : ''}</div>`;
 export function layout(p, ctx) {
   return `${head(p, ctx)}

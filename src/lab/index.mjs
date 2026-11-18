@@ -29,6 +29,8 @@ export default function () {
   <ul class="labx__grid" role="list">${HEROES.map(card).join('')}</ul>
   <h2 class="shead__t labx__h2">Splash animations</h2>
   <ul class="labx__grid" role="list">${SPLASHES.map(card).join('')}</ul>
+  <h2 class="shead__t labx__h2">Font pairings</h2>
+  <ul class="labx__grid" role="list">${card(['fonts', 'Aa', 'Four pairings on the real home page', 'A Current (Ultra), B Poster (Alfa Slab One), C Editorial (Zilla Slab), D the live logo font (Rockwell Bold). Switch with the A/B/C/D buttons on the right edge.', 'Reacts to: the switcher'])}</ul>
   <p class="fine">The storefront image is an AI-edited version of the store's own photo (golden-hour light and clouds added; the building, sign and windows kept). Every option is a working prototype at the live preview's quality bar, not a mock-up.</p>
 </div></section>`,
     inlineCss: `
