@@ -16,7 +16,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1A1424">
 <link rel="icon" type="image/svg+xml" href="/elevateddreams-redesign/assets/img/favicon.svg">
-<link rel="preload" href="/elevateddreams-redesign/assets/fonts/ultra-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/elevateddreams-redesign/assets/fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/elevateddreams-redesign/assets/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" imagesrcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" imagesizes="(max-width: 760px) 210vw, 106vw" fetchpriority="high"><link rel="preload" as="image" imagesrcset="/elevateddreams-redesign/assets/img/gen/hero-building-b-1381.webp 1381w, /elevateddreams-redesign/assets/img/gen/hero-building-b-900.webp 900w" imagesizes="(max-width: 760px) 106vw, 54vw">
@@ -42,6 +41,7 @@
 @font-face{font-family:'ED Display D';font-weight:400;font-display:swap;src:local('Rockwell Bold'),local('Rockwell-Bold'),url(/elevateddreams-redesign/assets/fonts/opt/roboto-slab-700.woff2) format('woff2')}
 html[data-fp="b"]{--f-display:'ED Display B',Georgia,serif;--f-ui:'Archivo Narrow','Arial Narrow',sans-serif;--f-body:'Archivo',system-ui,sans-serif}
 html[data-fp="c"]{--f-display:'ED Display C',Georgia,serif;--f-ui:'IBM Plex Sans Condensed','Arial Narrow',sans-serif;--f-body:'IBM Plex Sans',system-ui,sans-serif}
+html[data-fp="a"]{--f-display:'Ultra',Georgia,serif}
 html[data-fp="d"]{--f-display:'ED Display D',Georgia,serif}
 /* the switcher */
 .fpx-sw{position:fixed;right:14px;top:50%;z-index:96;display:grid;gap:8px;padding:10px;border-radius:999px;background:rgba(18,13,25,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:inset 0 0 0 1px rgba(241,236,248,.14),0 20px 50px -20px rgba(0,0,0,.9);transform:translateY(-50%)}
@@ -85,7 +85,7 @@ html[data-fp="d"]{--f-display:'ED Display D',Georgia,serif}
 /* the brand words, behind the building: DREAMS sits on the roof line; right-aligned to the frame, but never past the
    hero's gutter and never wider than the space right of the copy (narrow landscape screens crop the frame) */
 .hxa-words{position:absolute;inset:0;will-change:transform}
-.hxa-wbox{position:absolute;top:calc(var(--ft) + var(--fw)*.2071 - 1.8*var(--wf));right:max(calc(100cqw - var(--fl) - var(--fw)*.934),var(--gutter));margin:0;font:400 var(--wf)/.9 var(--f-display);text-align:right;white-space:nowrap}
+.hxa-wbox{position:absolute;top:max(calc(var(--ft) + var(--fw)*.2071 - 1.55*var(--wf)),calc(var(--hdr-h) + 5.5cqh));right:max(calc(100cqw - var(--fl) - var(--fw)*.934),var(--gutter));margin:0;font:400 calc(var(--wf)*.94)/.9 var(--f-display);text-align:left;white-space:nowrap}
 .hxa-w{display:block;will-change:transform}
 .hxa-wi{display:block;color:#fff;letter-spacing:.004em;text-shadow:0 2px 0 rgba(26,20,36,.16),0 16px 44px rgba(26,20,36,.42),0 0 54px rgba(169,155,240,.62)}
 .hxa-w2 .hxa-wi{color:#F3EEFF;text-shadow:0 2px 0 rgba(26,20,36,.16),0 16px 44px rgba(26,20,36,.42),0 0 64px rgba(123,106,196,.72)}
@@ -149,7 +149,7 @@ html[data-fp="d"]{--f-display:'ED Display D',Georgia,serif}
   .hxa{--hxa-art:84cqw;--hxa-fwq:207cqw;--hxa-bt:21cqw;--hxa-cw:calc(100cqw - 2*var(--hxa-pad));align-items:start;padding:calc(var(--hdr-h) + var(--hxa-art)) 0 34px}
   .hxa-stage{--fw:var(--hxa-fwq);--fl:calc(50cqw - var(--fw)*.666);--ft:calc(var(--hdr-h) + var(--hxa-bt) - var(--fw)*.1697);--wf:calc(var(--fw)*.0655)}
   .hxa-under{display:block;top:100%;transform:scaleY(-1)}
-  .hxa-wbox{right:auto;left:calc(var(--fl) + var(--fw)*.666);top:calc(var(--ft) + var(--fw)*.086);transform:translateX(-50%);text-align:center;line-height:.88}
+  .hxa-wbox{right:auto;left:calc(var(--fl) + var(--fw)*.666);top:calc(var(--ft) + var(--fw)*.086);transform:translateX(-50%);text-align:left;line-height:.88}
   .hxa-skygrade{background:linear-gradient(180deg,rgba(16,11,24,.55) 0,rgba(16,11,24,0) calc(var(--hdr-h) + 40px))}
   .hxa-grade{background:linear-gradient(180deg,rgba(18,13,25,0) 0%,rgba(18,13,25,0) calc(var(--hdr-h) + var(--hxa-art) - 84px),rgba(18,13,25,.5) calc(var(--hdr-h) + var(--hxa-art) - 34px),rgba(18,13,25,.8) calc(var(--hdr-h) + var(--hxa-art) - 4px),rgba(18,13,25,.86) calc(var(--hdr-h) + var(--hxa-art) + 120px),rgba(18,13,25,.92) 100%)}
   .hxa-fog{height:calc(var(--hdr-h) + var(--hxa-art) + 40px);bottom:auto;top:0;-webkit-mask-image:linear-gradient(180deg,transparent 52%,#000 74%,transparent);mask-image:linear-gradient(180deg,transparent 52%,#000 74%,transparent)}
@@ -292,15 +292,15 @@ html[data-fp="d"]{--f-display:'ED Display D',Georgia,serif}
   <div class="fpx__card">
     <div>
       <h2 class="sr-only" id="fpx-t">Font pairing options</h2>
-      <div class="fpx__tabs" role="group" aria-label="Font pairing"><button type="button" data-fp="a" aria-pressed="true">A · Current</button><button type="button" data-fp="b" aria-pressed="false">B · Poster</button><button type="button" data-fp="c" aria-pressed="false">C · Editorial</button><button type="button" data-fp="d" aria-pressed="false">D · Real logo</button></div>
+      <div class="fpx__tabs" role="group" aria-label="Font pairing"><button type="button" data-fp="a" aria-pressed="false">A · Ultra</button><button type="button" data-fp="b" aria-pressed="false">B · Poster</button><button type="button" data-fp="c" aria-pressed="false">C · Editorial</button><button type="button" data-fp="d" aria-pressed="true">D · Real logo (chosen)</button></div>
       <p class="fpx__lock" aria-hidden="true"><span>ELEVATED</span><span>DREAMS</span></p>
       <p class="fpx__h">Dreams take work. <em>Welcome in.</em></p>
       <p class="fpx__ui">SHOP · DEALS · LEARN · OUR STORY · VISIT · REWARDS</p>
       <p class="fpx__body">Discover premium cannabis, knowledgeable service, and convenient online ordering at Elevated Dreams LLC in Newburgh.</p>
     </div>
     <div>
-      <dl class="fpx__names"><div><dt>Display</dt><dd data-fpx="display">Ultra</dd></div><div><dt>UI</dt><dd data-fpx="ui">Barlow Condensed</dd></div><div><dt>Body</dt><dd data-fpx="body">Barlow</dd></div></dl>
-      <p class="fpx__note" data-fpx="note">A fat Clarendon-style slab with a signage condensed: loud and poster-like. This is the build today.</p>
+      <dl class="fpx__names"><div><dt>Display</dt><dd data-fpx="display">Rockwell Bold</dd></div><div><dt>UI</dt><dd data-fpx="ui">Barlow Condensed</dd></div><div><dt>Body</dt><dd data-fpx="body">Barlow</dd></div></dl>
+      <p class="fpx__note" data-fpx="note">The exact font the live site’s logo renders in. Shown with your installed Rockwell; a device without it shows Roboto Slab (the live site’s own next fallback). Going live needs a Rockwell web-font license.</p>
     </div>
   </div>
 </div></section>
@@ -596,7 +596,7 @@ html[data-fp="d"]{--f-display:'ED Display D',Georgia,serif}
     <p class="fine">Live products, pricing, discounts, customer accounts, and checkout are managed through our secure online store.</p>
   </div>
 </section>
-<div class="fpx-sw" role="group" aria-label="Font pairing"><p class="fpx-sw__k">FONTS</p><button type="button" data-fp="a" aria-pressed="true" aria-label="Pairing A: Current">A<span>Current: Ultra</span></button><button type="button" data-fp="b" aria-pressed="false" aria-label="Pairing B: Poster">B<span>Poster: Alfa Slab One</span></button><button type="button" data-fp="c" aria-pressed="false" aria-label="Pairing C: Editorial">C<span>Editorial: Zilla Slab Bold</span></button><button type="button" data-fp="d" aria-pressed="false" aria-label="Pairing D: Real logo">D<span>Real logo: Rockwell Bold</span></button></div>
+<div class="fpx-sw" role="group" aria-label="Font pairing"><p class="fpx-sw__k">FONTS</p><button type="button" data-fp="a" aria-pressed="false" aria-label="Pairing A: Ultra">A<span>Ultra: Ultra</span></button><button type="button" data-fp="b" aria-pressed="false" aria-label="Pairing B: Poster">B<span>Poster: Alfa Slab One</span></button><button type="button" data-fp="c" aria-pressed="false" aria-label="Pairing C: Editorial">C<span>Editorial: Zilla Slab Bold</span></button><button type="button" data-fp="d" aria-pressed="true" aria-label="Pairing D: Real logo (chosen)">D<span>Real logo (chosen): Rockwell Bold</span></button></div>
 </main>
 
 <footer class="ftr" data-ftr>
@@ -650,16 +650,16 @@ html[data-fp="d"]{--f-display:'ED Display D',Georgia,serif}
 <script src="/elevateddreams-redesign/assets/js/fog.js" defer></script>
 
 <script>(function(){
-  var P=[{"id":"a","name":"Current","display":"Ultra","ui":"Barlow Condensed","body":"Barlow","note":"A fat Clarendon-style slab with a signage condensed: loud and poster-like. This is the build today."},{"id":"b","name":"Poster","display":"Alfa Slab One","ui":"Archivo Narrow","body":"Archivo","note":"A heavy geometric slab from boxing and transit posters, with a tight grotesk: more urban, less retro than A."},{"id":"c","name":"Editorial","display":"Zilla Slab Bold","ui":"IBM Plex Sans Condensed","body":"IBM Plex Sans","note":"A contemporary slab with a refined condensed grotesk: calmer and more premium."},{"id":"d","name":"Real logo","display":"Rockwell Bold","ui":"Barlow Condensed","body":"Barlow","note":"The exact font the live site’s logo renders in. Shown with your installed Rockwell; a device without it shows Roboto Slab (the live site’s own next fallback). Going live needs a Rockwell web-font license."}],root=document.documentElement;
+  var P=[{"id":"a","name":"Ultra","display":"Ultra","ui":"Barlow Condensed","body":"Barlow","note":"A fat Clarendon-style slab with a signage condensed: loud and poster-like. The build before round 4."},{"id":"b","name":"Poster","display":"Alfa Slab One","ui":"Archivo Narrow","body":"Archivo","note":"A heavy geometric slab from boxing and transit posters, with a tight grotesk: more urban, less retro than A."},{"id":"c","name":"Editorial","display":"Zilla Slab Bold","ui":"IBM Plex Sans Condensed","body":"IBM Plex Sans","note":"A contemporary slab with a refined condensed grotesk: calmer and more premium."},{"id":"d","name":"Real logo (chosen)","display":"Rockwell Bold","ui":"Barlow Condensed","body":"Barlow","note":"The exact font the live site’s logo renders in. Shown with your installed Rockwell; a device without it shows Roboto Slab (the live site’s own next fallback). Going live needs a Rockwell web-font license."}],root=document.documentElement;
   function set(id,save){var p=P.find(function(x){return x.id===id;})||P[0];
-    if(p.id==='a')root.removeAttribute('data-fp');else root.setAttribute('data-fp',p.id);
+    root.setAttribute('data-fp',p.id);
     document.querySelectorAll('[data-fp]').forEach(function(b){if(b.tagName==='BUTTON')b.setAttribute('aria-pressed',String(b.getAttribute('data-fp')===p.id));});
     ['display','ui','body','note'].forEach(function(k){var el=document.querySelector('[data-fpx="'+k+'"]');if(el)el.textContent=p[k];});
     if(save){try{localStorage.setItem('ed.fp',p.id);}catch(e){}}
     try{var u=new URL(location.href);u.searchParams.set('fp',p.id);history.replaceState(null,'',u);}catch(e){}}
   document.addEventListener('click',function(e){var b=e.target.closest('button[data-fp]');if(b)set(b.getAttribute('data-fp'),true);});
   var q=null;try{q=new URLSearchParams(location.search).get('fp')||localStorage.getItem('ed.fp');}catch(e){}
-  set(q||'a',false);
+  set(q||'d',false);
 })();
 (function(){
   var hero=document.querySelector('[data-hxa]');if(!hero)return;

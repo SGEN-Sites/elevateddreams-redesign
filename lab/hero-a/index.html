@@ -16,7 +16,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1A1424">
 <link rel="icon" type="image/svg+xml" href="/elevateddreams-redesign/assets/img/favicon.svg">
-<link rel="preload" href="/elevateddreams-redesign/assets/fonts/ultra-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/elevateddreams-redesign/assets/fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/elevateddreams-redesign/assets/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" imagesrcset="/elevateddreams-redesign/assets/img/gen/hero-plate-b-2400.webp 2400w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-1600.webp 1600w, /elevateddreams-redesign/assets/img/gen/hero-plate-b-960.webp 960w" imagesizes="(max-width: 760px) 210vw, 106vw" fetchpriority="high"><link rel="preload" as="image" imagesrcset="/elevateddreams-redesign/assets/img/gen/hero-building-b-1381.webp 1381w, /elevateddreams-redesign/assets/img/gen/hero-building-b-900.webp 900w" imagesizes="(max-width: 760px) 106vw, 54vw">
@@ -39,7 +38,7 @@
 /* the brand words, behind the building: DREAMS sits on the roof line; right-aligned to the frame, but never past the
    hero's gutter and never wider than the space right of the copy (narrow landscape screens crop the frame) */
 .hxa-words{position:absolute;inset:0;will-change:transform}
-.hxa-wbox{position:absolute;top:calc(var(--ft) + var(--fw)*.2071 - 1.8*var(--wf));right:max(calc(100cqw - var(--fl) - var(--fw)*.934),var(--gutter));margin:0;font:400 var(--wf)/.9 var(--f-display);text-align:right;white-space:nowrap}
+.hxa-wbox{position:absolute;top:max(calc(var(--ft) + var(--fw)*.2071 - 1.55*var(--wf)),calc(var(--hdr-h) + 5.5cqh));right:max(calc(100cqw - var(--fl) - var(--fw)*.934),var(--gutter));margin:0;font:400 calc(var(--wf)*.94)/.9 var(--f-display);text-align:left;white-space:nowrap}
 .hxa-w{display:block;will-change:transform}
 .hxa-wi{display:block;color:#fff;letter-spacing:.004em;text-shadow:0 2px 0 rgba(26,20,36,.16),0 16px 44px rgba(26,20,36,.42),0 0 54px rgba(169,155,240,.62)}
 .hxa-w2 .hxa-wi{color:#F3EEFF;text-shadow:0 2px 0 rgba(26,20,36,.16),0 16px 44px rgba(26,20,36,.42),0 0 64px rgba(123,106,196,.72)}
@@ -103,7 +102,7 @@
   .hxa{--hxa-art:84cqw;--hxa-fwq:207cqw;--hxa-bt:21cqw;--hxa-cw:calc(100cqw - 2*var(--hxa-pad));align-items:start;padding:calc(var(--hdr-h) + var(--hxa-art)) 0 34px}
   .hxa-stage{--fw:var(--hxa-fwq);--fl:calc(50cqw - var(--fw)*.666);--ft:calc(var(--hdr-h) + var(--hxa-bt) - var(--fw)*.1697);--wf:calc(var(--fw)*.0655)}
   .hxa-under{display:block;top:100%;transform:scaleY(-1)}
-  .hxa-wbox{right:auto;left:calc(var(--fl) + var(--fw)*.666);top:calc(var(--ft) + var(--fw)*.086);transform:translateX(-50%);text-align:center;line-height:.88}
+  .hxa-wbox{right:auto;left:calc(var(--fl) + var(--fw)*.666);top:calc(var(--ft) + var(--fw)*.086);transform:translateX(-50%);text-align:left;line-height:.88}
   .hxa-skygrade{background:linear-gradient(180deg,rgba(16,11,24,.55) 0,rgba(16,11,24,0) calc(var(--hdr-h) + 40px))}
   .hxa-grade{background:linear-gradient(180deg,rgba(18,13,25,0) 0%,rgba(18,13,25,0) calc(var(--hdr-h) + var(--hxa-art) - 84px),rgba(18,13,25,.5) calc(var(--hdr-h) + var(--hxa-art) - 34px),rgba(18,13,25,.8) calc(var(--hdr-h) + var(--hxa-art) - 4px),rgba(18,13,25,.86) calc(var(--hdr-h) + var(--hxa-art) + 120px),rgba(18,13,25,.92) 100%)}
   .hxa-fog{height:calc(var(--hdr-h) + var(--hxa-art) + 40px);bottom:auto;top:0;-webkit-mask-image:linear-gradient(180deg,transparent 52%,#000 74%,transparent);mask-image:linear-gradient(180deg,transparent 52%,#000 74%,transparent)}

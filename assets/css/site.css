@@ -12,6 +12,12 @@
 @font-face{font-family:'Ultra';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/ultra-400.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
 
 /* tokens.css */
+/* Display face = the live logo's font. The live CSS asks for Clarendon, Rockwell, "Roboto Slab", Georgia; Clarendon is
+   never loaded, so the logo renders in Rockwell Bold (a Monotype face installed on macOS and with Microsoft Office).
+   Rockwell is commercial and is NOT hosted here: the visitor's installed copy is used, else Roboto Slab Bold (open,
+   the next font in the live stack). A production launch needs a Rockwell web-font license. One face for all weights,
+   so headings never get a synthetic bold. */
+@font-face { font-family: 'ED Display'; font-style: normal; font-weight: 100 900; font-display: swap; src: local('Rockwell Bold'), local('Rockwell-Bold'), url(../fonts/opt/roboto-slab-700.woff2) format('woff2'); }
 /* =====================================================================================================
    LEVITATION NOIR: Elevated Dreams after dark.
    Kept from the live site (its theme settings, /api/store-settings): violet #7B6AC4, plum #302842,
@@ -55,7 +61,8 @@
   --brick: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28'%3E%3Crect width='56' height='28' fill='%232b1a2b'/%3E%3Cpath d='M0 13.5h56M0 27.5h56M28 0v13.5M0 14v14M56 14v14' stroke='%23120a12' stroke-width='1.6'/%3E%3C/svg%3E");
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 
-  --f-display: 'Ultra', 'Rockwell Extra Bold', 'Clarendon', 'Roboto Slab', Georgia, serif;
+  /* the live logo's rendered font (owner's pick, round 4): Rockwell Bold, see @font-face 'ED Display' below */
+  --f-display: 'ED Display', Rockwell, 'Roboto Slab', Georgia, serif;
   --f-ui: 'Barlow Condensed', 'Arial Narrow', 'Roboto Condensed', sans-serif;
   --f-body: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --lh-display: .92;
@@ -1314,10 +1321,10 @@ html.js [data-reveal].is-in, html.js.reveal-all [data-reveal] { filter: none; }
 }
 
 /* ---------- design-option lab bar (review pages only) ---------- */
-.labbar { position: relative; z-index: 75; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding: 8px var(--gutter); background: #f1ecf8; color: #1A1424; font: 700 14px/20px var(--f-ui); letter-spacing: .1em; text-transform: uppercase; }
-.labbar__k { color: #7B6AC4; letter-spacing: .24em; margin-right: 6px; }
-.labbar a { color: #1A1424; text-decoration: none; padding: 4px 8px; border-radius: 6px; line-height: 20px; }
-.labbar a[aria-current] { background: #1A1424; color: #f1ecf8; }
+.labbar { position: relative; z-index: 75; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding: 8px var(--gutter); background: rgba(10, 8, 16, .88); color: #f1ecf8; box-shadow: inset 0 -1px 0 rgba(241, 236, 248, .1); font: 700 14px/20px var(--f-ui); letter-spacing: .1em; text-transform: uppercase; }
+.labbar__k { color: #A99BF0; letter-spacing: .24em; margin-right: 6px; }
+.labbar a { color: #f1ecf8; text-decoration: none; padding: 4px 8px; border-radius: 6px; line-height: 20px; }
+.labbar a[aria-current] { background: #f1ecf8; color: #1A1424; }
 .labbar__replay { margin-left: auto; border: 0; border-radius: 999px; padding: 4px 14px; line-height: 20px; background: #7B6AC4; color: #fff; font: inherit; letter-spacing: .1em; }
 
 /* main home (until a layout option is chosen): the storefront's own sign carries the name, so the giant lockup
