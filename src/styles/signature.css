@@ -15,15 +15,14 @@ body::after { content: ""; position: fixed; inset: -60%; z-index: 95; pointer-ev
 @keyframes castSm { 0%, 100% { transform: scaleX(1); opacity: .9; } 50% { transform: scaleX(.82); opacity: .6; } }
 @keyframes floatCard { from { transform: translateY(0) rotateX(8deg) rotateY(-14deg) rotateZ(-3deg); } to { transform: translateY(-18px) rotateX(4deg) rotateY(-6deg) rotateZ(-1deg); } }
 @keyframes leaf { from { background-position: 0% 0; } to { background-position: 220% 0; } }
-@keyframes sheen { 0%, 60% { background-position: 150% 0; } 100% { background-position: -100% 0; } }
+@keyframes sheen { 0%, 58%, 100% { opacity: 0; } 79% { opacity: 1; } }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes twinkle { from { opacity: .55; } to { opacity: .95; } }
-@keyframes win { 0%, 100% { opacity: .85; } 47% { opacity: .85; } 48% { opacity: .15; } 63% { opacity: .15; } 64% { opacity: .85; } }
 @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(143, 209, 168, .18), 0 0 12px rgba(143, 209, 168, .9); } 50% { box-shadow: 0 0 0 7px rgba(143, 209, 168, .06), 0 0 18px rgba(143, 209, 168, .6); } }
 @keyframes blink { 50% { opacity: .15; } }
 @keyframes neon { 0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; } 20%, 24%, 55% { opacity: .35; } }
 @keyframes neonOn { 0% { opacity: 0; } 10% { opacity: 1; } 14% { opacity: .2; } 20% { opacity: 1; } 24% { opacity: .4; } 30%, 100% { opacity: 1; } }
-@keyframes bulbs { 50% { background-position: 7px 0; } }
+@keyframes bulbs { 50% { transform: translateX(7px); } }
 @keyframes tonight { 0%, 100% { transform: rotate(7deg) scale(1); } 50% { transform: rotate(5deg) scale(1.06); } }
 @keyframes flick { 0% { opacity: .2; } 20% { opacity: 1; } 30% { opacity: .4; } 45%, 100% { opacity: 1; } }
 @keyframes callLit { 0% { box-shadow: inset 0 -3px 7px rgba(0, 0, 0, .4), 0 0 0 4px #2b2832, 0 0 0 5px rgba(255, 255, 255, .14); } 100% { box-shadow: inset 0 -3px 7px rgba(0, 0, 0, .4), 0 0 0 4px #2b2832, 0 0 0 5px rgba(255, 183, 102, .9), 0 0 22px 6px rgba(255, 155, 66, .6); } }
@@ -33,7 +32,6 @@ body::after { content: ""; position: fixed; inset: -60%; z-index: 95; pointer-ev
 @keyframes gateOut { to { opacity: 0; visibility: hidden; } }
 @keyframes lbIn { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
 @keyframes liftFailsafe { to { visibility: hidden; opacity: 0; } }
-@keyframes chroma { 0% { filter: none; } 40% { filter: drop-shadow(4px 0 0 rgba(255, 60, 120, .55)) drop-shadow(-4px 0 0 rgba(60, 200, 255, .55)); } 100% { filter: blur(2px) brightness(.6); } }
 @keyframes upcue { 0%, 100% { transform: translateY(4px); opacity: .5; } 50% { transform: translateY(-4px); opacity: 1; } }
 @keyframes drift { from { transform: translateY(0) rotate(-1.5deg); } to { transform: translateY(-16px) rotate(1.5deg); } }
 @keyframes stepGlow { 0%, 12%, 100% { fill: rgba(234, 213, 154, .12); } 4% { fill: rgba(255, 183, 102, .85); } }

@@ -95,6 +95,6 @@ ${base.inlineCss || ''}`;
 ${base.inlineJs || ''}`;
   return {
     path: '/lab/fonts/', title: 'Font pairings | Elevated Dreams redesign', desc: 'Four font pairings shown on the real home page; option D is the live logo font.',
-    bodyClass: 'is-lab is-home', preload: base.preload, body, inlineCss: css, inlineJs: js, replay: false,
+    bodyClass: `is-lab ${base.bodyClass}`, preload: base.preload, body, inlineCss: css, inlineJs: js, replay: false,
   };
 }

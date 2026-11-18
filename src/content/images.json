@@ -466,5 +466,85 @@
   "h": 791,
   "ai": true,
   "edited": true
+ },
+ "hero-plate-dusk": {
+  "variants": [
+   {
+    "w": 1600,
+    "h": 893,
+    "src": "img/gen/hero-plate-dusk-1600.webp",
+    "bytes": 21402
+   },
+   {
+    "w": 960,
+    "h": 536,
+    "src": "img/gen/hero-plate-dusk-960.webp",
+    "bytes": 11140
+   }
+  ],
+  "w": 1600,
+  "h": 893,
+  "ai": true,
+  "edited": true
+ },
+ "hero-plate-night": {
+  "variants": [
+   {
+    "w": 1600,
+    "h": 893,
+    "src": "img/gen/hero-plate-night-1600.webp",
+    "bytes": 19898
+   },
+   {
+    "w": 960,
+    "h": 536,
+    "src": "img/gen/hero-plate-night-960.webp",
+    "bytes": 10420
+   }
+  ],
+  "w": 1600,
+  "h": 893,
+  "ai": true,
+  "edited": true
+ },
+ "hero-sky-dusk": {
+  "variants": [
+   {
+    "w": 1600,
+    "h": 893,
+    "src": "img/gen/hero-sky-dusk-1600.webp",
+    "bytes": 23000
+   },
+   {
+    "w": 960,
+    "h": 536,
+    "src": "img/gen/hero-sky-dusk-960.webp",
+    "bytes": 11668
+   }
+  ],
+  "w": 1600,
+  "h": 893,
+  "ai": true,
+  "edited": true
+ },
+ "hero-sky-night": {
+  "variants": [
+   {
+    "w": 1600,
+    "h": 893,
+    "src": "img/gen/hero-sky-night-1600.webp",
+    "bytes": 20062
+   },
+   {
+    "w": 960,
+    "h": 536,
+    "src": "img/gen/hero-sky-night-960.webp",
+    "bytes": 10512
+   }
+  ],
+  "w": 1600,
+  "h": 893,
+  "ai": true,
+  "edited": true
  }
 }

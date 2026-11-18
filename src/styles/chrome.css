@@ -9,13 +9,13 @@
 .sky__moon { position: absolute; top: 9vh; right: 9vw; width: 84px; height: 84px; border-radius: 50%; background: radial-gradient(circle at 38% 36%, #fffaf0, #f2e6c8 45%, #cdbb93 75%); box-shadow: 0 0 60px 18px rgba(234, 213, 154, .22), 0 0 160px 40px rgba(123, 106, 196, .18); opacity: calc(var(--alt) * 1.4 - .15); transform: translate3d(0, calc((1 - var(--alt)) * 30vh), 0); }
 .sky__city { position: absolute; left: -4%; right: -4%; bottom: 0; }
 .sky__city .skyline { width: 100%; height: 100%; }
-.sky__city--far { height: 50vh; opacity: .5; filter: blur(1.2px); transform: translate3d(0, calc(var(--alt) * 52vh), 0); }
+.sky__city--far { height: 50vh; opacity: .5; transform: translate3d(0, calc(var(--alt) * 52vh), 0); }
 .sky__city--far .skyline__mass { fill: #2a1e3a; }
 .sky__city--near { height: 38vh; transform: translate3d(0, calc(var(--alt) * 95vh), 0); }
 .sky__clouds { position: absolute; inset: auto 0 0; height: 55vh; background-size: cover; background-position: 50% 100%; opacity: calc((var(--alt) - .62) * 2.6); transform: translate3d(0, calc((1 - var(--alt)) * 40vh), 0); -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%); mask-image: linear-gradient(180deg, transparent, #000 40%); }
 .skyline__mass { fill: #0c0911; }
-.skyline__lit .w1 { fill: #FFB766; opacity: .85; animation: win 9s steps(1) infinite; animation-delay: var(--wd); }
-.skyline__lit .w2 { fill: #BBAAFF; opacity: .7; animation: win 11s steps(1) infinite; animation-delay: var(--wd); }
+.skyline__lit .w1 { fill: #FFB766; opacity: .85; }
+.skyline__lit .w2 { fill: #BBAAFF; opacity: .7; }
 
 /* =============================== TOPBAR + LED TICKER =============================== */
 .topbar { position: relative; z-index: 60; background: #0b0810; border-bottom: 1px solid var(--line); font: 600 .9rem/1 var(--f-ui); letter-spacing: .08em; color: var(--text-2); }
@@ -118,7 +118,6 @@
 .doors i:last-child::after { left: 22px; }
 html.is-leaving .doors i, html.is-arriving .doors i { transform: none; }
 html.is-arriving .doors i { transition: none; }
-html.is-leaving main, html.is-leaving .hdr { animation: chroma .42s var(--ease-io); }
 
 /* =============================== ELEVATOR LOADER =============================== */
 .lift { position: fixed; inset: 0; z-index: 220; display: none; }

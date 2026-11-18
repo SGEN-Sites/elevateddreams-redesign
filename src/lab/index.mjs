@@ -7,7 +7,7 @@ const HEROES = [
   ['hero-b', 'B', 'Portal', 'A full-screen ELEVATED DREAMS wordmark with the golden-hour storefront seen through an arched window in the middle. Look around inside the window with your cursor; scroll and the window opens to full screen while the words part around it.', 'Reacts to: scroll (pinned reveal), cursor'],
   ['hero-c', 'C', 'Golden hour to after dark', 'Headline on the left, the storefront in a large framed scene on the right. Move across the scene (or drag on a phone) and the light sweeps from golden hour to after dark: the same building, the windows lit, the clouds turning to moonlight. Left alone, it cycles slowly.', 'Reacts to: cursor or drag, time'],
   ['hero-d', 'D', 'Open sky (seamless)', 'Round 4: the sky runs from the very top of the page behind the bars and the menu, and the cloud sea rises at the bottom so the license, warning and HOPEline signs rest on the clouds. No hard edge above or below the hero.', 'Reacts to: cursor, scroll'],
-  ['hero-e', 'E', 'One sky, golden hour to night (seamless)', 'Round 4: one continuous sky from the top of the page through the next two sections: golden hour behind the storefront, dusk behind the signs, night by the deals, with the clouds thinning and stars coming out as you scroll.', 'Reacts to: scroll, cursor'],
+  ['hero-e', 'E', 'One sky, golden hour to night (chosen)', 'On the home page now: one continuous sky from the top of the page through the next two sections: golden hour behind the storefront, dusk behind the signs, night by the deals, with the clouds thinning and stars coming out as you scroll.', 'Reacts to: scroll, cursor'],
 ];
 const SPLASHES = [
   ['splash-1', '1', 'Through the clouds', 'The screen opens inside warm clouds; the wordmark rises through them and the clouds part to reveal the storefront.'],
@@ -22,7 +22,7 @@ export default function () {
     body: `<section class="labx">
   <div class="labx__bg" aria-hidden="true">${img('hero-golden-b', { alt: '', sizes: '100vw', eager: true })}</div>
   <div class="band__in labx__in">
-    <p class="kicker">CHOSEN SO FAR: HERO A · SPLASH 1 · ROCKWELL BOLD. NEW: HEROES D AND E</p>
+    <p class="kicker">CHOSEN SO FAR: HERO E · SPLASH 1 · ROCKWELL BOLD. NEW: SIGN CARDS</p>
     <h1 class="labx__t">Pick a hero. <em>Pick a splash.</em></h1>
     <p class="labx__lede">Every hero uses the real storefront, relit at golden hour and floating on clouds. Open each one, move the cursor, scroll, and try it on your phone. Splash pages have a Replay button in the bar above.</p>
   </div>
@@ -32,6 +32,8 @@ export default function () {
   <ul class="labx__grid" role="list">${HEROES.filter(([slug]) => labReady(slug)).map(card).join('')}</ul>
   <h2 class="shead__t labx__h2">Splash animations</h2>
   <ul class="labx__grid" role="list">${SPLASHES.map(card).join('')}</ul>
+  <h2 class="shead__t labx__h2">Sign cards</h2>
+  <ul class="labx__grid" role="list">${card(['cards', '✦', 'Three directions for the license, warning and HOPEline', 'A Dream cards (the Sun, the Moon, the Star), B Street signs at dusk, C Adrift on the clouds. The wording never changes.', 'Reacts to: scroll, cursor'])}</ul>
   <h2 class="shead__t labx__h2">Font pairings</h2>
   <ul class="labx__grid" role="list">${card(['fonts', 'Aa', 'Four pairings on the real home page', 'A Ultra, B Poster (Alfa Slab One), C Editorial (Zilla Slab), D the live logo font, Rockwell Bold (chosen). Switch with the A/B/C/D buttons on the right edge.', 'Reacts to: the switcher'])}</ul>
   <p class="fine">The storefront image is an AI-edited version of the store's own photo (golden-hour light and clouds added; the building, sign and windows kept). Every option is a working prototype at the live preview's quality bar, not a mock-up.</p>

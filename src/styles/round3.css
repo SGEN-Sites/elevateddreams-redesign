@@ -12,7 +12,7 @@
 .mist__brand .logo__top { animation: condense 1.25s var(--ease) both; }
 
 /* ---------- skylines: a whisper, not a wall ---------- */
-.sky__city--near { opacity: .2; filter: blur(.5px); }
+.sky__city--near { opacity: .2; }
 .sky__city--far { opacity: .09; }
 .sky .skyline__lit { opacity: .3; }
 .phero__city { opacity: .42; }

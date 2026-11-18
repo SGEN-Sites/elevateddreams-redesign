@@ -1,17 +1,22 @@
-// home.mjs: street level to Cloud 9. Section order follows the live home (deals, members, menu, pickup, story,
-// inside, why, first visit, learn, community, ready) with the brief's additions (routing gate, placards, feelings, climb).
+// home.mjs: Hero E (one sky), then straight to the menu (owner, round 4), the compliance signs, tonight's deals, then the
+// rest of the live home's story (feelings, story, inside, why, members, learn, visit, community, ready).
 import { esc, u, icon, img, lev, btn, shopBtn, kicker, statusLine, asset } from '../lib/html.mjs';
 import { skyline } from '../lib/skyline.mjs';
 import { placards } from '../lib/layout.mjs';
 import { dealsGrid, catsGrid, feelingsFacade, visitBlock, stepsPanel, learnCards, finale, sectionHead, localBusiness } from '../lib/sections.mjs';
 import { store, SHOP, home } from '../content/site.mjs';
-import { heroA } from '../lib/hero-a.mjs';
+import { heroE } from '../lib/hero-e.mjs';
 
 export default function homePage({ articles }) {
   const latest = articles.slice(0, 3);
-  const hero = heroA();
+  const hero = heroE();
   const body = `
 ${hero.section}
+
+<section class="band band--cats" aria-labelledby="cats-t">
+  <div class="band__in">${catsGrid().replace('class="shead__t"', 'class="shead__t" id="cats-t"')}
+  <p class="center"><a class="link" href="${u('/learn/')}">Not sure where to start? Read our product guides ${icon('arrow')}</a></p></div>
+</section>
 
 <section class="band band--brick band--placards band--placards-top" aria-label="License, warnings and HOPEline">
   <div class="band__in">${placards()}</div>
@@ -24,11 +29,6 @@ ${hero.section}
 
 <section class="band band--feel" aria-labelledby="feel-t">
   <div class="band__in">${feelingsFacade().replace('class="shead__t"', 'class="shead__t" id="feel-t"')}</div>
-</section>
-
-<section class="band band--cats" aria-labelledby="cats-t">
-  <div class="band__in">${catsGrid().replace('class="shead__t"', 'class="shead__t" id="cats-t"')}
-  <p class="center"><a class="link" href="${u('/learn/')}">Not sure where to start? Read our product guides ${icon('arrow')}</a></p></div>
 </section>
 
 <section class="band band--story" aria-labelledby="t13">
@@ -128,7 +128,7 @@ ${finale()}`;
   return [{
     path: '/', title: 'Elevated Dreams LLC | Newburgh NY Dispensary',
     desc: 'Visit Elevated Dreams LLC, a Newburgh, NY dispensary for adult-use cannabis, delivery, pickup, product education, and daily deals. Order online today.',
-    bodyClass: 'is-home', body, noPlacards: true, inlineCss: hero.css, inlineJs: hero.js,
+    bodyClass: 'is-home hxe-page', body, noPlacards: true, inlineCss: hero.css, inlineJs: hero.js,
     preload: hero.preload,
     schema: [localBusiness(), { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Elevated Dreams', url: 'https://elevateddreamscannabisny.com/' }],
   }];

@@ -4,6 +4,17 @@ A design concept for **Elevated Dreams LLC**, 190 South Plank Road, Unit 10, New
 (license OCM-CAURD-26-000353). Built 2026-11-18 from the live site, https://elevateddreamscannabisny.com/.
 The preview is `noindex`; it is a pitch, not the client's official website.
 
+## Round 5 (owner review, 2026-11-18)
+
+- **Hero E "One sky" is the home hero.** Shop Our Menu now follows it directly, then the compliance signs and Tonight's
+  deals, all under one sky that runs from golden hour to night.
+- **Motion rebuilt for smoothness:** scroll-linked movement and crossfades run on the browser's compositor, the dusk and
+  night grades are pre-baked, the page's own sky stops while the hero's sky covers it, and reveals and page changes no
+  longer animate filters. The intro is about one second, once per visitor.
+- **The "13"** no longer shows a glow cut off by its fill.
+- **Sign cards:** three directions at `/lab/cards/` (Dream cards, Street signs at dusk, Adrift on the clouds), wording
+  unchanged, awaiting a pick.
+
 ## Round 4 (owner review, 2026-11-18)
 
 - **Display font = the live logo's font, Rockwell Bold** (chosen from four pairings at `/lab/fonts/`). Verified with

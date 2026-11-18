@@ -55,22 +55,25 @@ void main(){
     lx = x; ly = y; trail[head] = [x, y, 1]; head = (head + 1) % trail.length;
   }, { passive: true });
   const root = document.documentElement;
+  let maxScroll = 1; const measure = () => { maxScroll = Math.max(1, root.scrollHeight - innerHeight); }; measure(); window.addEventListener('resize', measure, { passive: true }); if ('ResizeObserver' in window) new ResizeObserver(measure).observe(document.body);
   let heroFull = false, run = false, t0 = performance.now(), shown = false;
   const flat = new Float32Array(24);
   function frame(now) {
     if (!run) return;
     resize();
     for (let i = 0; i < trail.length; i++) { trail[i][2] *= 0.962; flat[i * 3] = trail[i][0]; flat[i * 3 + 1] = trail[i][1]; flat[i * 3 + 2] = trail[i][2]; }
-    const alt = parseFloat(root.style.getPropertyValue('--alt')) || 0;
+    const alt = Math.min(1, window.scrollY / maxScroll);
     gl.uniform2f(uR, c.width, c.height); gl.uniform1f(uT, (now - t0) / 1000); gl.uniform1f(uA, alt); gl.uniform3fv(uM, flat);
     gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT); gl.drawArrays(gl.TRIANGLES, 0, 3);
     if (!shown) { shown = true; c.classList.add('is-on'); }
     requestAnimationFrame(frame);
   }
-  const want = () => !heroFull && !document.hidden;
+  /* nothing to draw while the hero's own sky covers the whole window */
+  const want = () => !heroFull && !document.hidden && !root.classList.contains('sky-covered');
   const sync = () => { if (want() && !run) { run = true; requestAnimationFrame(frame); } else if (!want()) run = false; };
   const hero = document.querySelector('[data-hero]');
   if (hero && 'IntersectionObserver' in window) new IntersectionObserver((en) => { heroFull = en[0].intersectionRatio > 0.8; sync(); }, { threshold: [0, 0.8, 1] }).observe(hero);
   document.addEventListener('visibilitychange', sync);
+  window.addEventListener('ed:skycover', sync);
   sync();
 })();

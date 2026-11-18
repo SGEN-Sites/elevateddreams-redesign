@@ -19,7 +19,7 @@
 /* =============================== LEVITATION =============================== */
 .lev { --float: 16px; position: relative; display: inline-grid; justify-items: center; align-content: end; }
 .lev[data-lift] { translate: none; }
-.lev__obj { position: relative; z-index: 1; width: auto; max-width: 100%; filter: drop-shadow(0 22px 26px rgba(0, 0, 0, .55)) drop-shadow(0 0 22px rgba(123, 106, 196, .25)); translate: 0 calc(var(--lift, 0) * -1px); transition: translate .5s var(--ease); animation: float 6.5s var(--ease-io) infinite alternate; animation-delay: calc(var(--d, 0s) * -1); will-change: transform; }
+.lev__obj { position: relative; z-index: 1; width: auto; max-width: 100%; translate: 0 calc(var(--lift, 0) * -1px); transition: translate .5s var(--ease); animation: float 6.5s var(--ease-io) infinite alternate; animation-delay: calc(var(--d, 0s) * -1); will-change: transform; }
 .lev__shadow { width: 62%; height: 16px; margin-top: 26px; border-radius: 50%; background: radial-gradient(closest-side, rgba(4, 2, 7, .92) 55%, rgba(4, 2, 7, 0) 100%); animation: shadow 6.5s var(--ease-io) infinite alternate; animation-delay: calc(var(--d, 0s) * -1); scale: calc(1 - var(--lift, 0) * .025); transition: scale .5s var(--ease); }
 
 /* =============================== COMPLIANCE PLACARDS =============================== */
@@ -60,7 +60,7 @@
 .ticket__tonight { display: none; position: absolute; top: 20px; right: -10px; padding: 8px 14px; border-radius: 6px; background: var(--sodium); color: #1A1424; font: 800 .86rem/1 var(--f-ui); letter-spacing: .2em; transform: rotate(7deg); box-shadow: 0 0 22px rgba(255, 155, 66, .8); animation: tonight 2.4s ease-in-out infinite; }
 .ticket.is-tonight .ticket__tonight { display: block; }
 .ticket.is-expired { display: none; }
-.ticket__bulbs { position: absolute; left: 22px; right: 22px; bottom: 9px; height: 4px; background: radial-gradient(circle, #FFB766 1.5px, transparent 2px) 0 0 / 14px 4px; opacity: .8; filter: drop-shadow(0 0 3px rgba(255, 155, 66, .9)); animation: bulbs 1.6s steps(2) infinite; }
+.ticket__bulbs { position: absolute; left: 22px; right: 22px; bottom: 9px; height: 4px; background: radial-gradient(circle, #FFB766 1.5px, transparent 2px) 0 0 / 14px 4px; opacity: .85; animation: bulbs 1.6s steps(2) infinite; }
 .tickets--compact .ticket { padding: 28px 24px 24px; }
 .tickets--compact .ticket__big span { font-size: clamp(2.8rem, 4.6vw, 3.8rem); }
 .tickets__foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; margin-top: 30px; }
@@ -85,7 +85,7 @@
 .cat__a:hover .cat__go { color: var(--gold); }
 .cat__guide { display: block; margin-top: 10px; text-align: center; font: 600 .95rem var(--f-ui); letter-spacing: .08em; color: var(--text-3); }
 .cat__guide:hover { color: var(--gold); }
-.cat__allmark { display: grid; place-items: center; width: 118px; height: 118px; margin-bottom: 28px; border-radius: 50%; font: 400 2rem/1 var(--f-display); color: var(--ink); background: var(--gold-leaf); background-size: 200% 100%; box-shadow: 0 0 0 6px rgba(234, 213, 154, .15), 0 0 50px rgba(234, 213, 154, .45); animation: float 6s var(--ease-io) infinite alternate, leaf 9s linear infinite; }
+.cat__allmark { display: grid; place-items: center; width: 118px; height: 118px; margin-bottom: 28px; border-radius: 50%; font: 400 2rem/1 var(--f-display); color: var(--ink); background: var(--gold-leaf); background-size: 200% 100%; box-shadow: 0 0 0 6px rgba(234, 213, 154, .15), 0 0 50px rgba(234, 213, 154, .45); animation: float 6s var(--ease-io) infinite alternate; }
 .cat--all .cat__a { background: radial-gradient(70% 55% at 50% 28%, rgba(234, 213, 154, .22), transparent 72%), linear-gradient(180deg, rgba(60, 46, 30, .55), rgba(14, 10, 20, .9)); }
 .ledge { height: 18px; margin: 22px clamp(-20px, -2vw, 0px) 0; border-radius: 4px; background: linear-gradient(180deg, #3a3342, #1c1722 60%, #0c0a10); box-shadow: 0 18px 30px -10px rgba(0, 0, 0, .9), inset 0 1px 0 rgba(255, 255, 255, .12); }
 
@@ -270,7 +270,7 @@
 .members { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(30px, 6vw, 90px); align-items: center; }
 .members__stage { position: relative; display: grid; justify-items: center; perspective: 1000px; padding: 30px 0 10px; }
 .mcard { position: relative; width: min(420px, 86%); aspect-ratio: 1.586; border-radius: 22px; padding: 26px 28px; background: radial-gradient(120% 90% at 0% 0%, rgba(187, 170, 255, .55), transparent 55%), radial-gradient(90% 80% at 100% 100%, rgba(255, 155, 66, .35), transparent 60%), linear-gradient(135deg, #2c2240, #120d19 70%); box-shadow: 0 0 0 1px rgba(234, 213, 154, .4), 0 50px 80px -30px rgba(0, 0, 0, .95), inset 0 1px 0 rgba(255, 255, 255, .2); transform-style: preserve-3d; animation: floatCard 7s var(--ease-io) infinite alternate; translate: 0 calc(var(--lift, 0) * -1px); }
-.mcard::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, .25) 45%, transparent 60%); background-size: 250% 100%; animation: sheen 6s ease-in-out infinite; pointer-events: none; }
+.mcard::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, .25) 45%, transparent 60%); animation: sheen 6s ease-in-out infinite; pointer-events: none; }
 .mcard__chip { position: absolute; left: 28px; top: 34%; width: 52px; height: 40px; border-radius: 8px; background: var(--brass); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .3); }
 .mcard__brand { position: absolute; left: 28px; top: 24px; font: 400 1.35rem/.95 var(--f-display); background: var(--gold-leaf); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
 .mcard__no { position: absolute; left: 28px; bottom: 24px; font: 700 .85rem var(--f-ui); letter-spacing: .26em; color: var(--text-2); }

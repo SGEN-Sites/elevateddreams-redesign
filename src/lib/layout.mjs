@@ -34,7 +34,8 @@ function head(p, ctx) {
 <link rel="preload" href="${asset('fonts/barlow-400.woff2')}" as="font" type="font/woff2" crossorigin>
 ${p.preload || ''}
 <link rel="stylesheet" href="${asset('css/site.css')}">
-<script>(function(d,w){var h=d.documentElement,c='js';try{var rm=w.matchMedia('(prefers-reduced-motion: reduce)').matches;if(rm)c+=' rm';var ss=w.sessionStorage,ls=w.localStorage;${p.lab ? '' : `if(!rm&&!ss.getItem('ed.mist'))c+=' mist-on';if(ls.getItem('ed.age')!=='1')c+=' gate-on';`}if(!rm&&ss.getItem('ed.haze')==='1'){c+=' is-arriving';ss.removeItem('ed.haze');}}catch(e){}h.className+=' '+c;w.setTimeout(function(){if(!h.classList.contains('site-ready')){h.classList.remove('gate-on','mist-on','is-arriving');h.classList.add('reveal-all');}},4000);})(document,window);</script>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"${u('/')}*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
+<script>(function(d,w){var h=d.documentElement,c='js';try{var rm=w.matchMedia('(prefers-reduced-motion: reduce)').matches;if(rm)c+=' rm';var ss=w.sessionStorage,ls=w.localStorage;${p.lab ? '' : `if(!rm&&!ls.getItem('ed.intro'))c+=' mist-on';if(ls.getItem('ed.age')!=='1')c+=' gate-on';`}if(!rm&&ss.getItem('ed.haze')==='1'){c+=' is-arriving';ss.removeItem('ed.haze');}}catch(e){}h.className+=' '+c;w.setTimeout(function(){if(!h.classList.contains('site-ready')){h.classList.remove('gate-on','mist-on','is-arriving');h.classList.add('reveal-all');}},4000);})(document,window);</script>
 ${ld}
 ${p.inlineCss ? `<style>${p.inlineCss}</style>` : ''}
 </head>`;
@@ -255,7 +256,7 @@ const altimeter = () => `<div class="alt" aria-hidden="true" data-alt>
   <span class="alt__track"><i data-alt-bar></i></span>
 </div>`;
 
-const LAB = [['/lab/', 'All options'], ['/lab/hero-a/', 'Hero A'], ['/lab/hero-b/', 'Hero B'], ['/lab/hero-c/', 'Hero C'], ['/lab/hero-d/', 'Hero D'], ['/lab/hero-e/', 'Hero E'], ['/lab/splash-1/', 'Splash 1'], ['/lab/splash-2/', 'Splash 2'], ['/lab/splash-3/', 'Splash 3'], ['/lab/fonts/', 'Fonts']];
+const LAB = [['/lab/', 'All options'], ['/lab/hero-a/', 'Hero A'], ['/lab/hero-b/', 'Hero B'], ['/lab/hero-c/', 'Hero C'], ['/lab/hero-d/', 'Hero D'], ['/lab/hero-e/', 'Hero E'], ['/lab/splash-1/', 'Splash 1'], ['/lab/splash-2/', 'Splash 2'], ['/lab/splash-3/', 'Splash 3'], ['/lab/fonts/', 'Fonts'], ['/lab/cards/', 'Sign cards']];
 const LAB_SKIP = (process.env.LAB_SKIP || '').split(',').map((s) => s.trim()).filter(Boolean);
 // a lab option is listed only when its file exists and it is not held back with LAB_SKIP (see build.mjs)
 export const labReady = (slug) => !LAB_SKIP.includes(slug) && fs.existsSync(new URL(`../lab/${slug}.mjs`, import.meta.url));

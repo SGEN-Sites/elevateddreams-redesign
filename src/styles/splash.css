@@ -1,13 +1,13 @@
 /* =====================================================================================================
    SPLASH: "Through the clouds" (round 3 pick; built as lab option 1). The page opens inside warm golden-hour
    cloud, the ELEVATED / DREAMS wordmark rises through it, then the banks part onto the page (and onto the age
-   check for a first visit). 1.75 s, once per visit, any input skips it, removed when done.
+   check for a first visit). About one second, once per visitor, any input skips it, removed when done.
    ===================================================================================================== */
 /* ---------- the splash: shown only on the first page of a visit (the head script sets html.mist-on), never under reduced motion or without JS ---------- */
 .sp1{position:fixed;inset:0;z-index:250;display:none;overflow:hidden;contain:strict;pointer-events:auto;--sp1-cloud:url(../img/gen/hero-plate-b-2400.webp)}
-html.mist-on .sp1{display:block;animation:sp1-failsafe .01s 2.6s forwards}
+html.mist-on .sp1{display:block;animation:sp1-failsafe .01s 1.7s forwards}
 @media (prefers-reduced-motion: reduce){.sp1{display:none!important}}
-.sp1.is-skip{opacity:0;transition:opacity .3s var(--ease-io)}
+.sp1.is-skip{opacity:0;transition:opacity .22s var(--ease-io)}
 @keyframes sp1-failsafe{to{opacity:0;visibility:hidden}}
 .sp1-base{position:absolute;inset:0;background:radial-gradient(80% 70% at 50% 40%,#f8cf9e 0%,#eeb27f 34%,#d99376 60%,#b07a86 84%,#7a6190 100%)}
 .sp1-c{position:absolute;top:-6%;bottom:-6%;width:66%;will-change:transform;background-image:var(--sp1-cloud);background-repeat:no-repeat}
@@ -40,13 +40,13 @@ html.mist-on .sp1{display:block;animation:sp1-failsafe .01s 2.6s forwards}
   .sp1-c--l0,.sp1-c--r0{background-size:auto 180%}
   .sp1-sun{width:150vw;height:150vw;margin:-75vw 0 0 -75vw;top:30%;opacity:.8}
 }
-/* the timeline (1.75 s): rise 0.05-0.7 s, hold, part 0.91-1.75 s (the warm base only thins once the gap is opening) */
-.sp1-base{animation:sp1-base 1.75s linear both}
-.sp1-sun{animation:sp1-sun 1.75s linear both}
-.sp1-c--l0{animation:sp1-l0 1.75s linear both}.sp1-c--r0{animation:sp1-r0 1.75s linear both}
-.sp1-c--l1{animation:sp1-l1 1.75s linear both}.sp1-c--r1{animation:sp1-r1 1.75s linear both}
-.sp1-c--l2{animation:sp1-l2 1.75s linear both}.sp1-c--r2{animation:sp1-r2 1.75s linear both}
-.sp1-mark{animation:sp1-mark 1.75s linear both}
+/* the timeline (1.05 s): rise to 0.42 s, a short hold, part from 0.59 s (the warm base only thins once the gap is opening) */
+.sp1-base{animation:sp1-base 1.05s linear both}
+.sp1-sun{animation:sp1-sun 1.05s linear both}
+.sp1-c--l0{animation:sp1-l0 1.05s linear both}.sp1-c--r0{animation:sp1-r0 1.05s linear both}
+.sp1-c--l1{animation:sp1-l1 1.05s linear both}.sp1-c--r1{animation:sp1-r1 1.05s linear both}
+.sp1-c--l2{animation:sp1-l2 1.05s linear both}.sp1-c--r2{animation:sp1-r2 1.05s linear both}
+.sp1-mark{animation:sp1-mark 1.05s linear both}
 @keyframes sp1-base{0%,58%{opacity:1}78%,100%{opacity:0}}
 @keyframes sp1-sun{0%{opacity:.55;transform:scale(.9)}44%{opacity:1;transform:scale(1)}56%{opacity:1;transform:scale(1.04);animation-timing-function:cubic-bezier(.5,0,.6,1)}82%,100%{opacity:0;transform:scale(1.25)}}
 @keyframes sp1-l0{0%{transform:translate3d(0,0,0) scale(1);animation-timing-function:cubic-bezier(.3,.4,.6,1)}52%{transform:translate3d(-2.5vw,-.6vh,0) scale(1.03);animation-timing-function:cubic-bezier(.4,0,.2,1)}100%{transform:translate3d(-66vw,-6vh,0) scale(1.16)}}
@@ -57,8 +57,8 @@ html.mist-on .sp1{display:block;animation:sp1-failsafe .01s 2.6s forwards}
 @keyframes sp1-r2{0%{transform:translate3d(0,2vh,0) scale(1);animation-timing-function:cubic-bezier(.3,.4,.6,1)}52%{transform:translate3d(5vw,0,0) scale(1.05);animation-timing-function:cubic-bezier(.4,0,.2,1)}100%{transform:translate3d(98vw,-3vh,0) scale(1.38)}}
 @keyframes sp1-mark{0%,3%{opacity:0;transform:translate3d(0,17vh,0) scale(.94);filter:blur(14px);animation-timing-function:cubic-bezier(.16,1,.3,1)}40%{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0)}56%{opacity:1;transform:translate3d(0,-1vh,0) scale(1.02);filter:blur(0);animation-timing-function:cubic-bezier(.5,0,.75,.5)}82%,100%{opacity:0;transform:translate3d(0,-7vh,0) scale(1.16);filter:blur(10px)}}
 /* the home hero's own entrance waits for the clouds to part (only on the visit's first page) */
-html.mist-on .hxa-lift{animation-delay:1s!important}
-html.mist-on .hxa-wi{animation-delay:1.1s!important}
-html.mist-on .hxa-w2 .hxa-wi{animation-delay:1.25s!important}
-html.mist-on .hxa-copy{animation-delay:1.2s!important}
-html.mist-on .hxa-bob{animation-delay:2.7s!important}
+html.mist-on .hxe-lift{animation-delay:.55s!important}
+html.mist-on .hxe-wi{animation-delay:.62s!important}
+html.mist-on .hxe-w2 .hxe-wi{animation-delay:.72s!important}
+html.mist-on .hxe-copy{animation-delay:.68s!important}
+html.mist-on .hxe-bob{animation-delay:2.1s!important}

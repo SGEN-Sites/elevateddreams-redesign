@@ -1,8 +1,8 @@
 /* fix.css: loaded last, one commented rule per integration fix. */
 /* word-by-word rise for [data-words] headings (set up by site.js; without JS the words are plain text) */
-html.js [data-words] .w { display: inline-block; opacity: 0; translate: 0 .45em; filter: blur(6px); transition: opacity .8s var(--ease), translate 1s var(--ease), filter .8s var(--ease); transition-delay: calc(var(--wi, 0) * 55ms); }
-html.js [data-words].is-in .w { opacity: 1; translate: 0 0; filter: none; }
-html.js [data-words][data-reveal] { opacity: 1; translate: none; filter: none; }
+html.js [data-words] .w { display: inline-block; opacity: 0; translate: 0 .45em; transition: opacity .8s var(--ease), translate 1s var(--ease); transition-delay: calc(var(--wi, 0) * 55ms); }
+html.js [data-words].is-in .w { opacity: 1; translate: 0 0; }
+html.js [data-words][data-reveal] { opacity: 1; translate: none; }
 /* altimeter reads CLOUD 9 at the top of the climb */
 .alt.is-cloud9 .alt__k, .alt.is-cloud9 .alt__u { display: none; }
 .alt.is-cloud9 .alt__v { grid-column: 1 / -1; text-align: left; color: var(--gold); text-shadow: 0 0 10px rgba(234, 213, 154, .9); }
@@ -50,3 +50,34 @@ html.in-climb .alt { opacity: 0; }
 /* pickup bar: the long label where it fits, the short one on phones */
 .pbar__short { display: none; }
 @media (max-width: 520px) { .pbar__long { display: none; } .pbar__short { display: inline; } }
+
+/* ---------- altitude on the compositor: the sky and the altimeter bar follow the page's scroll with no script at all ---------- */
+.alt { contain: layout style; }
+@supports (animation-timeline: scroll()) {
+  html.js:not(.rm) .sky__street { animation: alt-street linear both; animation-timeline: scroll(root); }
+  html.js:not(.rm) .sky__stars { animation: twinkle 7s ease-in-out infinite alternate, alt-stars linear both; animation-timeline: auto, scroll(root); }
+  html.js:not(.rm) .sky__moon { animation: alt-moon linear both; animation-timeline: scroll(root); }
+  html.js:not(.rm) .sky__city--far { animation: alt-far linear both; animation-timeline: scroll(root); }
+  html.js:not(.rm) .sky__city--near { animation: alt-near linear both; animation-timeline: scroll(root); }
+  html.js:not(.rm) .sky__clouds { animation: alt-clouds linear both; animation-timeline: scroll(root); }
+  html.js:not(.rm) .alt__track i { animation: alt-bar linear both; animation-timeline: scroll(root); }
+}
+@keyframes alt-street { 0% { opacity: 1; } 80%, 100% { opacity: 0; } }
+@keyframes alt-stars { to { transform: translate3d(0, 12vh, 0); } }
+@keyframes alt-moon { 0% { opacity: 0; transform: translate3d(0, 30vh, 0); } 32% { opacity: 0; } 73.7%, 83.3% { opacity: 1; } 100% { opacity: 0; transform: translate3d(0, 0, 0); } }
+@keyframes alt-far { to { transform: translate3d(0, 52vh, 0); } }
+@keyframes alt-near { to { transform: translate3d(0, 95vh, 0); } }
+@keyframes alt-clouds { 0% { opacity: 0; transform: translate3d(0, 40vh, 0); } 62% { opacity: 0; } 100% { opacity: 1; transform: translate3d(0, 0, 0); } }
+@keyframes alt-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+/* while the hero's sky covers the window, the page's own sky stops altogether */
+html.sky-covered .sky { visibility: hidden; }
+html.sky-covered .sky *, html.sky-covered .sky { animation-play-state: paused !important; }
+
+/* phones: the pickup bar's label and button no longer collide (Rockwell runs wider than the old display face) */
+@media (max-width: 430px) {
+  .pbar__where { flex: 1 1 auto; }
+  .pbar__st { overflow: hidden; text-overflow: ellipsis; }
+  .pbar__acts { flex: none; gap: 4px; }
+  .pbar__acts .btn .ic { display: none; }
+  .pbar__x { width: 36px; }
+}

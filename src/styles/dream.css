@@ -48,9 +48,8 @@
 
 /* ---------- levitation over a pool of mist ---------- */
 .cat__stage { position: relative; }
-.cat__mist { position: absolute; left: -10%; right: -10%; bottom: 4px; height: 44%; z-index: 2; pointer-events: none; background: var(--fog-v) repeat-x 0 60% / 600px 300px; mix-blend-mode: screen; opacity: .55; -webkit-mask-image: radial-gradient(60% 70% at 50% 75%, #000, transparent 75%); mask-image: radial-gradient(60% 70% at 50% 75%, #000, transparent 75%); animation: mistpan 26s linear infinite; }
+.cat__mist { position: absolute; left: -10%; right: -10%; bottom: 4px; height: 44%; z-index: 2; pointer-events: none; background: var(--fog-v) repeat-x 0 60% / 600px 300px; opacity: .42; -webkit-mask-image: radial-gradient(60% 70% at 50% 75%, #000, transparent 75%); mask-image: radial-gradient(60% 70% at 50% 75%, #000, transparent 75%); }
 .cat__a:hover .cat__mist { opacity: .85; }
-@keyframes mistpan { to { background-position: -600px 60%; } }
 .hero__smoke.is-on { opacity: 1; }
 
 /* ---------- smoke loader: the wordmark condenses out of the haze ---------- */
@@ -76,14 +75,13 @@ html.mist-on .mist { display: grid; animation: liftFailsafe .01s linear 3.2s for
 .mist.is-gone { display: none !important; }
 
 /* ---------- page haze: the old page drifts into haze, the new one clears out of it (never blocks) ---------- */
-.haze { position: fixed; inset: 0; z-index: 180; pointer-events: none; opacity: 0; background: radial-gradient(80% 70% at 50% 50%, rgba(36, 26, 51, .55), rgba(11, 8, 16, .82)); transition: opacity .9s var(--ease); overflow: hidden; }
-.haze i { position: absolute; inset: -15%; background-repeat: repeat; mix-blend-mode: screen; transition: transform 1.1s var(--ease); }
-.haze i:nth-child(1) { background-image: var(--fog-v); background-size: 1400px 700px; opacity: .55; filter: blur(4px); }
-.haze i:nth-child(2) { background-image: var(--fog-w); background-size: 1800px 900px; opacity: .22; transform: scale(1.1); filter: blur(4px); }
-html.is-leaving .haze { opacity: 1; transition-duration: .32s; }
+.haze { position: fixed; inset: 0; z-index: 180; pointer-events: none; opacity: 0; background: radial-gradient(80% 70% at 50% 50%, rgba(36, 26, 51, .55), rgba(11, 8, 16, .82)); transition: opacity .38s var(--ease); overflow: hidden; }
+.haze i { position: absolute; inset: -15%; background-repeat: repeat; transition: transform .5s var(--ease); }
+.haze i:nth-child(1) { background-image: var(--fog-v); background-size: 1400px 700px; opacity: .4; }
+.haze i:nth-child(2) { background-image: var(--fog-w); background-size: 1800px 900px; opacity: .16; transform: scale(1.1); }
+html.is-leaving .haze { opacity: 1; transition-duration: .16s; }
 html.is-arriving .haze { opacity: 1; transition: none; }
 html.is-arriving .haze i { transform: scale(1.2) translateX(-3%); transition: none; }
-html.is-leaving main, html.is-leaving .hdr { animation: chroma .5s var(--ease-io) both; }
 
 /* ---------- age gate: smoked glass with haze inside ---------- */
 .gate__panel { background: linear-gradient(165deg, rgba(48, 38, 66, .78), rgba(16, 11, 22, .88)); -webkit-backdrop-filter: blur(22px) saturate(140%); backdrop-filter: blur(22px) saturate(140%); box-shadow: 0 60px 120px -30px rgba(0, 0, 0, .95), inset 0 0 0 1px rgba(234, 213, 154, .3), inset 0 0 0 7px rgba(0, 0, 0, .15), inset 0 0 0 8px rgba(234, 213, 154, .14), 0 0 80px -20px rgba(123, 106, 196, .55); overflow: hidden; isolation: isolate; }
@@ -124,8 +122,6 @@ html.is-leaving main, html.is-leaving .hdr { animation: chroma .5s var(--ease-io
 .win__a:hover .win__glass { box-shadow: 0 0 0 6px #160e18, 0 0 0 8px #3a2a3c, 0 18px 30px -10px rgba(0, 0, 0, .9), 0 0 110px 10px rgba(var(--c1), .55); }
 
 /* ---------- reveals: content condenses out of the haze ---------- */
-html.js [data-reveal] { filter: blur(12px) brightness(.75); }
-html.js [data-reveal].is-in, html.js.reveal-all [data-reveal] { filter: none; }
 
 /* ---------- reduced motion: the haze stands still, nothing is missing ---------- */
 @media (prefers-reduced-motion: reduce) {
