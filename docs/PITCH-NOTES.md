@@ -4,6 +4,25 @@ A design concept for **Elevated Dreams LLC**, 190 South Plank Road, Unit 10, New
 (license OCM-CAURD-26-000353). Built 2026-11-18 from the live site, https://elevateddreamscannabisny.com/.
 The preview is `noindex`; it is a pitch, not the client's official website.
 
+## Round 3 (owner review, 2026-11-18)
+
+- **Hero background:** the store's own storefront photo, edited to golden hour with the ground replaced by a sea of
+  clouds so the building floats (fal Nano Banana Pro edit; the building, the "Elevated Dreams" sign, the window
+  banners, door and handrail kept as photographed and checked at full size). Also made from it: a phone crop, the same
+  shot after dark, the sky with the building removed, and a cut-out of the building, for the layout options.
+  Request ids: golden-wide-b 01a1ec45-770d-7c33-89f0-f68768b2ac52, golden-wide-a 01a1ec45-7605-7e22-8dc6-77c7217a8dd1,
+  golden-tall 01a1ec45-7605-7fb3-8f4d-0d4d748dcff3, night-wide-b 01a1ec47-9f88-71b0-9342-6676c9ca7607,
+  plate-wide-b 01a1ec47-9f7e-7ec0-9639-06783a4967ea, cut-out (BiRefNet v2) 01a1ec47-a04e-7c80-9dde-2ee9186ea146.
+  List price about $0.90. The client should approve showing an edited image of their storefront.
+- **Hero layout and splash: three options each** at `/lab/` on the preview (Levitate, Portal, Golden hour to after
+  dark; Through the clouds, Golden horizon, Wake into the dream). The home page shows the storefront on the right with
+  the copy on the left until one is chosen.
+- **Removed:** floating objects in every hero (home and inner pages; the category tiles keep their products because
+  they label the categories), the lit-windows building for "Shop by feeling" (now four skies, afternoon to after
+  dark), the giant "CLOUD 9" footer and its cloud-sea image (now the brand name, outlined), gold on the logo (white
+  with a violet glow everywhere; gold stays only on buttons and accents).
+- **Quieter:** the background skylines (about a fifth of their former strength, windows dimmed).
+
 ## The idea: Levitation Noir
 
 New York after dark, seen from a store that refused to stay shut. The live site's own palette is kept and pushed
@@ -14,12 +33,12 @@ fat Clarendon slab (Ultra), paired with a tight condensed grotesk (Barlow Conden
 - **Levitation.** "ELEVATED" hovers above "DREAMS" and casts a hard shadow on it. Products and the pre-roll float
   over the page with a shadow on the ground that shrinks as they rise; anything levitating lifts a few pixels when the
   cursor comes near.
-- **Altitude.** A fixed altimeter counts up as you scroll ("ALT 0 FT, STREET LEVEL" at the hero, "CLOUD 9" at the
-  footer) while the backdrop rises: street glow, then rooftops falling away, then stars, a moon and a cloud sea.
+- **Altitude.** A fixed altimeter counts up as you scroll ("ALT 0 FT, STREET LEVEL" at the hero, "ELEVATED" at the
+  footer) while the backdrop rises: street glow, then rooftops falling away, then stars and a moon.
 - **Dream haze (round 2).** Night fog is the connective tissue. The first visit opens with the wordmark condensing
   out of smoke (once per session, about a second, any input skips it). A site-wide WebGL fog layer drifts behind
   every page and changes with the altitude: orange streetlight haze at street level, a violet cloud layer midway,
-  clearing to stars, then the cloud sea at Cloud 9. The cursor or a finger parts it anywhere. Haze rolls across the
+  clearing to stars at the top. The cursor or a finger parts it anywhere. Haze rolls across the
   hero skyline and the floating products, drifts in front of the lit "Shop by feeling" windows, pools under every
   levitating category object and dissolves the seams between sections. Page changes never wait: the old page drifts
   into haze as the link fires and the new one clears out of it. The age check is smoked glass with haze inside.
@@ -125,7 +144,7 @@ List-price spend: about $1.20 (13 stills at $0.06, 7 cut-outs, one 5-second vide
 
 - Every page rendered headless at 1440 and 390 px: no script errors, no failed requests, no sideways overflow, one H1.
 - Interactions driven in a browser: loader, age gate (focus, routing, close), mega menu, pickup bar (past the hero,
-  hidden at the footer), altimeter ("CLOUD 9" at the bottom), smoke loader, page haze (navigation is never
+  hidden at the footer), altimeter ("ELEVATED" at the bottom), smoke loader, page haze (navigation is never
   delayed), fog layer, phone drawer. Re-run after round 2 (dream haze), 2026-11-18.
 - Not checked: the site-reforge gate (this is a pitch preview, not a handoff package), a Lighthouse run, and the live
   Sweed category pages (403 from outside the US).

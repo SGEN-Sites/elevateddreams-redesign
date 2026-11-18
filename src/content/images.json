@@ -317,5 +317,155 @@
   "h": 890,
   "bytes": 148585,
   "ai": true
+ },
+ "hero-golden-b": {
+  "variants": [
+   {
+    "w": 2400,
+    "h": 1340,
+    "src": "img/gen/hero-golden-b-2400.webp",
+    "bytes": 104764
+   },
+   {
+    "w": 1600,
+    "h": 893,
+    "src": "img/gen/hero-golden-b-1600.webp",
+    "bytes": 55846
+   },
+   {
+    "w": 960,
+    "h": 536,
+    "src": "img/gen/hero-golden-b-960.webp",
+    "bytes": 22690
+   }
+  ],
+  "w": 2400,
+  "h": 1340,
+  "ai": true,
+  "edited": true
+ },
+ "hero-golden-a": {
+  "variants": [
+   {
+    "w": 2400,
+    "h": 1340,
+    "src": "img/gen/hero-golden-a-2400.webp",
+    "bytes": 141102
+   },
+   {
+    "w": 1600,
+    "h": 893,
+    "src": "img/gen/hero-golden-a-1600.webp",
+    "bytes": 75916
+   },
+   {
+    "w": 960,
+    "h": 536,
+    "src": "img/gen/hero-golden-a-960.webp",
+    "bytes": 28320
+   }
+  ],
+  "w": 2400,
+  "h": 1340,
+  "ai": true,
+  "edited": true
+ },
+ "hero-golden-tall": {
+  "variants": [
+   {
+    "w": 1080,
+    "h": 1935,
+    "src": "img/gen/hero-golden-tall-1080.webp",
+    "bytes": 87388
+   },
+   {
+    "w": 720,
+    "h": 1290,
+    "src": "img/gen/hero-golden-tall-720.webp",
+    "bytes": 47648
+   }
+  ],
+  "w": 1080,
+  "h": 1935,
+  "ai": true,
+  "edited": true
+ },
+ "hero-night-b": {
+  "variants": [
+   {
+    "w": 2400,
+    "h": 1340,
+    "src": "img/gen/hero-night-b-2400.webp",
+    "bytes": 89422
+   },
+   {
+    "w": 1600,
+    "h": 893,
+    "src": "img/gen/hero-night-b-1600.webp",
+    "bytes": 49346
+   },
+   {
+    "w": 960,
+    "h": 536,
+    "src": "img/gen/hero-night-b-960.webp",
+    "bytes": 20154
+   }
+  ],
+  "w": 2400,
+  "h": 1340,
+  "ai": true,
+  "edited": true
+ },
+ "hero-plate-b": {
+  "variants": [
+   {
+    "w": 2400,
+    "h": 1340,
+    "src": "img/gen/hero-plate-b-2400.webp",
+    "bytes": 59362
+   },
+   {
+    "w": 1600,
+    "h": 893,
+    "src": "img/gen/hero-plate-b-1600.webp",
+    "bytes": 29546
+   },
+   {
+    "w": 960,
+    "h": 536,
+    "src": "img/gen/hero-plate-b-960.webp",
+    "bytes": 13884
+   }
+  ],
+  "w": 2400,
+  "h": 1340,
+  "ai": true,
+  "edited": true
+ },
+ "hero-building-b-box": {
+  "x": 0.41497093023255816,
+  "y": 0.3040364583333333,
+  "w": 0.5018168604651163,
+  "h": 0.5149739583333334
+ },
+ "hero-building-b": {
+  "variants": [
+   {
+    "w": 1381,
+    "h": 791,
+    "src": "img/gen/hero-building-b-1381.webp",
+    "bytes": 143116
+   },
+   {
+    "w": 900,
+    "h": 515,
+    "src": "img/gen/hero-building-b-900.webp",
+    "bytes": 83774
+   }
+  ],
+  "w": 1381,
+  "h": 791,
+  "ai": true,
+  "edited": true
  }
 }

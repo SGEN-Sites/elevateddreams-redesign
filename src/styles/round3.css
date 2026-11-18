@@ -1,0 +1,97 @@
+/* =====================================================================================================
+   ROUND 3 (owner review, 2026-11-18): the logo is never gold; skylines whisper; the footer carries the brand
+   name, not "Cloud 9"; Shop by feeling is four skies, afternoon to after dark; the home hero is the real
+   storefront at golden hour, floating on clouds.
+   ===================================================================================================== */
+
+/* ---------- logo: white with a violet glow, everywhere it appears ---------- */
+.logo__top { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: var(--text); text-shadow: 0 0 18px rgba(169, 155, 240, .55); animation: floatSm 5s ease-in-out infinite; }
+.logo__base { color: var(--text); }
+.hero__elev { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: #fff; filter: none; text-shadow: 0 2px 0 rgba(26, 20, 36, .25), 0 10px 40px rgba(26, 20, 36, .55), 0 0 60px rgba(169, 155, 240, .45); animation: hover 7s var(--ease-io) infinite alternate; }
+.hero__dreams { color: #fff; text-shadow: 0 2px 0 rgba(26, 20, 36, .25), 0 10px 40px rgba(26, 20, 36, .55), 0 0 70px rgba(123, 106, 196, .6); }
+.mist__brand .logo__top { animation: condense 1.25s var(--ease) both; }
+
+/* ---------- skylines: a whisper, not a wall ---------- */
+.sky__city--near { opacity: .2; filter: blur(.5px); }
+.sky__city--far { opacity: .09; }
+.sky .skyline__lit { opacity: .3; }
+.phero__city { opacity: .42; }
+.phero .skyline__lit { opacity: .45; }
+
+/* ---------- footer: the brand name, huge and quiet ---------- */
+.ftr__mark { position: absolute; top: clamp(34px, 6vw, 86px); left: 0; right: 0; z-index: -1; display: flex; justify-content: center; gap: .28em; font-family: var(--f-display); font-size: clamp(2.6rem, 8.2vw, 9.4rem); line-height: .82; white-space: nowrap; pointer-events: none; }
+.ftr__mark span { color: transparent; -webkit-text-stroke: 1.2px rgba(241, 236, 248, .26); text-shadow: 0 0 60px rgba(123, 106, 196, .25); }
+.ftr__mark span:first-child { animation: hover 9s var(--ease-io) infinite alternate; }
+.ftr { padding-top: clamp(140px, 17vw, 240px); }
+
+/* ---------- Shop by feeling: four skies in one strip, afternoon to after dark ---------- */
+.moods { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-radius: 28px; overflow: hidden; box-shadow: 0 50px 100px -40px rgba(0, 0, 0, .95), 0 0 0 1px rgba(241, 236, 248, .1); perspective: 1200px; isolation: isolate; }
+.mood { position: relative; }
+.mood + .mood::before { content: ""; position: absolute; left: 0; top: 12%; bottom: 12%; width: 1px; z-index: 4; background: linear-gradient(180deg, transparent, rgba(255, 255, 255, .28), transparent); }
+.mood__a { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: clamp(380px, 38vw, 520px); padding: clamp(22px, 2.4vw, 32px); text-decoration: none; color: #fff; overflow: hidden; transform-style: preserve-3d; transition: transform .7s var(--ease); }
+.mood__sky { position: absolute; inset: 0; z-index: 0; transition: filter .7s var(--ease), transform 1.2s var(--ease); }
+.mood--daydream .mood__sky { background: linear-gradient(180deg, #8fb3e0 0%, #f2d3a2 52%, #f6b77a 78%, #e08d6a 100%); }
+.mood--social .mood__sky { background: linear-gradient(180deg, #b58dc9 0%, #f39a6b 50%, #ff8a4c 72%, #c95479 100%); }
+.mood--wind-down .mood__sky { background: linear-gradient(180deg, #3d3576 0%, #8063a8 46%, #d48c9b 80%, #f0a888 100%); }
+.mood--lights-out .mood__sky { background: linear-gradient(180deg, #07060f 0%, #161236 46%, #2c2560 78%, #4a3a7a 100%); }
+.mood__orb { position: absolute; left: 50%; width: 90px; height: 90px; margin-left: -45px; border-radius: 50%; transition: transform 1.2s var(--ease); }
+.mood--daydream .mood__orb { top: 14%; background: radial-gradient(circle, #fffbe8 0%, #ffe9b0 45%, rgba(255, 233, 176, 0) 70%); box-shadow: 0 0 80px 30px rgba(255, 236, 190, .6); }
+.mood--social .mood__orb { top: 46%; width: 110px; height: 110px; margin-left: -55px; background: radial-gradient(circle, #fff1d6 0%, #ffb36b 45%, rgba(255, 140, 70, 0) 72%); box-shadow: 0 0 90px 36px rgba(255, 150, 80, .55); }
+.mood--wind-down .mood__orb { top: 70%; width: 120px; height: 120px; margin-left: -60px; background: radial-gradient(circle, rgba(255, 214, 180, .9) 0%, rgba(255, 170, 140, .45) 45%, rgba(255, 150, 130, 0) 72%); box-shadow: 0 0 80px 30px rgba(255, 170, 150, .35); }
+.mood--lights-out .mood__orb { top: 16%; width: 64px; height: 64px; margin-left: -32px; background: radial-gradient(circle at 38% 38%, #fffdf6, #e9e2cf 60%, #c9bfa6 100%); box-shadow: 0 0 40px 10px rgba(240, 232, 210, .35), 0 0 120px 40px rgba(169, 155, 240, .25); }
+.mood__stars { position: absolute; inset: 0 0 45%; opacity: 0; background-image: radial-gradient(1.2px 1.2px at 18% 22%, #fff 50%, transparent 52%), radial-gradient(1px 1px at 62% 12%, #fff 50%, transparent 52%), radial-gradient(1.3px 1.3px at 82% 34%, #fff 50%, transparent 52%), radial-gradient(1px 1px at 38% 40%, #fff 50%, transparent 52%), radial-gradient(1px 1px at 10% 52%, #fff 50%, transparent 52%), radial-gradient(1.2px 1.2px at 72% 58%, #fff 50%, transparent 52%); }
+.mood--lights-out .mood__stars { opacity: .9; animation: twinkle 5s ease-in-out infinite alternate; }
+.mood--wind-down .mood__stars { opacity: .35; }
+.mood__cloud { position: absolute; left: 0; width: calc(100% + 1200px); background-repeat: repeat-x; background-size: 1200px 100%; mix-blend-mode: screen; pointer-events: none; animation: fogslide-m 60s linear infinite; -webkit-mask-image: linear-gradient(180deg, transparent, #000 35%, #000 75%, transparent); mask-image: linear-gradient(180deg, transparent, #000 35%, #000 75%, transparent); }
+.mood__cloud--a { bottom: -6%; height: 52%; background-image: var(--fog-w); opacity: .75; -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%); mask-image: linear-gradient(180deg, transparent, #000 40%); }
+.mood__cloud--b { bottom: 18%; height: 30%; background-image: var(--fog-s); opacity: .4; animation-duration: 54s; animation-direction: reverse; }
+.mood--lights-out .mood__cloud--a { background-image: var(--fog-v); opacity: .55; }
+.mood--wind-down .mood__cloud--a { background-image: var(--fog-v); opacity: .6; }
+@keyframes fogslide-m { to { transform: translate3d(-1200px, 0, 0); } }
+.mood__txt { position: relative; z-index: 3; display: grid; gap: 6px; }
+.mood__txt::before { content: ""; position: absolute; inset: -60px -40px -40px; z-index: -1; background: linear-gradient(180deg, transparent, rgba(12, 8, 18, .55) 45%, rgba(12, 8, 18, .78)); pointer-events: none; }
+.mood__txt small { font: 800 .8rem/1 var(--f-ui); letter-spacing: .3em; color: rgba(255, 255, 255, .82); }
+.mood__txt b { font: 400 clamp(1.7rem, 2.6vw, 2.4rem)/1 var(--f-display); color: #fff; text-shadow: 0 2px 20px rgba(0, 0, 0, .4); }
+.mood__txt span { font-size: 1rem; line-height: 1.45; color: rgba(255, 255, 255, .9); }
+.mood__txt em { display: inline-flex; align-items: center; gap: .4em; margin-top: 6px; font: 700 .95rem var(--f-ui); font-style: normal; letter-spacing: .16em; text-transform: uppercase; color: #fff; }
+.mood__txt em .ic { width: 15px; height: 15px; transition: transform .4s var(--ease); }
+.mood__a:hover .mood__sky, .mood__a:focus-visible .mood__sky { filter: brightness(1.12) saturate(1.15); transform: scale(1.04); }
+.mood__a:hover .mood__orb, .mood__a:focus-visible .mood__orb { transform: translateY(-18px) scale(1.08); }
+.mood__a:hover .mood__cloud, .mood__a:focus-visible .mood__cloud { animation-duration: 24s; }
+.mood__a:hover em .ic { transform: translate(3px, -3px); }
+@media (max-width: 1023px) { .moods { grid-template-columns: 1fr 1fr; } .mood:nth-child(3)::before { display: none; } }
+@media (max-width: 760px) {
+  .moods { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; border-radius: 22px; scrollbar-width: none; margin-inline: calc(-1 * var(--gutter)); border-radius: 0; box-shadow: none; padding: 0 var(--gutter); gap: 12px; }
+  .moods::-webkit-scrollbar { display: none; }
+  .mood { flex: 0 0 78%; scroll-snap-align: center; border-radius: 22px; overflow: hidden; }
+  .mood + .mood::before { display: none; }
+  .mood__a { min-height: 400px; }
+}
+
+/* ---------- home hero: the real storefront at golden hour, floating on clouds ---------- */
+.hero__still img { object-position: 62% 50%; filter: saturate(1.04) contrast(1.02); }
+.hero__glow--golden { background: linear-gradient(90deg, rgba(20, 14, 28, .78) 0%, rgba(20, 14, 28, .5) 34%, rgba(20, 14, 28, 0) 62%), linear-gradient(180deg, rgba(20, 14, 28, .45) 0%, rgba(20, 14, 28, 0) 22%, rgba(20, 14, 28, 0) 70%, rgba(26, 20, 36, .96) 100%); }
+.fogband--warm i:nth-child(1) { background-image: var(--fog-s); opacity: .55; }
+.fogband--warm i:nth-child(2) { background-image: var(--fog-w); opacity: .5; }
+.fogband--warm i:nth-child(3) { background-image: var(--fog-w); opacity: .3; }
+.is-home .hero__smoke.is-on { opacity: .55; }
+.is-home .hero__plate { background: linear-gradient(160deg, rgba(30, 22, 42, .62), rgba(14, 10, 20, .58)); }
+@media (max-width: 760px) {
+  .hero__still img { object-position: 50% 40%; }
+  .hero__glow--golden { background: linear-gradient(180deg, rgba(20, 14, 28, .55) 0%, rgba(20, 14, 28, .05) 26%, rgba(20, 14, 28, .1) 52%, rgba(26, 20, 36, .96) 100%); }
+}
+
+/* ---------- design-option lab bar (review pages only) ---------- */
+.labbar { position: relative; z-index: 75; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding: 8px var(--gutter); background: #f1ecf8; color: #1A1424; font: 700 14px/20px var(--f-ui); letter-spacing: .1em; text-transform: uppercase; }
+.labbar__k { color: #7B6AC4; letter-spacing: .24em; margin-right: 6px; }
+.labbar a { color: #1A1424; text-decoration: none; padding: 4px 8px; border-radius: 6px; line-height: 20px; }
+.labbar a[aria-current] { background: #1A1424; color: #f1ecf8; }
+.labbar__replay { margin-left: auto; border: 0; border-radius: 999px; padding: 4px 14px; line-height: 20px; background: #7B6AC4; color: #fff; font: inherit; letter-spacing: .1em; }
+
+/* main home (until a layout option is chosen): the storefront's own sign carries the name, so the giant lockup
+   steps aside and the copy sits clear of the building */
+.is-home:not(.is-lab) .hero__lock { display: none; }
+.is-home:not(.is-lab) .hero__plate { max-width: 540px; }
+.is-home:not(.is-lab) .hero__h1 { font-size: clamp(2rem, 3.2vw, 3rem); }
+@media (max-width: 760px) { .is-home:not(.is-lab) .hero { padding-top: 52vh; } }
+@media (max-width: 760px) { .labbar { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; white-space: nowrap; } .labbar::-webkit-scrollbar { display: none; } .labbar__replay { margin-left: 8px; flex: none; } }

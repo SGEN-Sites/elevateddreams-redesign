@@ -26,3 +26,11 @@
 
 Not run: the site-reforge readiness gate (a pitch preview, not a handoff package) and a check of the live store's
 category pages, which answer 403 outside the US.
+
+## Round 3 (2026-11-18): golden-hour storefront, hero and splash options
+
+Owner feedback applied (see PITCH-NOTES "Round 3"): golden-hour floating storefront hero, no floating objects, no gold
+on the logo, quieter skylines, four-sky "Shop by feeling", brand wordmark footer. Three hero layouts and three splash
+animations published for review at `/lab/` (noindex like every page; not in the sitemap). Each option was built by a
+separate agent to a written contract (two files each under `src/lab/`, scoped CSS/JS), then re-checked here at 390 and
+1440: 0 script errors, no sideways overflow, one H1.

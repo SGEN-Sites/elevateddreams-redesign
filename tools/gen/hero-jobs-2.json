@@ -1,0 +1,10 @@
+{
+  "note": "Round 3 hero, wave 2: derived from golden-wide-b (owner-directed storefront edit).",
+  "jobs": [
+    { "id": "night-wide-b", "model": "fal-ai/nano-banana-pro/edit", "image": "private/gen/hero/golden-wide-b.png", "aspect": "16:9", "resolution": "2K",
+      "prompt": "Change only the time of day in this exact image to night, after dark. Keep everything else identical: the same building in the same place and size, the same camera angle, the same cloud shapes, the same sign reading exactly \"Elevated Dreams\" and the same window banners, with no lettering changed or added. The sky becomes deep violet-blue going to near-black at the top with a few faint stars and a soft moon glow high on the left where the sun was. The clouds are moonlit, silvery lavender with soft violet shadows. The windows glow warm amber from inside, the sign is softly lit, and a gentle violet neon glow spills from the windows onto the clouds. Cinematic night photograph, soft haze, fine film grain. No people, no extra text, no logos." },
+    { "id": "plate-wide-b", "model": "fal-ai/nano-banana-pro/edit", "image": "private/gen/hero/golden-wide-b.png", "aspect": "16:9", "resolution": "2K",
+      "prompt": "Remove the building from this exact image completely: no walls, no roof, no sign, no windows, no door, no handrail. Fill the space where it stood with the same golden-hour sky and the same soft sunlit cloud tops, continuing the clouds and light naturally. Keep the rest of the image identical: the same sun, sun rays, cloud shapes, colours and composition. Photographic, cinematic, fine film grain. No text, no people." },
+    { "id": "cut-wide-b", "model": "fal-ai/birefnet/v2", "image": "private/gen/hero/golden-wide-b.png" }
+  ]
+}

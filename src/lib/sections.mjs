@@ -8,7 +8,7 @@ export const activeDeals = () => deals.filter((d) => !d.expires || new Date(d.ex
 
 // Inner-page hero: a graded night plate, a far skyline, the title in the slab, an optional levitating object.
 export function pageHero({ kicker: k, title, lede, crumbs, art = 'scene-rooftops', obj = null, objAlt = '', cta = '', h1 = true, small = false, extra = '' }) {
-  return `<section class="phero${small ? ' phero--sm' : ''}${obj ? ' phero--obj' : ''}" data-hero>
+  return `<section class="phero${small ? ' phero--sm' : ''}" data-hero>
   <div class="phero__bg" aria-hidden="true">${art ? img(art, { alt: '', sizes: '100vw', eager: true }) : ''}<div class="phero__city">${skyline({ seed: (title.length * 13) % 97 + 3 })}</div></div>
   <div class="fogband fogband--hero" aria-hidden="true"><i></i><i></i></div>
   <div class="band__in phero__in">
@@ -19,7 +19,6 @@ export function pageHero({ kicker: k, title, lede, crumbs, art = 'scene-rooftops
     ${cta ? `<div class="phero__cta">${cta}</div>` : ''}
     ${extra}
   </div>
-  ${obj ? `<div class="phero__obj" aria-hidden="true">${lev(obj, { alt: objAlt, sizes: '(max-width: 760px) 40vw, 320px', eager: true })}</div>` : ''}
 </section>`;
 }
 
@@ -65,22 +64,18 @@ export function catsGrid({ head = true, guides = false } = {}) {
 <div class="ledge" aria-hidden="true"></div>`;
 }
 
-// Shop by feeling: four lit windows on one building, haze drifting across them.
+// Shop by feeling: four skies, afternoon to night, one continuous strip. Each opens the live menu.
+const SKY = { daydream: 'AFTERNOON', social: 'GOLDEN HOUR', 'wind-down': 'DUSK', 'lights-out': 'AFTER DARK' };
 export function feelingsFacade({ head = true } = {}) {
-  return `${head ? sectionHead({ k: 'SHOP BY FEELING', t: 'Pick a window. <em>Every light is on.</em>', lede: 'Four moods, four lit windows. Each one opens the live menu.' }) : ''}
-<div class="facade" data-reveal>
-  <div class="facade__roof" aria-hidden="true"><span class="facade__tank"></span></div>
-  <ul class="facade__grid" role="list">
-    ${feelings.map((f, i) => `<li class="win win--${f.id}" style="--i:${i}">
-      <a class="win__a" href="${SHOP.menu}" ${shopAttrs} data-lift>
-        <span class="win__glass" aria-hidden="true"><span class="win__room"></span><span class="win__blinds"></span><span class="win__sill"></span></span>
-        <span class="win__txt"><b>${esc(f.label)}</b><span>${esc(f.line)}</span><em>Shop ${icon('ne')}</em></span>
-      </a>
-    </li>`).join('')}
-  </ul>
-  <div class="facade__door" aria-hidden="true"><span>190</span></div>
-  <div class="fogband fogband--facade" aria-hidden="true"><i></i><i></i></div>
-</div>
+  return `${head ? sectionHead({ k: 'SHOP BY FEELING', t: 'From daydream <em>to lights out.</em>', lede: 'Four moods, afternoon to after dark. Each one opens the live menu.' }) : ''}
+<ul class="moods" role="list" data-reveal>
+  ${feelings.map((f, i) => `<li class="mood mood--${f.id}" style="--i:${i}">
+    <a class="mood__a" href="${SHOP.menu}" ${shopAttrs} data-tilt>
+      <span class="mood__sky" aria-hidden="true"><span class="mood__orb"></span><span class="mood__stars"></span><span class="mood__cloud mood__cloud--a"></span><span class="mood__cloud mood__cloud--b"></span></span>
+      <span class="mood__txt"><small>${SKY[f.id]}</small><b>${esc(f.label)}</b><span>${esc(f.line)}</span><em>Shop ${icon('ne')}</em></span>
+    </a>
+  </li>`).join('')}
+</ul>
 <p class="fine fine--center">${esc(feelingsNote)}</p>`;
 }
 
@@ -124,7 +119,7 @@ export const learnCards = () => `<ul class="lcards" role="list">${home.learnCard
 export function finale({ title = home.readyTitle, lede = home.ready, fine = home.readyFine } = {}) {
   return `<section class="band band--finale" aria-labelledby="finale-t">
   <div class="band__in finale">
-    <p class="finale__alt" aria-hidden="true">YOU ARE NOW AT CLOUD 9</p>
+    <p class="finale__alt" aria-hidden="true">NOW YOU’RE ELEVATED</p>
     <h2 class="finale__t" id="finale-t" data-reveal>${esc(title)}</h2>
     <p class="finale__lede">${esc(lede)}</p>
     <div class="finale__cta">${btn('Order Online / Delivery Available', SHOP.menu, { shop: true })}${btn('Plan your visit', '/visit/', { kind: 'ghost' })}</div>

@@ -12,18 +12,11 @@ export default function homePage({ articles }) {
 <section class="hero" data-hero aria-labelledby="hero-h1">
   <div class="hero__media" aria-hidden="true">
     <picture class="hero__still">
-      <source media="(max-width: 760px)" srcset="${asset('img/gen/scene-hero-river-tall-720.webp')} 720w, ${asset('img/gen/scene-hero-river-tall-1080.webp')} 1080w" sizes="100vw">
-      ${img('scene-hero-river', { alt: '', sizes: '100vw', eager: true, cls: 'hero__img' })}
+      <source media="(max-width: 760px)" srcset="${asset('img/gen/hero-golden-tall-720.webp')} 720w, ${asset('img/gen/hero-golden-tall-1080.webp')} 1080w" sizes="100vw">
+      ${img('hero-golden-b', { alt: '', sizes: '100vw', eager: true, cls: 'hero__img' })}
     </picture>
-    <video class="hero__video" muted playsinline loop preload="none" poster="${asset('video/hero-river-poster.webp')}" data-hero-video data-src="${asset('video/hero-river.mp4')}" data-ai="generated"></video>
   </div>
-  <div class="hero__glow" aria-hidden="true"></div>
-  <div class="hero__stars" aria-hidden="true"></div>
-  <div class="hero__city" aria-hidden="true">
-    <div class="hero__skyline">${skyline({ seed: 11, h: 420 })}</div>
-    <div class="hero__reflect">${skyline({ seed: 11, h: 420 })}</div>
-    <svg class="hero__ripple-def" width="0" height="0"><filter id="ripple"><feTurbulence type="fractalNoise" baseFrequency="0.006 0.09" numOctaves="2" seed="3" result="n"><animate attributeName="baseFrequency" dur="18s" values="0.006 0.09;0.008 0.12;0.006 0.09" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="18" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
-  </div>
+  <div class="hero__glow hero__glow--golden" aria-hidden="true"></div>
   <canvas class="hero__smoke" data-smoke aria-hidden="true"></canvas>
   <div class="band__in hero__in">
     <div class="hero__lock" aria-hidden="true">
@@ -40,12 +33,7 @@ export default function homePage({ articles }) {
       <p class="hero__meta"><a href="tel:${store.tel}">${icon('phone')} Call ${store.phone}</a>${statusLine()}</p>
     </div>
   </div>
-  <div class="hero__props" aria-hidden="true">
-    ${lev('obj-preroll', { cls: 'hero__prop hero__prop--a', sizes: '(max-width: 760px) 30vw, 220px', delay: 0.4 })}
-    ${lev('obj-flower', { cls: 'hero__prop hero__prop--b', sizes: '(max-width: 760px) 26vw, 170px', delay: 1.6 })}
-  </div>
-  <div class="fogband fogband--home" aria-hidden="true"><i></i><i></i><i></i></div>
-  <button class="hero__pause" type="button" data-video-toggle aria-label="Pause background video" hidden>${icon('pause')}</button>
+  <div class="fogband fogband--home fogband--warm" aria-hidden="true"><i></i><i></i><i></i></div>
   <a class="hero__down" href="#tonight"><span>GOING UP</span>${icon('up')}</a>
 </section>
 

@@ -33,8 +33,9 @@ function head(p, ctx) {
 <link rel="preload" href="${asset('fonts/barlow-400.woff2')}" as="font" type="font/woff2" crossorigin>
 ${p.preload || ''}
 <link rel="stylesheet" href="${asset('css/site.css')}">
-<script>(function(d,w){var h=d.documentElement,c='js';try{var rm=w.matchMedia('(prefers-reduced-motion: reduce)').matches;if(rm)c+=' rm';var ss=w.sessionStorage,ls=w.localStorage;if(!rm&&!ss.getItem('ed.mist'))c+=' mist-on';if(ls.getItem('ed.age')!=='1')c+=' gate-on';if(!rm&&ss.getItem('ed.haze')==='1'){c+=' is-arriving';ss.removeItem('ed.haze');}}catch(e){}h.className+=' '+c;w.setTimeout(function(){if(!h.classList.contains('site-ready')){h.classList.remove('gate-on','mist-on','is-arriving');h.classList.add('reveal-all');}},4000);})(document,window);</script>
+<script>(function(d,w){var h=d.documentElement,c='js';try{var rm=w.matchMedia('(prefers-reduced-motion: reduce)').matches;if(rm)c+=' rm';var ss=w.sessionStorage,ls=w.localStorage;${p.lab ? '' : `if(!rm&&!ss.getItem('ed.mist'))c+=' mist-on';if(ls.getItem('ed.age')!=='1')c+=' gate-on';`}if(!rm&&ss.getItem('ed.haze')==='1'){c+=' is-arriving';ss.removeItem('ed.haze');}}catch(e){}h.className+=' '+c;w.setTimeout(function(){if(!h.classList.contains('site-ready')){h.classList.remove('gate-on','mist-on','is-arriving');h.classList.add('reveal-all');}},4000);})(document,window);</script>
 ${ld}
+${p.inlineCss ? `<style>${p.inlineCss}</style>` : ''}
 </head>`;
 }
 
@@ -162,8 +163,7 @@ export { placards };
 function footer(ctx) {
   const col = (title, links) => `<details class="ftr__col" open><summary>${esc(title)}${icon('chev')}</summary><ul>${links.map(([l, h, ext]) => `<li><a href="${esc(/^https?:/.test(h) ? h : u(h))}"${ext ? ` ${shopAttrs}` : ''}>${esc(l)}${ext ? ' ↗' : ''}</a></li>`).join('')}</ul></details>`;
   return `<footer class="ftr" data-ftr>
-  <div class="ftr__sky" aria-hidden="true">${img('scene-sky', { alt: '', sizes: '100vw' })}</div>
-  <div class="ftr__cloud9" aria-hidden="true"><span>CLOUD</span><b>9</b></div>
+  <div class="ftr__mark" aria-hidden="true"><span>ELEVATED</span> <span>DREAMS</span></div>
   <div class="fogband fogband--ftr" aria-hidden="true"><i></i><i></i></div>
   <div class="band__in ftr__in">
     <div class="ftr__brand">
@@ -254,12 +254,14 @@ const altimeter = () => `<div class="alt" aria-hidden="true" data-alt>
   <span class="alt__track"><i data-alt-bar></i></span>
 </div>`;
 
+const LAB = [['/lab/', 'All options'], ['/lab/hero-a/', 'Hero A'], ['/lab/hero-b/', 'Hero B'], ['/lab/hero-c/', 'Hero C'], ['/lab/splash-1/', 'Splash 1'], ['/lab/splash-2/', 'Splash 2'], ['/lab/splash-3/', 'Splash 3']];
+const labBar = (p) => `<div class="labbar" role="navigation" aria-label="Design options"><span class="labbar__k">DESIGN OPTIONS</span>${LAB.map(([h, l]) => `<a href="${u(h)}"${p.path === h ? ' aria-current="page"' : ''}>${l}</a>`).join('')}${p.replay ? '<button type="button" class="labbar__replay" onclick="window.labReplay&&window.labReplay()">Replay splash</button>' : ''}</div>`;
 export function layout(p, ctx) {
   return `${head(p, ctx)}
 <body class="${p.bodyClass || ''}">
 <a class="skip" href="#main">Skip to content</a>
-${loader()}
-${gate()}
+${p.lab ? labBar(p) : `${loader()}
+${gate()}`}
 ${sky()}
 ${header(p)}
 <main id="main" tabindex="-1">
@@ -274,6 +276,7 @@ ${altimeter()}
 <script src="${asset('js/site.js')}" defer></script>
 <script src="${asset('js/fog.js')}" defer></script>
 ${(p.scripts || []).map((s) => `<script src="${asset('js/' + s)}" defer></script>`).join('\n')}
+${p.inlineJs ? `<script>${p.inlineJs}</script>` : ''}
 </body>
 </html>
 `;
