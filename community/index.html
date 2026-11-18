@@ -27,10 +27,28 @@
 </head>
 <body class="is-community">
 <a class="skip" href="#main">Skip to content</a>
-<div class="mist" aria-hidden="true" data-mist>
-  <div class="mist__fog mist__fog--a"></div><div class="mist__fog mist__fog--b"></div><div class="mist__fog mist__fog--c"></div>
-  <p class="mist__brand"><span class="logo__lock" aria-hidden="true"><span class="logo__top">ELEVATED</span><span class="logo__shadow"></span><span class="logo__base">DREAMS</span></span></p>
+<div class="sp1" data-sp1 aria-hidden="true">
+  <div class="sp1-base"></div>
+  <div class="sp1-c sp1-c--l0"></div><div class="sp1-c sp1-c--r0"></div>
+  <div class="sp1-sun"></div>
+  <div class="sp1-c sp1-c--l1"></div><div class="sp1-c sp1-c--r1"></div>
+  <p class="sp1-mark"><span class="sp1-w">ELEVATED</span><span class="sp1-w sp1-w2">DREAMS</span></p>
+  <div class="sp1-c sp1-c--l2"></div><div class="sp1-c sp1-c--r2"></div>
 </div>
+<script>(function(){
+  var d=document,W=window,root=d.documentElement,el=d.querySelector('[data-sp1]');
+  if(!el)return;
+  var still=W.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!root.classList.contains('mist-on')||still){el.parentNode.removeChild(el);return;}
+  try{W.sessionStorage.setItem('ed.mist','1');}catch(e){}
+  var timer=0,armT=0,armed=false,EV=['keydown','pointerdown','wheel','touchstart'];
+  function disarm(){if(!armed)return;armed=false;EV.forEach(function(e){W.removeEventListener(e,skip,true);});}
+  function arm(){armed=true;EV.forEach(function(e){W.addEventListener(e,skip,{capture:true,passive:true});});}
+  function finish(){W.clearTimeout(timer);W.clearTimeout(armT);disarm();if(el&&el.parentNode)el.parentNode.removeChild(el);el=null;
+    var y=d.querySelector('[data-gate-yes]');if(y&&root.classList.contains('gate-on'))y.focus();}
+  function skip(){if(!el||el.classList.contains('is-skip'))return;disarm();el.classList.add('is-skip');W.clearTimeout(timer);timer=W.setTimeout(finish,320);}
+  timer=W.setTimeout(finish,1800);armT=W.setTimeout(arm,60);
+})();</script>
 <div class="gate" role="dialog" aria-modal="true" aria-labelledby="gate-q" data-gate>
   <div class="gate__panel">
     <div class="gate__fog" aria-hidden="true"><i></i><i></i></div>
