@@ -148,6 +148,7 @@ body.hxe-page .band--placards-top::before{background:radial-gradient(48% 44% at 
 /* the menu sits straight on the sky: no scrim, and no rooftop ledge up here */
 body.hxe-page .band--cats::before{background:none}
 body.hxe-page .ledge{display:none}
+body.hxe-page .band--cats .center{margin:clamp(36px,4vw,56px) 0 0;scroll-margin-top:45vh}
 
 /* far off screen the heavy layers leave the compositor altogether */
 .hxe.hxe-off .hxe-stage,.hxe.hxe-skyoff .hxe-sky{visibility:hidden}
@@ -477,7 +478,7 @@ body.hxe-page .ledge{display:none}
   </li>
 </ul>
 <div class="ledge" aria-hidden="true"></div>
-  <p class="center"><a class="link" href="/elevateddreams-redesign/learn/">Not sure where to start? Read our product guides <svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a></p></div>
+  <p class="center" id="menu-guides"><a class="link" href="/elevateddreams-redesign/learn/">Not sure where to start? Read our product guides <svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a></p></div>
 </section>
 
 <section class="band band--brick band--placards band--placards-top" id="license" aria-label="License, warnings and HOPEline">
