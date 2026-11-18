@@ -7,11 +7,10 @@
   "bytes": 159760
  },
  "obj-preroll": {
-  "src": "img/gen/obj-preroll.webp",
-  "w": 863,
-  "h": 900,
-  "ai": true,
-  "bytes": 47378
+  "src": "img/product/preroll.webp",
+  "w": 548,
+  "h": 554,
+  "bytes": 23870
  },
  "obj-edibles": {
   "src": "img/gen/obj-edibles.webp",

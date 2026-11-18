@@ -42,7 +42,9 @@ def largest_component(alpha):
     from PIL import ImageChops
     return ImageChops.multiply(alpha, keep)
 
-for name in ['obj-flower', 'obj-preroll', 'obj-edibles', 'obj-vape', 'obj-concentrate', 'obj-cbd', 'obj-accessory']:
+# obj-preroll is no longer generated: since round 4 the tile uses a real product photo (docs/PITCH-NOTES.md)
+manifest['obj-preroll'] = {'src': 'img/product/preroll.webp', 'w': 548, 'h': 554, 'bytes': 23870}
+for name in ['obj-flower', 'obj-edibles', 'obj-vape', 'obj-concentrate', 'obj-cbd', 'obj-accessory']:
     im = Image.open(f'{GEN}/{name}-cut.png').convert('RGBA')
     a = largest_component(im.getchannel('A'))
     im.putalpha(a)
