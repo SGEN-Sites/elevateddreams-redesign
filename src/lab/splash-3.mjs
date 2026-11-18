@@ -79,7 +79,6 @@ html.rm .sp3{display:none!important}
 .sp3-hero__in{position:relative;width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
 .sp3-plate{position:relative;max-width:560px;padding:clamp(28px,2.6vw,40px) clamp(28px,2.8vw,42px);border-radius:30px;background:linear-gradient(160deg,rgba(34,25,48,.74),rgba(13,9,19,.8));-webkit-backdrop-filter:blur(20px) saturate(145%);backdrop-filter:blur(20px) saturate(145%);box-shadow:inset 0 0 0 1px rgba(241,236,248,.14),inset 0 1px 0 rgba(255,255,255,.1),0 50px 100px -40px rgba(0,0,0,.9)}
 .sp3-kicker{display:flex;align-items:center;gap:.75em;margin:0 0 18px;font:700 .84rem/1.35 var(--f-ui);letter-spacing:.22em;text-transform:uppercase;color:var(--violet-hi);text-wrap:balance}
-.sp3-kicker::before{content:"";flex:none;width:28px;height:1px;background:currentColor;opacity:.8}
 .sp3-h1{margin:0 0 16px;font-family:var(--f-display);font-size:clamp(1.9rem,2.65vw,2.6rem);line-height:1;letter-spacing:.005em;color:#fff;text-wrap:balance}
 .sp3-h1 em{display:block;margin-top:.06em;font-style:normal;color:var(--violet-hi);text-shadow:0 0 30px rgba(123,106,196,.6)}
 .sp3-lede{max-width:44ch;margin:0 0 24px;font-size:clamp(1.02rem,1.12vw,1.12rem);line-height:1.6;color:var(--text-2)}
@@ -98,7 +97,6 @@ html.rm .sp3{display:none!important}
   .sp3-hero__fog{bottom:auto;top:100vw;height:80vw}
   .sp3-plate{padding:22px 18px 20px;border-radius:24px}
   .sp3-kicker{margin-bottom:12px;font-size:.74rem;letter-spacing:.17em;text-wrap:balance}
-  .sp3-kicker::before{width:20px}
   .sp3-h1{margin-bottom:12px;font-size:min(6.8vw,2.3rem)}
   .sp3-lede{margin-bottom:18px;font-size:1rem;line-height:1.55}
   .sp3-cta{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:16px}

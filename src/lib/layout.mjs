@@ -256,7 +256,10 @@ const altimeter = () => `<div class="alt" aria-hidden="true" data-alt>
 </div>`;
 
 const LAB = [['/lab/', 'All options'], ['/lab/hero-a/', 'Hero A'], ['/lab/hero-b/', 'Hero B'], ['/lab/hero-c/', 'Hero C'], ['/lab/hero-d/', 'Hero D'], ['/lab/hero-e/', 'Hero E'], ['/lab/splash-1/', 'Splash 1'], ['/lab/splash-2/', 'Splash 2'], ['/lab/splash-3/', 'Splash 3'], ['/lab/fonts/', 'Fonts']];
-const labExists = (h) => h === '/lab/' || fs.existsSync(new URL(`../lab/${h.replace(/^\/lab\/|\/$/g, '')}.mjs`, import.meta.url));
+const LAB_SKIP = (process.env.LAB_SKIP || '').split(',').map((s) => s.trim()).filter(Boolean);
+// a lab option is listed only when its file exists and it is not held back with LAB_SKIP (see build.mjs)
+export const labReady = (slug) => !LAB_SKIP.includes(slug) && fs.existsSync(new URL(`../lab/${slug}.mjs`, import.meta.url));
+const labExists = (h) => h === '/lab/' || labReady(h.replace(/^\/lab\/|\/$/g, ''));
 const labBar = (p) => `<div class="labbar" role="navigation" aria-label="Design options"><span class="labbar__k">DESIGN OPTIONS</span>${LAB.filter(([h]) => labExists(h)).map(([h, l]) => `<a href="${u(h)}"${p.path === h ? ' aria-current="page"' : ''}>${l}</a>`).join('')}${p.replay ? '<button type="button" class="labbar__replay" onclick="window.labReplay&&window.labReplay()">Replay splash</button>' : ''}</div>`;
 export function layout(p, ctx) {
   return `${head(p, ctx)}

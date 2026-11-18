@@ -12,6 +12,8 @@ The preview is `noindex`; it is a pitch, not the client's official website.
   visitor's installed copy (Macs, PCs with Microsoft Office) and otherwise Roboto Slab Bold, the next font in the live
   stack. **A Rockwell web-font license is needed before launch.** UI and body stay Barlow Condensed and Barlow.
 - **Hero wordmark:** ELEVATED and DREAMS left-aligned with each other and lowered, clear of the menu.
+- **Eyebrows carry no dashes** (owner rule): the short line drawn before every eyebrow is gone, and the hero eyebrow
+  reads PREMIUM LICENSED DISPENSARY · NEWBURGH, NY (the em dash became the middle dot the site already uses).
 - **Two more hero options with seamless transitions** into the bars above and the sections below: D "Open sky" and
   E "One sky, golden hour to night", at `/lab/hero-d/` and `/lab/hero-e/` once built.
 

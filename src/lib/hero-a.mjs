@@ -81,7 +81,6 @@ export function heroA() {
 .hxa-in{position:relative;z-index:2;width:100%;padding:0 var(--hxa-pad)}
 .hxa-copy{max-width:var(--hxa-cw);text-shadow:0 2px 20px rgba(10,7,14,.5)}
 .hxa-kicker{display:flex;align-items:center;gap:.8em;margin:0 0 18px;font:700 .86rem/1.3 var(--f-ui);letter-spacing:.24em;text-transform:uppercase;color:var(--text-2)}
-.hxa-kicker::before{content:"";flex:none;width:34px;height:2px;border-radius:2px;background:var(--violet-hi);box-shadow:0 0 12px rgba(169,155,240,.9)}
 .hxa-h1{margin:0 0 18px;font-family:var(--f-display);font-size:min(2.75rem,calc(var(--hxa-cw)/12.1));line-height:1.04;letter-spacing:.004em;color:var(--text);text-wrap:balance}
 .hxa-h1 em{display:block;font-style:normal;color:var(--violet-hi);text-shadow:0 0 30px rgba(123,106,196,.7),0 2px 18px rgba(10,7,14,.5)}
 .hxa-lede{max-width:44ch;margin:0;font-size:clamp(1.02rem,1.25vw,1.14rem);line-height:1.62;color:var(--text);text-wrap:pretty}
@@ -131,7 +130,6 @@ export function heroA() {
 }
 @media (max-width: 760px){
   .hxa-kicker{font-size:.74rem;letter-spacing:.16em;gap:.6em;margin-bottom:12px}
-  .hxa-kicker::before{width:20px}
   .hxa-h1{font-size:min(2.05rem,calc(var(--hxa-cw)/12.05));margin-bottom:12px}
   .hxa-lede{font-size:.98rem;line-height:1.52}
   .hxa-cta{gap:10px;margin:18px 0 14px}

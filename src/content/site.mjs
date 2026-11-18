@@ -90,7 +90,7 @@ export const feelingsNote = 'Feelings name the moment, not a promised effect. Ef
 
 // LIVE home blocks.
 export const home = {
-  heroKicker: 'PREMIUM LICENSED DISPENSARY — NEWBURGH, NY',
+  heroKicker: 'PREMIUM LICENSED DISPENSARY · NEWBURGH, NY',
   liveH1: 'Elevate Your Experience',
   heroLede: 'Discover premium cannabis, knowledgeable service, and convenient online ordering at Elevated Dreams LLC in Newburgh.',
   storyKicker: 'OUR STORY', storyTitle: 'Welcome to Elevated Dreams LLC',

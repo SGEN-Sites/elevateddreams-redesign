@@ -94,7 +94,6 @@ html.rm .sp2-splash{display:none !important}
 .sp2-plate{position:relative;max-width:610px;padding:clamp(22px,2.4vw,34px) clamp(22px,2.8vw,38px);border-radius:28px;background:linear-gradient(160deg,rgba(34,25,48,.7),rgba(12,8,18,.66));-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 0 0 1px rgba(207,195,255,.2),0 40px 90px -30px rgba(0,0,0,.85)}
 .sp2-plate::before{content:"";position:absolute;inset:7px;border-radius:22px;box-shadow:inset 0 0 0 1px rgba(207,195,255,.1);pointer-events:none}
 .sp2-kicker{display:flex;align-items:center;gap:.7em;margin:0 0 14px;font:700 .9rem/1.2 var(--f-ui);letter-spacing:.22em;text-transform:uppercase;color:#DCD3FF}
-.sp2-kicker::before{content:"";flex:none;width:26px;height:1px;background:var(--violet-hi)}
 .sp2-h1{margin:0 0 14px;font-family:var(--f-display);font-size:clamp(2rem,3vw,3.1rem);line-height:1.02;color:#fff}
 .sp2-h1 em{display:block;font-style:normal;color:#CFC3FF;text-shadow:0 0 28px rgba(123,106,196,.7)}
 .sp2-lede{margin:0;font-size:clamp(1.02rem,1.25vw,1.15rem);line-height:1.6;color:#DDD5EA}
@@ -118,7 +117,6 @@ html.rm .sp2-splash{display:none !important}
   .sp2-plate{padding:20px;border-radius:22px}
   .sp2-plate::before{border-radius:16px}
   .sp2-kicker{font-size:.76rem;letter-spacing:.16em;margin-bottom:10px;text-wrap:balance}
-  .sp2-kicker::before{width:18px}
   .sp2-h1{font-size:clamp(1.75rem,8.4vw,2.3rem);margin-bottom:10px}
   .sp2-lede{font-size:.98rem;line-height:1.5}
   .sp2-cta{gap:10px;margin:16px 0 12px}

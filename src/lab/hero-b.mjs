@@ -116,7 +116,6 @@ html.js:not(.rm) .hxb-stage{position:sticky;top:0;height:100svh}
 .hxb-col{max-width:min(720px,56vw)}
 .hxb-rv{--hxb-t:clamp(0,calc((var(--hxb-p) - .5 - var(--i,0)*.045)/.3),1);opacity:var(--hxb-t);transform:translateY(calc((1 - var(--hxb-t))*34px))}
 .hxb-kicker{display:flex;align-items:center;gap:.7em;margin:0 0 16px;font:700 .9rem/1.2 var(--f-ui);letter-spacing:.22em;text-transform:uppercase;color:#DCD3FF}
-.hxb-kicker::before{content:"";flex:none;width:26px;height:1px;background:var(--violet-hi)}
 .hxb-h1{margin:0 0 16px;font-family:var(--f-display);font-size:clamp(2.2rem,3.3vw,3.7rem);line-height:1.02;color:#fff;text-shadow:0 2px 30px rgba(8,5,12,.55)}
 .hxb-h1 em{display:block;font-style:normal;color:#CFC3FF;text-shadow:0 0 30px rgba(123,106,196,.75),0 2px 30px rgba(8,5,12,.55)}
 .hxb-lede{max-width:44ch;margin:0;font-size:clamp(1.02rem,1.25vw,1.18rem);line-height:1.6;color:#DDD5EA}
@@ -150,7 +149,6 @@ html:not(.js) .hxb-cue,html.rm .hxb-cue{display:none}
   .hxb-rv{opacity:1;transform:none}
   .hxb.is-pre .hxb-copy{pointer-events:auto}
   .hxb-kicker{font-size:.76rem;letter-spacing:.18em;margin-bottom:10px}
-  .hxb-kicker::before{width:18px}
   .hxb-h1{font-size:clamp(1.75rem,8.4vw,2.3rem);margin-bottom:10px}
   .hxb-lede{font-size:.98rem;line-height:1.5}
   .hxb-cta{gap:10px;margin:16px 0 12px}

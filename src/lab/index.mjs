@@ -1,6 +1,6 @@
 // lab/index.mjs: the review page for round 3: three hero layouts and three splash animations, side by side.
-import fs from 'node:fs';
 import { u, img, icon, esc } from '../lib/html.mjs';
+import { labReady } from '../lib/layout.mjs';
 
 const HEROES = [
   ['hero-a', 'A', 'Levitate', 'The real storefront lifts off a sea of golden-hour clouds. Sky, building and three cloud layers move at different depths as your cursor moves; scrolling lifts the building higher while the clouds sink. The brand name sits behind the building, the clouds in front of both.', 'Reacts to: cursor, scroll'],
@@ -29,7 +29,7 @@ export default function () {
 </section>
 <section class="band"><div class="band__in">
   <h2 class="shead__t">Hero layouts</h2>
-  <ul class="labx__grid" role="list">${HEROES.filter(([slug]) => fs.existsSync(new URL(`./${slug}.mjs`, import.meta.url))).map(card).join('')}</ul>
+  <ul class="labx__grid" role="list">${HEROES.filter(([slug]) => labReady(slug)).map(card).join('')}</ul>
   <h2 class="shead__t labx__h2">Splash animations</h2>
   <ul class="labx__grid" role="list">${SPLASHES.map(card).join('')}</ul>
   <h2 class="shead__t labx__h2">Font pairings</h2>

@@ -34,8 +34,11 @@ const misc = await import('./pages/misc.mjs');
 const pages = [...home({ articles }), ...shop(), ...story(), ...learn({ articles }), ...visit()];
 pages.push(...misc.default({ allPages: pages }));
 // design-option lab pages (src/lab/*.mjs): each default-exports a function returning one page object
+// LAB_SKIP=hero-d,hero-e (slugs) holds work-in-progress lab pages out of a build; layout.mjs (labReady) hides their menu
+// links and tools/publish-copy.mjs keeps their source out of the public repo, so a half-built option never ships.
+const LAB_SKIP = (process.env.LAB_SKIP || '').split(',').map((s) => s.trim()).filter(Boolean);
 const labDir = path.join(ROOT, 'src/lab');
-if (fs.existsSync(labDir)) for (const f of fs.readdirSync(labDir).filter((x) => x.endsWith('.mjs')).sort()) {
+if (fs.existsSync(labDir)) for (const f of fs.readdirSync(labDir).filter((x) => x.endsWith('.mjs') && !LAB_SKIP.includes(x.slice(0, -4))).sort()) {
   const mod = await import(path.join(labDir, f)); const out = mod.default({ articles });
   for (const lp of [].concat(out)) pages.push({ noPlacards: true, ...lp, lab: true, schema: [] });
 }

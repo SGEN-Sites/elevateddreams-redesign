@@ -62,7 +62,6 @@ export default function () {
 .hxc-rim--day{opacity:.46;background:linear-gradient(270deg,rgba(255,170,90,.14),transparent 32%);box-shadow:inset -1.5px 0 0 rgba(255,196,130,.6)}
 .hxc-rim--night{opacity:.54;background:linear-gradient(270deg,rgba(150,128,255,.17),transparent 32%);box-shadow:inset -1.5px 0 0 rgba(187,170,255,.65)}
 .hxc-kicker{display:flex;align-items:center;gap:.75em;margin:0 0 18px;font:700 .84rem/1.35 var(--f-ui);letter-spacing:.22em;text-transform:uppercase;color:var(--violet-hi);text-wrap:balance}
-.hxc-kicker::before{content:"";flex:none;width:28px;height:1px;background:currentColor;opacity:.8}
 .hxc-h1{margin:0 0 16px;font-family:var(--f-display);font-size:calc((var(--hxc-plate) - 2*var(--hxc-pad))/12.3);line-height:1;letter-spacing:.005em;color:#fff;text-wrap:balance}
 .hxc-h1 em{display:block;margin-top:.06em;font-style:normal;color:var(--violet-hi);text-shadow:0 0 30px rgba(123,106,196,.6)}
 .hxc-lede{max-width:44ch;margin:0 0 24px;font-size:clamp(1.02rem,1.12vw,1.12rem);line-height:1.6;color:var(--text-2)}
@@ -123,7 +122,6 @@ export default function () {
 @media (max-width:760px){
   .hxc{padding:calc(var(--hdr-h) + 14px) 0 30px;--hxc-op:87%}
   .hxc-kicker{margin-bottom:12px;font-size:.74rem;letter-spacing:.17em}
-  .hxc-kicker::before{width:20px}
   .hxc-h1{margin-bottom:12px;font-size:min(7.4vw,2.4rem)}
   .hxc-lede{margin-bottom:18px;font-size:1rem;line-height:1.55}
   .hxc-cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
